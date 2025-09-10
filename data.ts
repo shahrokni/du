@@ -1,0 +1,217 @@
+import { Data, NounSpec } from "./schema";
+
+export const data: Data = {
+  prepositions: [],
+  words: [
+    {
+      word: "Sprache",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Communication"],
+      spec: {
+        samples: [
+          "Du sprichst meine Sprache.",
+          "Die arabische Sprache ist einfach.",
+        ],
+        article: "Die",
+        meanings: ["language"],
+        plural: "Sprachen",
+      } as NounSpec,
+    },
+    {
+      word: "Buch",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Education"],
+      spec: {
+        article: "Das",
+        samples: ["Ich lese ein Buch.", "Das Buch ist interessant."],
+        meanings: ["book"],
+        plural: "Bücher",
+      } as NounSpec,
+    },
+    {
+      word: "Haus",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Living"],
+      spec: {
+        article: "Das",
+        samples: ["Das Haus ist groß.", "Ich wohne in einem Haus."],
+        meanings: ["house", "home"],
+        plural: "Häuser",
+      } as NounSpec,
+    },
+    {
+      word: "Katze",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Animals and Pets"],
+      spec: {
+        samples: ["Die Katze schläft.", "Ich habe eine Katze."],
+        article: "Die",
+        meanings: ["cat"],
+        plural: "Katzen",
+      } as NounSpec,
+    },
+    {
+      word: "Auto",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          "Das Auto ist schnell.",
+          "Ich fahre ein Auto.",
+          "Mein Auto hat ein Problem.",
+        ],
+        article: "Das",
+        meanings: ["car"],
+        plural: "Autos",
+      } as NounSpec,
+    },
+    {
+      word: "Baum",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature"],
+      spec: {
+        samples: [
+          "Der Baum ist hoch.",
+          "Ich sehe einen Baum.",
+          "Der Wald hat viele Bäume.",
+        ],
+        article: "Der",
+        meanings: ["tree"],
+        plural: "Bäume",
+      } as NounSpec,
+    },
+    {
+      word: "Bus",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          "Der Bus ist pünktlich.",
+          "Ich nehme den Bus.",
+          "Der Bus fährt um 8 Uhr ab.",
+          "Wann kommt der nächste Bus?",
+          "Von welchem Busbahnhof fährt der Bus ab?",
+        ],
+        article: "Der",
+        meanings: ["bus"],
+        plural: "Busse",
+      } as NounSpec,
+    },
+    {
+      word: "Zug",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          "Ich fahre mit dem Zug.",
+          "Der Zug kommt um 10 Uhr an.",
+          "Wo ist der Bahnhof für den Zug?",
+          "Der ICE-Zug ist sehr schnell.",
+          "Der Zug fällt heute aus.",
+        ],
+        article: "Der",
+        meanings: ["train"],
+        plural: "Züge",
+      } as NounSpec,
+    },
+    {
+      word: "Fahrrad",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation", "Sports"],
+      spec: {
+        samples: ["Ich fahre mit dem Fahrrad zur Arbeit."],
+        article: "Das",
+        meanings: ["bicycle", "bike"],
+        plural: "Fahrräder",
+      } as NounSpec,
+    },
+    {
+      word: "U-Bahn",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          "Wo ist die nächste U-Bahn-Station?",
+          "Die U-Bahn fährt alle 5 Minuten.",
+          "Die U-Bahn ist heute sehr voll.",
+        ],
+        article: "Die",
+        meanings: ["subway", "metro"],
+        plural: "U-Bahnen",
+      } as NounSpec,
+    },
+    {
+      word: "S-Bahn",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          "Ich nehme die S-Bahn zur Arbeit.",
+          "Die S-Bahn fährt bis Mitternacht.",
+        ],
+        article: "Die",
+        meanings: ["commuter train"],
+        plural: "S-Bahnen",
+      } as NounSpec,
+    },
+    {
+      word: "Straße",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation", "Places"],
+      spec: {
+        samples: ["Die Straße ist lang.", "Die Straße ist heute gesperrt."],
+        article: "Die",
+        meanings: ["street", "road"],
+        plural: "Straßen",
+      } as NounSpec,
+    },
+    {
+      word: "Brücke",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation", "Places"],
+      spec: {
+        samples: ["Die Brücke verbindet zwei Städte."],
+        article: "Die",
+        meanings: ["bridge"],
+        plural: "Brücken",
+      } as NounSpec,
+    },
+    {
+      word: "Ampel",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation", "Places"],
+      spec: {
+        samples: ["Die Ampel ist rot.", "An der Ampel musst du warten."],
+        article: "Die",
+        meanings: ["traffic light", "stoplight"],
+        plural: "Ampeln",
+      } as NounSpec,
+    },
+    {
+      word: "Kreuzung",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation", "Places"],
+      spec: {
+        samples: ["An der Kreuzung musst du links abbiegen."],
+        article: "Die",
+        meanings: ["intersection", "crossroad"],
+        plural: "Kreuzungen",
+      } as NounSpec,
+    },
+  ],
+};
