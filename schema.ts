@@ -12,6 +12,7 @@ export type Category =
   | "Directions and Transportation"
   | "Health"
   | "Work"
+  | "Occupation"
   | "Hobbies"
   | "Basic cultural topics"
   | "Travel and Holidays"
@@ -27,7 +28,11 @@ export type Category =
   | "Transportation"
   | "Nature"
   | "Sports"
-  | "Places";
+  | "Places"
+  | "Emergency"
+  | "Appointment"
+  | "Aviation"
+  | "Sport";
 
 export type PersonalPronouns =
   | "ich"
@@ -77,6 +82,8 @@ export type Preposition =
   | "innerhalb"
   | "außerhalb";
 
+export type Contraction = "beim" | "zum" | "zur" | "im" | "am" | "ins" | "aufs";
+
 export interface WordSpec {
   samples: Array<{ sample: string; translation: string }>;
 }
@@ -98,6 +105,7 @@ export interface Word {
   type: Type;
   level: Level;
   spec: WordSpec;
+  important?: boolean;
   categories: Category[];
 }
 
