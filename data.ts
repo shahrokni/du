@@ -10,8 +10,14 @@ export const data: Data = {
       categories: ["General", "Communication"],
       spec: {
         samples: [
-          "Du sprichst meine Sprache.",
-          "Die arabische Sprache ist einfach.",
+          {
+            sample: "Du sprichst meine Sprache.",
+            translation: "You speak my language.",
+          },
+          {
+            sample: "Die arabische Sprache ist einfach.",
+            translation: "The Arabic language is simple.",
+          },
         ],
         article: "Die",
         meanings: ["language"],
@@ -25,7 +31,13 @@ export const data: Data = {
       categories: ["General", "Education"],
       spec: {
         article: "Das",
-        samples: ["Ich lese ein Buch.", "Das Buch ist interessant."],
+        samples: [
+          { sample: "Ich lese ein Buch.", translation: "I am reading a book." },
+          {
+            sample: "Das Buch ist interessant.",
+            translation: "The book is interesting.",
+          },
+        ],
         meanings: ["book"],
         plural: "Bücher",
       } as NounSpec,
@@ -37,7 +49,13 @@ export const data: Data = {
       categories: ["General", "Living"],
       spec: {
         article: "Das",
-        samples: ["Das Haus ist groß.", "Ich wohne in einem Haus."],
+        samples: [
+          { sample: "Das Haus ist groß.", translation: "The house is big." },
+          {
+            sample: "Ich wohne in einem Haus.",
+            translation: "I live in a house.",
+          },
+        ],
         meanings: ["house", "home"],
         plural: "Häuser",
       } as NounSpec,
@@ -48,7 +66,10 @@ export const data: Data = {
       type: "NOUN",
       categories: ["Animals and Pets"],
       spec: {
-        samples: ["Die Katze schläft.", "Ich habe eine Katze."],
+        samples: [
+          { sample: "Die Katze schläft.", translation: "The cat is sleeping." },
+          { sample: "Ich habe eine Katze.", translation: "I have a cat." },
+        ],
         article: "Die",
         meanings: ["cat"],
         plural: "Katzen",
@@ -61,9 +82,12 @@ export const data: Data = {
       categories: ["Transportation"],
       spec: {
         samples: [
-          "Das Auto ist schnell.",
-          "Ich fahre ein Auto.",
-          "Mein Auto hat ein Problem.",
+          { sample: "Das Auto ist schnell.", translation: "The car is fast." },
+          { sample: "Ich fahre ein Auto.", translation: "I am driving a car." },
+          {
+            sample: "Mein Auto hat ein Problem.",
+            translation: "My car has a problem.",
+          },
         ],
         article: "Das",
         meanings: ["car"],
@@ -77,9 +101,11 @@ export const data: Data = {
       categories: ["Nature"],
       spec: {
         samples: [
-          "Der Baum ist hoch.",
-          "Ich sehe einen Baum.",
-          "Der Wald hat viele Bäume.",
+          { sample: "Der Baum ist hoch.", translation: "The tree is tall." },
+          {
+            sample: "Der Wald hat viele Bäume.",
+            translation: "The forest has many trees.",
+          },
         ],
         article: "Der",
         meanings: ["tree"],
@@ -211,6 +237,111 @@ export const data: Data = {
         article: "Die",
         meanings: ["intersection", "crossroad"],
         plural: "Kreuzungen",
+      } as NounSpec,
+    },
+    {
+      word: "Vorname",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Introduction"],
+      spec: {
+        samples: [
+          "Wie ist dein Vorname?",
+          "Mein Vorname ist Anna.",
+          "Schreib bitte deinen Vornamen auf.",
+        ],
+        article: "Der",
+        meanings: ["first name", "given name"],
+        plural: "Vornamen",
+      } as NounSpec,
+    },
+    {
+      word: "Nachname",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Introduction"],
+      spec: {
+        samples: [
+          "Wie ist dein Nachname?",
+          "Mein Nachname ist Müller.",
+          "Schreib bitte deinen Nachnamen auf.",
+        ],
+        article: "Der",
+        meanings: ["last name", "surname", "family name"],
+        plural: "Nachnamen",
+      } as NounSpec,
+    },
+    {
+      word: "Alter",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Introduction"],
+      spec: {
+        samples: ["Wie alt bist du?", "Mein Alter ist 25 Jahre."],
+        article: "Das",
+        meanings: ["age"],
+        plural: "Alter",
+      } as NounSpec,
+    },
+    {
+      word: "Adresse",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Introduction"],
+      spec: {
+        samples: [
+          "Meine Adresse ist Hauptstraße 5.",
+          "Kannst du mir deine Adresse geben?",
+          "Die Adresse steht auf dem Brief.",
+          "Die Adresse ist nicht korrekt.",
+        ],
+        article: "Die",
+        meanings: ["address"],
+        plural: "Adressen",
+      } as NounSpec,
+    },
+    {
+      word: "Telefonnummer",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Introduction"],
+      spec: {
+        samples: ["Du kannnst mich unter dieser Telefonnummer erreichen."],
+        article: "Die",
+        meanings: ["phone number", "telephone number"],
+        plural: "Telefonnummern",
+      } as NounSpec,
+    },
+    {
+      word: "Ausweis",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Introduction"],
+      spec: {
+        samples: [
+          "Zeigen Sie bitte Ihren Ausweis.",
+          "Mein Ausweis ist abgelaufen.",
+          "Ich habe meinen Ausweis verloren.",
+        ],
+        article: "Der",
+        meanings: ["ID", "identification card"],
+        plural: "Ausweise",
+      } as NounSpec,
+    },
+    {
+      word: "Pass",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Introduction"],
+      spec: {
+        samples: [
+          "Ich brauche einen neuen Pass.",
+          "Mein Pass ist gültig bis 2025.",
+          "Haben Sie Ihren Pass dabei?",
+        ],
+        article: "Der",
+        meanings: ["passport"],
+        plural: "Pässe",
       } as NounSpec,
     },
   ],

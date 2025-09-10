@@ -78,7 +78,7 @@ export type Preposition =
   | "außerhalb";
 
 export interface WordSpec {
-  samples: string[];
+  samples: Array<{ sample: string; translation: string }>;
 }
 
 export interface NounSpec extends WordSpec {
