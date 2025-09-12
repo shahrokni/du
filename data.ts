@@ -1,14 +1,508 @@
 import { Data, NounSpec } from "./schema";
-/* Introduction */
-/* Transportation */
-/* Weather and Seasons */
-/* Date and Time */
-/* Education */
-/* Family and Friends */
 
 export const data: Data = {
   prepositions: [],
   words: [
+    {
+      word: "Wolke",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          { sample: "Die Wolke ist weiß.", translation: "The cloud is white." },
+          {
+            sample: "Am Himmel sind viele Wolken.",
+            translation: "There are many clouds in the sky.",
+          },
+        ],
+        article: "Die",
+        meanings: ["cloud"],
+        plural: "Wolken",
+      } as NounSpec,
+    },
+    {
+      word: "Sonne",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          { sample: "Die Sonne scheint.", translation: "The sun is shining." },
+          {
+            sample: "Die Sonne ist sehr heiß.",
+            translation: "The sun is very hot.",
+          },
+        ],
+        article: "Die",
+        meanings: ["sun"],
+        plural: "Sonnen",
+      } as NounSpec,
+    },
+    {
+      word: "Mond",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          { sample: "Der Mond ist rund.", translation: "The moon is round." },
+          {
+            sample: "Der Mond scheint in der Nacht.",
+            translation: "The moon shines at night.",
+          },
+        ],
+        article: "Der",
+        meanings: ["moon"],
+        plural: "Monde",
+      } as NounSpec,
+    },
+    {
+      word: "Stern",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          {
+            sample: "Am Himmel sind viele Sterne.",
+            translation: "There are many stars in the sky.",
+          },
+          {
+            translation: "The red star is the symbol of the country.",
+            sample: "Der rote Stern ist das Symbol des Landes.",
+          },
+        ],
+        article: "Der",
+        meanings: ["star"],
+        plural: "Sterne",
+      } as NounSpec,
+    },
+    {
+      word: "Himmel",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          { sample: "Der Himmel ist blau.", translation: "The sky is blue." },
+          {
+            sample: "Am Abend sieht der Himmel schön aus.",
+            translation: "The sky looks beautiful in the evening.",
+          },
+          {
+            translation: "The sky is clear today.",
+            sample: "Der Himmel ist heute klar.",
+          },
+          {
+            translation: "The sky is cloudy.",
+            sample: "Der Himmel ist bewölkt.",
+          },
+          {
+            translation: "Birds are flying in the sky.",
+            sample: "Vögel fliegen am Himmel.",
+          },
+        ],
+        article: "Der",
+        meanings: ["sky", "heaven"],
+        plural: "Himmel",
+      } as NounSpec,
+    },
+    {
+      word: "Wind",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          {
+            sample: "Der Wind weht stark.",
+            translation: "The wind is blowing strongly.",
+          },
+          {
+            translation: "The wind is blowing from the north.",
+            sample: "Der Wind weht aus dem Norden.",
+          },
+          {
+            translation: "The wind is strong and blowing from the west.",
+            sample: "Der Wind ist stark und weht aus dem Westen.",
+          },
+          {
+            translation: "The wind is light today.",
+            sample: "Der Wind ist heute leicht.",
+          },
+        ],
+        article: "Der",
+        meanings: ["wind"],
+        plural: "Winde",
+      } as NounSpec,
+    },
+    {
+      word: "Regen",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          { sample: "Der Regen fällt.", translation: "The rain is falling." },
+          {
+            sample: "Im Sommer gibt es oft Regen.",
+            translation: "In summer, there is often rain.",
+          },
+          {
+            translation: "The rain is very heavy today.",
+            sample: "Der Regen ist heute sehr stark.",
+          },
+          {
+            translation: "I forgot my umbrella and got wet in the rain.",
+            sample:
+              "Ich habe meinen Regenschirm vergessen und bin im Regen nass geworden.",
+          },
+        ],
+        article: "Der",
+        meanings: ["rain"],
+        plural: "Regen",
+      } as NounSpec,
+    },
+    {
+      word: "Schnee",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          { sample: "Der Schnee ist weiß.", translation: "The snow is white." },
+          {
+            sample: "Im Winter gibt es viel Schnee.",
+            translation: "In winter, there is a lot of snow.",
+          },
+          {
+            translation: "The snow is melting in the sun.",
+            sample: "Der Schnee schmilzt in der Sonne.",
+          },
+        ],
+        article: "Der",
+        meanings: ["snow"],
+        plural: "Schneefälle",
+      } as NounSpec,
+    },
+    {
+      word: "Winter",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          { sample: "Der Winter ist kalt.", translation: "Winter is cold." },
+          {
+            sample: "Im Winter schneit es oft.",
+            translation: "It often snows in winter.",
+          },
+          {
+            translation: "I like winter because I can go skiing.",
+            sample: "Ich mag den Winter, weil ich Ski fahren kann.",
+          },
+        ],
+        article: "Der",
+        meanings: ["winter"],
+        plural: "Winter",
+      } as NounSpec,
+    },
+    {
+      word: "Sommer",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          {
+            sample: "Im Sommer gehe ich gerne schwimmen.",
+            translation: "In summer, I like to go swimming.",
+          },
+          {
+            translation: "I love summer because of the long days.",
+            sample: "Ich liebe den Sommer wegen der langen Tage.",
+          },
+        ],
+        article: "Der",
+        meanings: ["summer"],
+        plural: "Sommer",
+      } as NounSpec,
+    },
+    {
+      word: "Frühling",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          {
+            sample: "Im Frühling blühen die Blumen.",
+            translation: "In spring, the flowers bloom.",
+          },
+          {
+            translation: "Spring is my favorite season.",
+            sample: "Der Frühling ist meine Lieblingsjahreszeit.",
+          },
+        ],
+        article: "Der",
+        meanings: ["spring", "springtime"],
+        plural: "Frühlinge",
+      } as NounSpec,
+    },
+    {
+      word: "Herbst",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          {
+            sample: "Im Herbst fallen die Blätter von den Bäumen.",
+            translation: "In autumn, the leaves fall from the trees.",
+          },
+          {
+            translation: "Autumn is a beautiful season with colorful leaves.",
+            sample:
+              "Der Herbst ist eine schöne Jahreszeit mit bunten Blättern.",
+          },
+        ],
+        article: "Der",
+        meanings: ["autumn", "fall"],
+        plural: "Herbste",
+      } as NounSpec,
+    },
+    {
+      word: "April",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Im April beginnt der Frühling.",
+            translation: "Spring begins in April.",
+          },
+          {
+            translation: "My birthday is in April.",
+            sample: "Mein Geburtstag ist im April.",
+          },
+        ],
+        article: "Der",
+        meanings: ["April"],
+        plural: "Aprile",
+      } as NounSpec,
+    },
+    {
+      word: "Januar",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Der Januar ist der erste Monat des Jahres.",
+            translation: "January is the first month of the year.",
+          },
+          {
+            translation: "In January, it is usually cold.",
+            sample: "Im Januar ist es normalerweise kalt.",
+          },
+        ],
+        article: "Der",
+        meanings: ["January"],
+        plural: "Januare",
+      } as NounSpec,
+    },
+    {
+      word: "Februar",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Der Februar hat 28 oder 29 Tage.",
+            translation: "February has 28 or 29 days.",
+          },
+          {
+            translation: "In February, we celebrate Valentine's Day.",
+            sample: "Im Februar feiern wir den Valentinstag.",
+          },
+        ],
+        article: "Der",
+        meanings: ["February"],
+        plural: "Februare",
+      } as NounSpec,
+    },
+    {
+      word: "März",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Im März beginnt der Frühling.",
+            translation: "Spring begins in March.",
+          },
+          {
+            translation: "March is the third month of the year.",
+            sample: "Der März ist der dritte Monat des Jahres.",
+          },
+        ],
+        article: "Der",
+        meanings: ["March"],
+        plural: "Märze",
+      } as NounSpec,
+    },
+    {
+      word: "Juni",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Im Juni beginnt der Sommer.",
+            translation: "Summer begins in June.",
+          },
+          {
+            translation: "June is the sixth month of the year.",
+            sample: "Der Juni ist der sechste Monat des Jahres.",
+          },
+        ],
+        article: "Der",
+        meanings: ["June"],
+        plural: "Junis",
+      } as NounSpec,
+    },
+    {
+      word: "Juli",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Im Juli ist es oft sehr heiß.",
+            translation: "In July, it is often very hot.",
+          },
+          {
+            translation: "July is the seventh month of the year.",
+            sample: "Der Juli ist der siebte Monat des Jahres.",
+          },
+        ],
+        article: "Der",
+        meanings: ["July"],
+        plural: "Julis",
+      } as NounSpec,
+    },
+    {
+      word: "August",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Im August haben viele Menschen Urlaub.",
+            translation: "In August, many people are on vacation.",
+          },
+          {
+            translation: "August is the eighth month of the year.",
+            sample: "Der August ist der achte Monat des Jahres.",
+          },
+        ],
+        article: "Der",
+        meanings: ["August"],
+        plural: "Auguste",
+      } as NounSpec,
+    },
+    {
+      word: "Mai",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Im Mai blühen viele Blumen.",
+            translation: "In May, many flowers bloom.",
+          },
+          {
+            translation: "May is the fifth month of the year.",
+            sample: "Der Mai ist der fünfte Monat des Jahres.",
+          },
+        ],
+        article: "Der",
+        meanings: ["May"],
+        plural: "Maie",
+      } as NounSpec,
+    },
+    {
+      word: "Dezember",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Im Dezember ist Weihnachten.",
+            translation: "In December, it is Christmas.",
+          },
+          {
+            translation: "December is the twelfth month of the year.",
+            sample: "Der Dezember ist der zwölfte Monat des Jahres.",
+          },
+        ],
+        article: "Der",
+        meanings: ["December"],
+        plural: "Dezember",
+      } as NounSpec,
+    },
+    {
+      word: "Oktober",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Im Oktober fallen die Blätter von den Bäumen.",
+            translation: "In October, the leaves fall from the trees.",
+          },
+          {
+            translation: "October is the tenth month of the year.",
+            sample: "Der Oktober ist der zehnte Monat des Jahres.",
+          },
+        ],
+        article: "Der",
+        meanings: ["October"],
+        plural: "Oktobers",
+      } as NounSpec,
+    },
+    {
+      word: "November",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Im November wird es oft kalt und regnerisch.",
+            translation: "In November, it often becomes cold and rainy.",
+          },
+          {
+            translation: "November is the eleventh month of the year.",
+            sample: "Der November ist der elfte Monat des Jahres.",
+          },
+        ],
+        article: "Der",
+        meanings: ["November"],
+        plural: "November",
+      } as NounSpec,
+    },
     {
       word: "Sprache",
       level: "A1",
@@ -93,6 +587,10 @@ export const data: Data = {
           {
             sample: "Mein Auto hat ein Problem.",
             translation: "My car has a problem.",
+          },
+          {
+            translation: "How much does the car cost?",
+            sample: "Wie viel kostet das Auto?",
           },
         ],
         article: "Das",
@@ -245,6 +743,166 @@ export const data: Data = {
       } as NounSpec,
     },
     {
+      word: "Supermarkt",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Places", "Shopping and Clothing"],
+      spec: {
+        samples: [
+          {
+            translation: "Can you buy some bread at the supermarket?",
+            sample: "Kannst du im Supermarkt etwas Brot kaufen?",
+          },
+          {
+            sample: "Der Supermarkt ist um die Ecke.",
+            translation: "The supermarket is around the corner.",
+          },
+        ],
+        article: "Der",
+        meanings: ["supermarket"],
+        plural: "Supermärkte",
+      } as NounSpec,
+    },
+    {
+      word: "Tankstelle",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation", "Places"],
+      spec: {
+        samples: [
+          {
+            sample: "Die Tankstelle ist gleich hier.",
+            translation: "The gas station is right here.",
+          },
+          {
+            sample: "Ich muss zur Tankstelle fahren.",
+            translation: "I need to drive to the gas station.",
+          },
+        ],
+        article: "Die",
+        meanings: ["gas station", "petrol station"],
+        plural: "Tankstellen",
+      } as NounSpec,
+    },
+    {
+      word: "Parkplatz",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation", "Places"],
+      spec: {
+        samples: [
+          {
+            sample: "Der Parkplatz ist voll.",
+            translation: "The parking lot is full.",
+          },
+          {
+            sample: "Ich suche einen Parkplatz.",
+            translation: "I am looking for a parking space.",
+          },
+        ],
+        article: "Der",
+        meanings: ["parking lot", "parking space"],
+        plural: "Parkplätze",
+      } as NounSpec,
+    },
+    {
+      word: "Kino",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Places", "Entertainment"],
+      spec: {
+        samples: [
+          {
+            sample: "Wir gehen heute Abend ins Kino.",
+            translation: "We are going to the cinema tonight.",
+          },
+        ],
+        article: "Das",
+        meanings: ["cinema", "movie theater"],
+        plural: "Kinos",
+      } as NounSpec,
+    },
+    {
+      word: "Rathaus",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Places", "City life and errands"],
+      spec: {
+        samples: [
+          {
+            sample: "Das Rathaus ist im Stadtzentrum.",
+            translation: "The town hall is in the city center.",
+          },
+        ],
+        article: "Das",
+        meanings: ["town hall", "city hall"],
+        plural: "Rathäuser",
+      } as NounSpec,
+    },
+    {
+      word: "Morgen",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Morgen habe ich einen Termin.",
+            translation: "I have an appointment tomorrow.",
+          },
+          {
+            sample: "Am Morgen trinke ich Kaffee.",
+            translation: "In the morning, I drink coffee.",
+          },
+        ],
+        article: "Der",
+        meanings: ["morning", "tomorrow"],
+        plural: "Morgen",
+      } as NounSpec,
+    },
+    {
+      word: "Abend",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Am Abend gehe ich spazieren.",
+            translation: "In the evening, I go for a walk.",
+          },
+          {
+            sample: "Der Abend ist ruhig.",
+            translation: "The evening is quiet.",
+          },
+        ],
+        article: "Der",
+        meanings: ["evening"],
+        plural: "Abende",
+      } as NounSpec,
+    },
+    {
+      word: "Nacht",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "In der Nacht schlafe ich.",
+            translation: "At night, I sleep.",
+          },
+          {
+            sample: "Die Nacht ist dunkel.",
+            translation: "The night is dark.",
+          },
+        ],
+        article: "Die",
+        meanings: ["night"],
+        plural: "Nächte",
+      } as NounSpec,
+    },
+    {
       word: "Straße",
       level: "A1",
       type: "NOUN",
@@ -318,6 +976,123 @@ export const data: Data = {
         article: "Die",
         meanings: ["intersection", "crossroad"],
         plural: "Kreuzungen",
+      } as NounSpec,
+    },
+    {
+      word: "Bahnhof",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation", "Places"],
+      spec: {
+        samples: [
+          {
+            translation: "The train station is not far from here.",
+            sample: "Der Bahnhof ist nicht weit von hier entfernt.",
+          },
+          {
+            sample: "Der Bahnhof ist in der Nähe des Stadtzentrums.",
+            translation: "The train station is near the city center.",
+          },
+          {
+            sample: "Ich warte am Bahnhof auf den Zug.",
+            translation: "I am waiting at the train station for the train.",
+          },
+        ],
+        article: "Der",
+        meanings: ["train station", "railway station"],
+        plural: "Bahnhöfe",
+      } as NounSpec,
+    },
+    {
+      word: "Straßenbahn",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          {
+            translation: "I take the tram to work every day.",
+            sample: "Ich nehme jeden Tag die Straßenbahn zur Arbeit.",
+          },
+          {
+            translation: "The tram is very convenient in the city.",
+            sample: "Die Straßenbahn ist in der Stadt sehr praktisch.",
+          },
+        ],
+        article: "Die",
+        meanings: ["tram", "streetcar"],
+        plural: "Straßenbahnen",
+      } as NounSpec,
+    },
+    {
+      word: "Taxi",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          {
+            translation: "I took a taxi to the airport.",
+            sample: "Ich habe ein Taxi zum Flughafen genommen.",
+          },
+          {
+            translation: "Taking a taxi is more expensive than the bus.",
+            sample: "Ein Taxi zu nehmen ist teurer als der Bus.",
+          },
+        ],
+        article: "Das",
+        meanings: ["taxi", "cab"],
+        plural: "Taxis",
+      } as NounSpec,
+    },
+    {
+      word: "Bushaltestelle",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation", "Places"],
+      spec: {
+        samples: [
+          {
+            sample: "Die Bushaltestelle ist um die Ecke.",
+            translation: "The bus stop is around the corner.",
+          },
+          {
+            sample: "An der Bushaltestelle warten viele Leute.",
+            translation: "Many people are waiting at the bus stop.",
+          },
+        ],
+        article: "Die",
+        meanings: ["bus stop"],
+        plural: "Bushaltestellen",
+      } as NounSpec,
+    },
+    {
+      word: "Gleis",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation", "Places"],
+      spec: {
+        samples: [
+          {
+            sample: "Der Zug fährt von Gleis 3 ab.",
+            translation: "The train departs from platform 3.",
+          },
+          {
+            translation: "The train is arriving at platform 5.",
+            sample: "Der Zug kommt auf Gleis 5 an.",
+          },
+          {
+            translation: "From which platform does the train depart?",
+            sample: "Von welchem Gleis fährt der Zug ab?",
+          },
+          {
+            sample: "Wo ist das Gleis für den ICE-Zug?",
+            translation: "Where is the platform for the ICE train?",
+          },
+        ],
+        article: "Das",
+        meanings: ["platform", "track"],
+        plural: "Gleise",
       } as NounSpec,
     },
     {
@@ -506,6 +1281,229 @@ export const data: Data = {
       } as NounSpec,
     },
     {
+      word: "Familie",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Family and Friends"],
+      spec: {
+        samples: [
+          {
+            sample: "Meine Familie ist sehr wichtig für mich.",
+            translation: "My family is very important to me.",
+          },
+          {
+            sample: "Ich habe eine große Familie.",
+            translation: "I have a big family.",
+          },
+        ],
+        article: "Die",
+        meanings: ["family"],
+        plural: "Familien",
+      } as NounSpec,
+    },
+    {
+      word: "Bruder",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Family and Friends"],
+      spec: {
+        samples: [
+          {
+            sample: "Mein Bruder ist älter als ich.",
+            translation: "My brother is older than me.",
+          },
+          {
+            sample: "Ich habe einen jüngeren Bruder.",
+            translation: "I have a younger brother.",
+          },
+        ],
+        article: "Der",
+        meanings: ["brother"],
+        plural: "Brüder",
+      } as NounSpec,
+    },
+    {
+      word: "Schwester",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Family and Friends"],
+      spec: {
+        samples: [
+          {
+            sample: "Meine Schwester studiert Medizin.",
+            translation: "My sister is studying medicine.",
+          },
+          {
+            sample: "Ich habe zwei Schwestern.",
+            translation: "I have two sisters.",
+          },
+        ],
+        article: "Die",
+        meanings: ["sister"],
+        plural: "Schwestern",
+      } as NounSpec,
+    },
+    {
+      word: "Mutter",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Family and Friends"],
+      spec: {
+        samples: [
+          {
+            sample: "Meine Mutter kocht gerne.",
+            translation: "My mother likes to cook.",
+          },
+          {
+            sample: "Ich besuche meine Mutter am Wochenende.",
+            translation: "I visit my mother on the weekend.",
+          },
+        ],
+        article: "Die",
+        meanings: ["mother", "mom"],
+        plural: "Mütter",
+      } as NounSpec,
+    },
+    {
+      word: "Kind",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Family and Friends"],
+      spec: {
+        samples: [
+          {
+            sample: "Das Kind spielt im Garten.",
+            translation: "The child is playing in the garden.",
+          },
+          {
+            sample: "Ich habe zwei Kinder.",
+            translation: "I have two children.",
+          },
+          {
+            translation: "How many kids do you have?",
+            sample: "Wie viele Kinder hast du?",
+          },
+        ],
+        article: "Das",
+        meanings: ["child", "kid"],
+        plural: "Kinder",
+      } as NounSpec,
+    },
+    {
+      word: "Vater",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Family and Friends"],
+      spec: {
+        samples: [
+          {
+            sample: "Mein Vater arbeitet als Ingenieur.",
+            translation: "My father works as an engineer.",
+          },
+          {
+            sample: "Ich rufe meinen Vater jeden Sonntag an.",
+            translation: "I call my father every Sunday.",
+          },
+        ],
+        article: "Der",
+        meanings: ["father", "dad"],
+        plural: "Väter",
+      } as NounSpec,
+    },
+    {
+      word: "Eltern",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Family and Friends"],
+      spec: {
+        samples: [
+          {
+            translation: "My parents suppoted me to study abroad.",
+            sample:
+              "Meine Eltern haben mich unterstützt, im Ausland zu studieren.",
+          },
+          {
+            translation: "He lost his parents in a car accident.",
+            sample: "Er hat seine Eltern bei einem Autounfall verloren.",
+          },
+          {
+            translation: "Her paretns were proud of her achievements.",
+            sample: "Ihre Eltern waren stolz auf ihre Leistungen.",
+          },
+        ],
+        article: "Die",
+        meanings: ["parents"],
+        plural: "Eltern",
+      } as NounSpec,
+    },
+    {
+      word: "Freund",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Family and Friends"],
+      spec: {
+        samples: [
+          {
+            sample: "Mein Freund heißt Max.",
+            translation: "My friend's name is Max.",
+          },
+          {
+            sample: "Ich treffe mich heute mit meinem Freund.",
+            translation: "I am meeting my friend today.",
+          },
+          {
+            sample: "Er ist mein bester Freund.",
+            translation: "He is my best friend.",
+          },
+        ],
+        article: "Der",
+        meanings: ["friend", "boyfriend"],
+        plural: "Freunde",
+      } as NounSpec,
+    },
+    {
+      word: "Oma",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Family and Friends"],
+      spec: {
+        samples: [
+          {
+            translation: "What is your grandmother's name?",
+            sample: "Wie heißt deine Oma?",
+          },
+          {
+            translation: "My grandmother bakes the best cookies.",
+            sample: "Meine Oma backt die besten Kekse.",
+          },
+        ],
+        article: "Die",
+        meanings: ["grandmother", "grandma"],
+        plural: "Omas",
+      } as NounSpec,
+    },
+    {
+      word: "Opa",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Family and Friends"],
+      spec: {
+        samples: [
+          {
+            translation: "My grandfather tells interesting stories.",
+            sample: "Mein Opa erzählt interessante Geschichten.",
+          },
+          {
+            translation: "I visit my grandfather every Sunday.",
+            sample: "Ich besuche meinen Opa jeden Sonntag.",
+          },
+        ],
+        article: "Der",
+        meanings: ["grandfather", "grandpa"],
+        plural: "Opas",
+      } as NounSpec,
+    },
+    {
       word: "Schüler",
       level: "A1",
       type: "NOUN",
@@ -523,6 +1521,10 @@ export const data: Data = {
           {
             translation: "The student was expelled.",
             sample: "Der Schüler wurde ausgeschlossen.",
+          },
+          {
+            translation: "I am a student at the local high school.",
+            sample: "Ich bin Schüler an der örtlichen Gesamtschule.",
           },
         ],
         article: "Der",
@@ -629,6 +1631,27 @@ export const data: Data = {
         article: "Das",
         meanings: ["textbook"],
         plural: "Lehrbücher",
+      } as NounSpec,
+    },
+    {
+      word: "Tafel",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Education"],
+      spec: {
+        samples: [
+          {
+            translation: "The teacher writes the homework on the board.",
+            sample: "Der Lehrer schreibt die Hausaufgaben an die Tafel.",
+          },
+          {
+            translation: "Please clean the board after class.",
+            sample: "Bitte putz die Tafel nach dem Unterricht.",
+          },
+        ],
+        article: "Die",
+        meanings: ["board", "blackboard", "chalkboard"],
+        plural: "Tafeln",
       } as NounSpec,
     },
     {
@@ -978,6 +2001,376 @@ export const data: Data = {
         article: "Die",
         meanings: ["allergy"],
         plural: "Allergien",
+      } as NounSpec,
+    },
+    {
+      word: "Brot",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "I like to eat bread with butter.",
+            sample: "Ich esse gerne Brot mit Butter.",
+          },
+          {
+            translation: "The bakery sells fresh bread every morning.",
+            sample: "Die Bäckerei verkauft jeden Morgen frisches Brot.",
+          },
+          {
+            translation: "Please cut the bread.",
+            sample: "Bitte schneiden Sie das Brot.",
+          },
+        ],
+        article: "Das",
+        meanings: ["bread"],
+        plural: "Brote",
+      } as NounSpec,
+    },
+    {
+      word: "Tomate",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks", "Vegetables"],
+      spec: {
+        samples: [
+          {
+            translation: "I like to eat tomatoes in my salad.",
+            sample: "Ich esse gerne Tomaten in meinem Salat.",
+          },
+          {
+            translation: "The tomato is red and juicy.",
+            sample: "Die Tomate ist rot und saftig.",
+          },
+          {
+            translation: "Tomato has a lot of vitamin C.",
+            sample: "Die Tomate hat viel Vitamin C.",
+          },
+        ],
+        article: "Die",
+        meanings: ["tomato"],
+        plural: "Tomaten",
+      } as NounSpec,
+    },
+    {
+      word: "Käse",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "I like to eat cheese with bread.",
+            sample: "Ich esse gerne Käse mit Brot.",
+          },
+          {
+            translation: "The cheese is made from cow's milk.",
+            sample: "Der Käse wird aus Kuhmilch hergestellt.",
+          },
+          {
+            translation: "The cheese smells strong.",
+            sample: "Der Käse riecht stark.",
+          },
+          {
+            translation: "Switzerland is famous for its cheese.",
+            sample: "Die Schweiz ist berühmt für ihren Käse.",
+          },
+        ],
+        article: "Der",
+        meanings: ["cheese"],
+        plural: "Käse",
+      } as NounSpec,
+    },
+    {
+      word: "Milch",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "I drink milk every morning.",
+            sample: "Ich trinke jeden Morgen Milch.",
+          },
+          {
+            translation: "The milk is fresh and cold.",
+            sample: "Die Milch ist frisch und kalt.",
+          },
+          {
+            translation: "The doctor told me to drink more milk.",
+            sample: "Der Arzt hat mir gesagt, ich soll mehr Milch trinken.",
+          },
+        ],
+        article: "Die",
+        meanings: ["milk"],
+        plural: "Milchsorten",
+      } as NounSpec,
+    },
+    {
+      word: "Wasser",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks", "Health"],
+      spec: {
+        samples: [
+          {
+            translation: "I drink a lot of water every day.",
+            sample: "Ich trinke jeden Tag viel Wasser.",
+          },
+          {
+            translation: "You should drink water",
+            sample: "Du solltest Wasser trinken",
+          },
+        ],
+        article: "Das",
+        meanings: ["water"],
+        plural: "Wässer",
+      } as NounSpec,
+    },
+    {
+      word: "Saft",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "I like to drink orange juice.",
+            sample: "Ich trinke gerne Orangensaft.",
+          },
+          {
+            translation: "The juice is fresh and sweet.",
+            sample: "Der Saft ist frisch und süß.",
+          },
+        ],
+        article: "Der",
+        meanings: ["juice"],
+        plural: "Säfte",
+      } as NounSpec,
+    },
+    {
+      word: "Bier",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "He likes to drink beer with his friends.",
+            sample: "Er trinkt gerne Bier mit seinen Freunden.",
+          },
+          {
+            translation: "The oktoberfest is famous for its beer.",
+            sample: "Das Oktoberfest ist berühmt für sein Bier.",
+          },
+        ],
+        article: "Das",
+        meanings: ["beer"],
+        plural: "Biere",
+      } as NounSpec,
+    },
+    {
+      word: "Wein",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "She enjoys a glass of wine in the evening.",
+            sample: "Sie genießt abends ein Glas Wein.",
+          },
+          {
+            translation: "The wine is from Italy.",
+            sample: "Der Wein ist aus Italien.",
+          },
+        ],
+        article: "Der",
+        meanings: ["wine"],
+        plural: "Weine",
+      } as NounSpec,
+    },
+    {
+      word: "Kaffee",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "I like to drink coffee in the morning.",
+            sample: "Ich trinke morgens gerne Kaffee.",
+          },
+          {
+            translation: "The coffee is hot and strong.",
+            sample: "Der Kaffee ist heiß und stark.",
+          },
+        ],
+        article: "Der",
+        meanings: ["coffee"],
+        plural: "Kaffees",
+      } as NounSpec,
+    },
+    {
+      word: "Tee",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "She drinks tea with lemon and honey.",
+            sample: "Sie trinkt Tee mit Zitrone und Honig.",
+          },
+        ],
+        article: "Der",
+        meanings: ["tea"],
+        plural: "Tees",
+      } as NounSpec,
+    },
+    {
+      word: "Fleisch",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "He doesn't eat meat.",
+            sample: "Er isst kein Fleisch.",
+          },
+          {
+            translation: "The meat is fresh and tender.",
+            sample: "Das Fleisch ist frisch und zart.",
+          },
+          {
+            translation: "She bought meat at the butcher's.",
+            sample: "Sie hat Fleisch beim Metzger gekauft.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Gemüse",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks", "Vegetables"],
+      spec: {
+        samples: [
+          {
+            translation: "The vegetables are healthy and nutritious.",
+            sample: "Das Gemüse ist gesund und nahrhaft.",
+          },
+        ],
+        article: "Das",
+        meanings: ["vegetables"],
+        plural: "Gemüse",
+      } as NounSpec,
+    },
+    {
+      word: "Obst",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks", "Fruits"],
+      spec: {
+        samples: [
+          {
+            translation: "The fruit is fresh and sweet.",
+            sample: "Das Obst ist frisch und süß.",
+          },
+          {
+            translation: "Can you buy some fruit at the market?",
+            sample: "Kannst du auf dem Markt etwas Obst kaufen?",
+          },
+          {
+            translation: "Apple, banana, and orange are my favorite fruits.",
+            sample: "Apfel, Banane und Orange sind meine Lieblingsobstsorten.",
+          },
+        ],
+        article: "Das",
+        meanings: ["fruit"],
+        plural: "Obstsorten",
+      } as NounSpec,
+    },
+    {
+      word: "Zucker",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "I like to put sugar in my coffee.",
+            sample: "Ich mag Zucker in meinem Kaffee.",
+          },
+          {
+            translation: "The cake contains a lot of sugar.",
+            sample: "Der Kuchen enthält viel Zucker.",
+          },
+        ],
+        article: "Der",
+        meanings: ["sugar"],
+        plural: "Zucker",
+      } as NounSpec,
+    },
+    {
+      word: "Salz",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "Please add some salt to the soup.",
+            sample: "Bitte füge der Suppe etwas Salz hinzu.",
+          },
+          {
+            translation: "The salt is in the kitchen cabinet.",
+            sample: "Das Salz ist im Küchenschrank.",
+          },
+        ],
+        article: "Das",
+        meanings: ["salt"],
+        plural: "Salze",
+      } as NounSpec,
+    },
+    {
+      word: "Pfeffer",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "Saltz and pepper are common seasonings.",
+            sample: "Salz und Pfeffer sind gängige Gewürze.",
+          },
+        ],
+        article: "Der",
+        meanings: ["pepper"],
+        plural: "Pfeffer",
+      } as NounSpec,
+    },
+    {
+      word: "Wurst",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "He likes to eat sausage with bread.",
+            sample: "Er isst gerne Wurst mit Brot.",
+          },
+          {
+            translation: "The sausage is made from pork.",
+            sample: "Die Wurst wird aus Schweinefleisch hergestellt.",
+          },
+        ],
+        article: "Die",
+        meanings: ["sausage"],
+        plural: "Würste",
       } as NounSpec,
     },
     {

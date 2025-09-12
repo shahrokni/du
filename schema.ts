@@ -32,7 +32,10 @@ export type Category =
   | "Emergency"
   | "Appointment"
   | "Aviation"
-  | "Sport";
+  | "Sport"
+  | "Vegetables"
+  | "Fruits"
+  | "Entertainment";
 
 export type PersonalPronouns =
   | "ich"
@@ -81,6 +84,39 @@ export type Preposition =
   | "wegen"
   | "innerhalb"
   | "außerhalb";
+
+export type Connectors =
+  | "und"
+  | "oder"
+  | "aber"
+  | "denn"
+  | "sondern"
+  | "weil"
+  | "dass"
+  | "wenn"
+  | "obwohl"
+  | "ob"
+  | "als"
+  | "bevor"
+  | "nachdem"
+  | "während"
+  | "bis"
+  | "damit"
+  | "deshalb"
+  | "trotzdem"
+  | "außerdem"
+  | "dann"
+  | "dannach"
+  | "zuerst"
+  | "sonst"
+  | "schließlich"
+  | "jedoch"
+  | "also"
+  | "na ja"
+  | "übrigens"
+  | "eigentlich"
+  | "halt"
+  | "eben";
 
 export type Contraction = "beim" | "zum" | "zur" | "im" | "am" | "ins" | "aufs";
 
