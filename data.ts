@@ -1,4 +1,4 @@
-import { Data, NounSpec } from "./schema";
+import { Data, NounSpec, VerbSpec } from "./schema";
 
 export const data: Data = {
   prepositions: [],
@@ -56,6 +56,958 @@ export const data: Data = {
         meanings: ["moon"],
         plural: "Monde",
       } as NounSpec,
+    },
+    {
+      word: "scheinen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Nature", "Weather and Seasons"],
+      spec: {
+        samples: [
+          { sample: "Die Sonne scheint.", translation: "The sun is shining." },
+          {
+            sample: "Der Mond scheint in der Nacht.",
+            translation: "The moon shines at night.",
+          },
+        ],
+        meanings: ["to shine", "to appear"],
+        infinitive: "scheinen",
+        conjugation: {
+          ich: "scheine",
+          du: "scheinst",
+          er_sie_es: "scheint",
+          wir: "scheinen",
+          ihr: "scheint",
+          sie_Sie: "scheinen",
+        },
+        pp: "geschienen",
+      } as VerbSpec,
+    },
+    {
+      word: "verbinden",
+      level: "A1",
+      type: "VERB",
+      categories: ["Transportation", "Places"],
+      spec: {
+        samples: [
+          {
+            sample: "Die Brücke verbindet zwei Städte.",
+            translation: "The bridge connects two cities.",
+          },
+          {
+            sample: "Das Internet verbindet Menschen auf der ganzen Welt.",
+            translation: "The internet connects people all over the world.",
+          },
+          {
+            translation: "Can you connect my phone to the Wi-Fi?",
+            sample: "Kannst du mein Handy mit dem WLAN verbinden?",
+          },
+          {
+            translation: "The internet has connected people worldwide.",
+            sample: "Das Internet hat Menschen weltweit verbunden.",
+          },
+        ],
+        meanings: ["to connect", "to link"],
+        infinitive: "verbinden",
+        conjugation: {
+          ich: "verbinde",
+          du: "verbindest",
+          er_sie_es: "verbindet",
+          wir: "verbinden",
+          ihr: "verbindet",
+          sie_Sie: "verbinden",
+        },
+        pp: "verbunden",
+      } as VerbSpec,
+    },
+    {
+      word: "ausfüllen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Education", "Official matters"],
+      spec: {
+        samples: [
+          {
+            sample: "Bitte füllen Sie das Formular aus.",
+            translation: "Please fill out the form.",
+          },
+          {
+            sample: "Ich muss den Antrag ausfüllen.",
+            translation: "I need to fill out the application.",
+          },
+          {
+            translation: "Can you help me fill out this form?",
+            sample: "Kannst du mir helfen, dieses Formular auszufüllen?",
+          },
+          {
+            translation: "I filled out the registration form online.",
+            sample: "Ich habe das Anmeldeformular online ausgefüllt.",
+          },
+          {
+            translation: "Who should fill out the questionnaire?",
+            sample: "Wer soll den Fragebogen ausfüllen?",
+          },
+        ],
+        meanings: ["to fill out", "to complete"],
+        infinitive: "ausfüllen",
+        conjugation: {
+          ich: "fülle aus",
+          du: "füllst aus",
+          er_sie_es: "füllt aus",
+          wir: "füllen aus",
+          ihr: "füllt aus",
+          sie_Sie: "füllen aus",
+        },
+        pp: "ausgefüllt",
+      } as VerbSpec,
+    },
+    {
+      word: "entfernen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Health"],
+      spec: {
+        samples: [
+          {
+            sample: "Bitte entfernen Sie den Fleck von meinem Hemd.",
+            translation: "Please remove the stain from my shirt.",
+          },
+          {
+            sample: "Der Arzt hat den Tumor entfernt.",
+            translation: "The doctor removed the tumor.",
+          },
+          {
+            translation: "Can you remove this file from my computer?",
+            sample: "Kannst du diese Datei von meinem Computer entfernen?",
+          },
+          {
+            translation: "I removed the old furniture from my apartment.",
+            sample: "Ich habe die alten Möbel aus meiner Wohnung entfernt.",
+          },
+        ],
+        meanings: ["to remove", "to delete"],
+        infinitive: "entfernen",
+        conjugation: {
+          ich: "entferne",
+          du: "entfernst",
+          er_sie_es: "entfernt",
+          wir: "entfernen",
+          ihr: "entfernt",
+          sie_Sie: "entfernen",
+        },
+        pp: "entfernt",
+      } as VerbSpec,
+    },
+    {
+      word: "ankommen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          {
+            sample: "Der Zug kommt um 10 Uhr an.",
+            translation: "The train arrives at 10 o'clock.",
+          },
+          {
+            sample: "Wann kommt der Bus an?",
+            translation: "When does the bus arrive?",
+          },
+          {
+            translation: "What time does the plane arrive?",
+            sample: "Um wie viel Uhr kommt das Flugzeug an?",
+          },
+          {
+            translation: "I arrived at the airport two hours ago.",
+            sample: "Ich bin vor zwei Stunden am Flughafen angekommen.",
+          },
+        ],
+        meanings: ["to arrive", "to reach"],
+        infinitive: "ankommen",
+        conjugation: {
+          ich: "komme an",
+          du: "kommst an",
+          er_sie_es: "kommt an",
+          wir: "kommen an",
+          ihr: "kommt an",
+          sie_Sie: "kommen an",
+        },
+        pp: "angekommen",
+      } as VerbSpec,
+    },
+    {
+      word: "abfahren",
+      level: "A1",
+      type: "VERB",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          {
+            sample: "Der Bus fährt um 8 Uhr ab.",
+            translation: "The bus departs at 8 o'clock.",
+          },
+          {
+            sample: "Wann fährt der Zug ab?",
+            translation: "When does the train depart?",
+          },
+        ],
+        meanings: ["to depart", "to leave"],
+        infinitive: "abfahren",
+        conjugation: {
+          ich: "fahre ab",
+          du: "fährst ab",
+          er_sie_es: "fährt ab",
+          wir: "fahren ab",
+          ihr: "fahrt ab",
+          sie_Sie: "fahren ab",
+        },
+        pp: "abgefahren",
+      } as VerbSpec,
+    },
+    {
+      word: "anrufen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Communication"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich rufe dich später an.",
+            translation: "I will call you later.",
+          },
+          {
+            sample: "Kannst du mich morgen anrufen?",
+            translation: "Can you call me tomorrow?",
+          },
+          {
+            translation: "I called my friend last night.",
+            sample: "Ich habe meinen Freund gestern Abend angerufen.",
+          },
+          {
+            translatio: "She called the doctor.",
+            sample: "Sie hat den Arzt angerufen.",
+          },
+          {
+            translation: "In case of emergency, call this number.",
+            sample: "Im Notfall rufen Sie diese Nummer an.",
+          },
+        ],
+        meanings: ["to call", "to phone"],
+        infinitive: "anrufen",
+        conjugation: {
+          ich: "rufe an",
+          du: "rufst an",
+          er_sie_es: "ruft an",
+          wir: "rufen an",
+          ihr: "ruft an",
+          sie_Sie: "rufen an",
+        },
+        pp: "angerufen",
+      } as VerbSpec,
+    },
+    {
+      word: "einladen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Communication"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich lade dich zu meiner Party ein.",
+            translation: "I invite you to my party.",
+          },
+          {
+            sample: "Kannst du mich zum Essen einladen?",
+            translation: "Can you invite me to dinner?",
+          },
+          {
+            translation: "I invited my friends to my birthday party.",
+            sample:
+              "Ich habe meine Freunde zu meiner Geburtstagsparty eingeladen.",
+          },
+          {
+            translation: "She invited me to her wedding.",
+            sample: "Sie hat mich zu ihrer Hochzeit eingeladen.",
+          },
+          {
+            translation: "We are going to invite our neighbors for coffee.",
+            sample: "Wir werden unsere Nachbarn zum Kaffee einladen.",
+          },
+        ],
+        meanings: ["to invite", "to load"],
+        infinitive: "einladen",
+        conjugation: {
+          ich: "lade ein",
+          du: "lädst ein",
+          er_sie_es: "lädt ein",
+          wir: "laden ein",
+          ihr: "ladet ein",
+          sie_Sie: "laden ein",
+        },
+        pp: "eingeladen",
+      } as VerbSpec,
+    },
+    {
+      word: "einkaufen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Shopping and Clothing"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich gehe heute einkaufen.",
+            translation: "I am going shopping today.",
+          },
+          {
+            sample: "Kannst du Brot und Milch einkaufen?",
+            translation: "Can you buy bread and milk?",
+          },
+          {
+            translation: "I went shopping for clothes yesterday.",
+            sample: "Ich bin gestern zum Einkaufen von Kleidung gegangen.",
+          },
+          {
+            translation: "She likes to shop for groceries on weekends.",
+            sample: "Sie kauft am Wochenende gerne Lebensmittel ein.",
+          },
+          {
+            translation: "We need to go shopping for a new car.",
+            sample: "Wir müssen für ein neues Auto einkaufen gehen.",
+          },
+        ],
+        meanings: ["to shop", "to buy"],
+        infinitive: "einkaufen",
+        conjugation: {
+          ich: "kaufe ein",
+          du: "kaufst ein",
+          er_sie_es: "kauft ein",
+          wir: "kaufen ein",
+          ihr: "kauft ein",
+          sie_Sie: "kaufen ein",
+        },
+        pp: "eingekauft",
+      } as VerbSpec,
+    },
+    {
+      word: "einsteigen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich steige in den Bus ein.",
+            translation: "I am getting on the bus.",
+          },
+          {
+            sample: "Wo kann ich in den Zug einsteigen?",
+            translation: "Where can I get on the train?",
+          },
+          {
+            translation: "I got on the plane at gate 5.",
+            sample: "Ich bin am Gate 5 in das Flugzeug eingestiegen.",
+          },
+          {
+            translation: "She is getting on the subway now.",
+            sample: "Sie steigt jetzt in die U-Bahn ein.",
+          },
+          {
+            translation: "We need to get on the ferry before it leaves.",
+            sample: "Wir müssen vor der Abfahrt auf die Fähre einsteigen.",
+          },
+        ],
+        meanings: ["to get in", "to board"],
+        infinitive: "einsteigen",
+        conjugation: {
+          ich: "steige ein",
+          du: "steigst ein",
+          er_sie_es: "steigt ein",
+          wir: "steigen ein",
+          ihr: "steigt ein",
+          sie_Sie: "steigen ein",
+        },
+        pp: "eingestiegen",
+      } as VerbSpec,
+    },
+    {
+      word: "umsteigen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich muss in Berlin umsteigen.",
+            translation: "I have to change trains in Berlin.",
+          },
+          {
+            sample: "Wo muss ich umsteigen?",
+            translation: "Where do I have to change?",
+          },
+          {
+            translation: "I changed trains in Munich.",
+            sample: "Ich bin in München umgestiegen.",
+          },
+          {
+            translation: "We need to change at the next station.",
+            sample: "Wir müssen an der nächsten Station umsteigen.",
+          },
+          {
+            translation: "We will change the train in Frankfurt.",
+            sample: "Wir werden in Frankfurt umsteigen.",
+          },
+        ],
+        meanings: ["to change (trains, buses)", "to transfer"],
+        infinitive: "umsteigen",
+        conjugation: {
+          ich: "steige um",
+          du: "steigst um",
+          er_sie_es: "steigt um",
+          wir: "steigen um",
+          ihr: "steigt um",
+          sie_Sie: "steigen um",
+        },
+        pp: "umgestiegen",
+      } as VerbSpec,
+    },
+    {
+      word: "aussteigen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich steige an der nächsten Haltestelle aus.",
+            translation: "I am getting off at the next stop.",
+          },
+          {
+            sample: "Wo muss ich aussteigen?",
+            translation: "Where do I have to get off?",
+          },
+          {
+            translation: "I got off the train in Hamburg.",
+            sample: "Ich bin in Hamburg aus dem Zug ausgestiegen.",
+          },
+          {
+            translation: "She is getting off the bus now.",
+            sample: "Sie steigt jetzt aus dem Bus aus.",
+          },
+        ],
+        meanings: ["to get out", "to disembark"],
+        infinitive: "aussteigen",
+        conjugation: {
+          ich: "steige aus",
+          du: "steigst aus",
+          er_sie_es: "steigt aus",
+          wir: "steigen aus",
+          ihr: "steigt aus",
+          sie_Sie: "steigen aus",
+        },
+        pp: "ausgestiegen",
+      } as VerbSpec,
+    },
+    {
+      word: "akzeptieren",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Communication"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich akzeptiere deine Meinung.",
+            translation: "I accept your opinion.",
+          },
+          {
+            sample: "Der Chef akzeptiert keine Ausreden.",
+            translation: "The boss does not accept excuses.",
+          },
+          {
+            translation: "I accepted the job offer.",
+            sample: "Ich habe das Jobangebot akzeptiert.",
+          },
+          {
+            translation: "She accepted the invitation to the party.",
+            sample: "Sie hat die Einladung zur Party akzeptiert.",
+          },
+          {
+            translation: "We need to accept the terms and conditions.",
+            sample: "Wir müssen die Geschäftsbedingungen akzeptieren.",
+          },
+        ],
+        meanings: ["to accept", "to approve"],
+        infinitive: "akzeptieren",
+        conjugation: {
+          ich: "akzeptiere",
+          du: "akzeptierst",
+          er_sie_es: "akzeptiert",
+          wir: "akzeptieren",
+          ihr: "akzeptiert",
+          sie_Sie: "akzeptieren",
+        },
+        pp: "akzeptiert",
+      } as VerbSpec,
+    },
+    {
+      word: "ablehnen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Communication"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich lehne dein Angebot ab.",
+            translation: "I decline your offer.",
+          },
+          {
+            sample: "Der Chef lehnt keine Vorschläge ab.",
+            translation: "The boss does not reject proposals.",
+          },
+          {
+            translation: "I declined the invitation to the party.",
+            sample: "Ich habe die Einladung zur Party abgelehnt.",
+          },
+          {
+            translation: "She rejected the job offer.",
+            sample: "Sie hat das Jobangebot abgelehnt.",
+          },
+          {
+            translation: "We need to reject the terms and conditions.",
+            sample: "Wir müssen die Geschäftsbedingungen ablehnen.",
+          },
+          {
+            sample: "Ich lehne das Angebot ab.",
+            translation: "I refuse the offer.",
+          },
+        ],
+        meanings: ["to decline", "to reject"],
+        infinitive: "ablehnen",
+        conjugation: {
+          ich: "lehne ab",
+          du: "lehnst ab",
+          er_sie_es: "lehnt ab",
+          wir: "lehnen ab",
+          ihr: "lehnt ab",
+          sie_Sie: "lehnen ab",
+        },
+        pp: "abgelehnt",
+      } as VerbSpec,
+    },
+    {
+      word: "mitbringen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Communication"],
+      spec: {
+        samples: [
+          {
+            sample: "Kannst du bitte einen Kuchen mitbringen?",
+            translation: "Can you please bring a cake?",
+          },
+          {
+            sample: "Ich bringe meine Freunde zur Party mit.",
+            translation: "I am bringing my friends to the party.",
+          },
+          {
+            translation: "I brought my own drinks to the picnic.",
+            sample: "Ich habe meine eigenen Getränke zum Picknick mitgebracht.",
+          },
+          {
+            translation: "She is bringing her laptop to the meeting.",
+            sample: "Sie bringt ihren Laptop zum Meeting mit.",
+          },
+          {
+            translation: "We need to bring our passports to the airport.",
+            sample: "Wir müssen unsere Pässe zum Flughafen mitbringen.",
+          },
+        ],
+        meanings: ["to bring along", "to bring with"],
+        infinitive: "mitbringen",
+        conjugation: {
+          ich: "bringe mit",
+          du: "bringst mit",
+          er_sie_es: "bringt mit",
+          wir: "bringen mit",
+          ihr: "bringt mit",
+          sie_Sie: "bringen mit",
+        },
+        pp: "mitgebracht",
+      } as VerbSpec,
+    },
+    {
+      word: "mitkommen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Communication"],
+      spec: {
+        samples: [
+          {
+            sample: "Willst du mitkommen?",
+            translation: "Do you want to come along?",
+          },
+          {
+            sample: "Ich komme gerne mit.",
+            translation: "I like to come along.",
+          },
+          {
+            translation: "I came along to the party.",
+            sample: "Ich bin zur Party mitgekommen.",
+          },
+          {
+            translation: "She is coming along to the concert.",
+            sample: "Sie kommt zum Konzert mit.",
+          },
+          {
+            translation: "We need to come along to the meeting.",
+            sample: "Wir müssen zum Meeting mitkommen.",
+          },
+        ],
+        meanings: ["to come along", "to accompany"],
+        infinitive: "mitkommen",
+        conjugation: {
+          ich: "komme mit",
+          du: "kommst mit",
+          er_sie_es: "kommt mit",
+          wir: "kommen mit",
+          ihr: "kommt mit",
+          sie_Sie: "kommen mit",
+        },
+        pp: "mitgekommen",
+      } as VerbSpec,
+    },
+    {
+      word: "warten",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Communication"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich warte auf den Bus.",
+            translation: "I am waiting for the bus.",
+          },
+          {
+            sample: "Kannst du bitte warten?",
+            translation: "Can you please wait?",
+          },
+          {
+            translation: "I waited for you at the café.",
+            sample: "Ich habe im Café auf dich gewartet.",
+          },
+          {
+            translation: "She is waiting for her friend.",
+            sample: "Sie wartet auf ihre Freundin.",
+          },
+          {
+            translation: "We need to wait for the train to arrive.",
+            sample: "Wir müssen auf die Ankunft des Zuges warten.",
+          },
+          {
+            translation: "How long should I wait?",
+            sample: "Wie lange soll ich warten?",
+          },
+          {
+            translation: "Could you wait 5 minutes?",
+            sample: "Könntest du 5 Minuten warten?",
+          },
+        ],
+        meanings: ["to wait", "to await"],
+        infinitive: "warten",
+        conjugation: {
+          ich: "warte",
+          du: "wartest",
+          er_sie_es: "wartet",
+          wir: "warten",
+          ihr: "wartet",
+          sie_Sie: "warten",
+        },
+        pp: "gewartet",
+      } as VerbSpec,
+    },
+    {
+      word: "erklären",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Education"],
+      spec: {
+        samples: [
+          {
+            sample: "Kannst du das bitte erklären?",
+            translation: "Can you please explain that?",
+          },
+          {
+            sample: "Der Lehrer erklärt die Grammatik.",
+            translation: "The teacher explains the grammar.",
+          },
+          {
+            translation: "I explained the problem to my friend.",
+            sample: "Ich habe meinem Freund das Problem erklärt.",
+          },
+          {
+            translation: "She is explaining the rules of the game.",
+            sample: "Sie erklärt die Regeln des Spiels.",
+          },
+          {
+            translation: "We need to explain our decision to the team.",
+            sample: "Wir müssen unsere Entscheidung dem Team erklären.",
+          },
+        ],
+        meanings: ["to explain", "to clarify"],
+        infinitive: "erklären",
+        conjugation: {
+          ich: "erkläre",
+          du: "erklärst",
+          er_sie_es: "erklärt",
+          wir: "erklären",
+          ihr: "erklärt",
+          sie_Sie: "erklären",
+        },
+        pp: "erklärt",
+      } as VerbSpec,
+    },
+    {
+      word: "lernen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Education"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich lerne Deutsch.",
+            translation: "I am learning German.",
+          },
+          {
+            sample: "Kannst du mir helfen, Englisch zu lernen?",
+            translation: "Can you help me learn English?",
+          },
+          {
+            translation: "I learned a lot in school.",
+            sample: "Ich habe in der Schule viel gelernt.",
+          },
+          {
+            translation: "She is learning to play the piano.",
+            sample: "Sie lernt Klavier zu spielen.",
+          },
+          {
+            translation: "We need to learn the new software for work.",
+            sample: "Wir müssen die neue Software für die Arbeit lernen.",
+          },
+          {
+            translation: "How could I learn to speak French?",
+            sample: "Wie könnte ich lernen, Französisch zu sprechen?",
+          },
+        ],
+        meanings: ["to learn", "to study"],
+        infinitive: "lernen",
+        conjugation: {
+          ich: "lerne",
+          du: "lernst",
+          er_sie_es: "lernt",
+          wir: "lernen",
+          ihr: "lernt",
+          sie_Sie: "lernen",
+        },
+        pp: "gelernt",
+      } as VerbSpec,
+    },
+    {
+      word: "üben",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Education"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich übe jeden Tag Klavier.",
+            translation: "I practice piano every day.",
+          },
+          {
+            sample: "Kannst du mir helfen, Deutsch zu üben?",
+            translation: "Can you help me practice German?",
+          },
+          {
+            translation: "I practiced my presentation before the meeting.",
+            sample: "Ich habe meine Präsentation vor dem Meeting geübt.",
+          },
+          {
+            translation: "She is practicing her dance routine.",
+            sample: "Sie übt ihre Tanzroutine.",
+          },
+          {
+            translation: "We need to practice our teamwork skills.",
+            sample: "Wir müssen unsere Teamfähigkeiten üben.",
+          },
+          {
+            translation: "Although it was difficult, I practiced every day.",
+            sample: "Obwohl es schwierig war, habe ich jeden Tag geübt.",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "fahren",
+      level: "A1",
+      type: "VERB",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich fahre mit dem Auto zur Arbeit.",
+            translation: "I drive to work by car.",
+          },
+          {
+            sample: "Kannst du mich zum Bahnhof fahren?",
+            translation: "Can you drive me to the train station?",
+          },
+          {
+            translation: "I drove to the beach last weekend.",
+            sample: "Ich bin letztes Wochenende zum Strand gefahren.",
+          },
+          {
+            translation: "She is driving her kids to school.",
+            sample: "Sie fährt ihre Kinder zur Schule.",
+          },
+          {
+            translation: "We need to drive carefully in the snow.",
+            sample: "Wir müssen bei Schnee vorsichtig fahren.",
+          },
+        ],
+        meanings: ["to drive", "to ride"],
+        infinitive: "fahren",
+        conjugation: {
+          ich: "fahre",
+          du: "fährst",
+          er_sie_es: "fährt",
+          wir: "fahren",
+          ihr: "fahrt",
+          sie_Sie: "fahren",
+        },
+        pp: "gefahren",
+      } as VerbSpec,
+    },
+    {
+      word: "abholen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich hole dich um 8 Uhr ab.",
+            translation: "I will pick you up at 8 o'clock.",
+          },
+          {
+            sample: "Kannst du mich vom Flughafen abholen?",
+            translation: "Can you pick me up from the airport?",
+          },
+          {
+            translation: "I picked up my friend from the train station.",
+            sample: "Ich habe meinen Freund vom Bahnhof abgeholt.",
+          },
+          {
+            translation: "She is picking up her kids from school.",
+            sample: "Sie holt ihre Kinder von der Schule ab.",
+          },
+          {
+            translation: "We need to pick up our luggage at the airport.",
+            sample: "Wir müssen unser Gepäck am Flughafen abholen.",
+          },
+        ],
+        meanings: ["to pick up", "to collect"],
+        infinitive: "abholen",
+        conjugation: {
+          ich: "hole ab",
+          du: "holst ab",
+          er_sie_es: "holt ab",
+          wir: "holen ab",
+          ihr: "holt ab",
+          sie_Sie: "holen ab",
+        },
+        pp: "abgeholt",
+      } as VerbSpec,
+    },
+    {
+      word: "verriegeln",
+      level: "A1",
+      type: "VERB",
+      categories: ["General"],
+      spec: {
+        samples: [
+          {
+            sample: "Bitte verriegeln Sie die Tür.",
+            translation: "Please lock the door.",
+          },
+          {
+            sample: "Ich habe mein Fahrrad verriegelt.",
+            translation: "I locked my bike.",
+          },
+          {
+            translation: "I locked the car before leaving.",
+            sample: "Ich habe das Auto vor dem Verlassen verriegelt.",
+          },
+          {
+            translation: "She is locking the windows before going to bed.",
+            sample: "Sie verriegelt die Fenster, bevor sie ins Bett geht.",
+          },
+          {
+            translation: "We need to lock the house when we go out.",
+            sample: "Wir müssen das Haus verriegeln, wenn wir ausgehen.",
+          },
+          {
+            translation: "I lock the door every night before going to bed.",
+            sample:
+              "Ich verriegele die Tür jede Nacht, bevor ich ins Bett gehe.",
+          },
+        ],
+        meanings: ["to lock", "to bolt"],
+        infinitive: "verriegeln",
+        conjugation: {
+          ich: "verrieg(e)le",
+          du: "verriegelst",
+          er_sie_es: "verriegelt",
+          wir: "verriegeln",
+          ihr: "verriegelt",
+          sie_Sie: "verriegeln",
+        },
+        pp: "verriegelt",
+      } as VerbSpec,
+    },
+    {
+      word: "aufräumen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Daily routines"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich räume mein Zimmer auf.",
+            translation: "I tidy up my room.",
+          },
+          {
+            sample: "Kannst du bitte die Küche aufräumen?",
+            translation: "Can you please clean up the kitchen?",
+          },
+          {
+            translation: "I cleaned up the living room yesterday.",
+            sample: "Ich habe gestern das Wohnzimmer aufgeräumt.",
+          },
+          {
+            translation: "She is tidying up her desk.",
+            sample: "Sie räumt ihren Schreibtisch auf.",
+          },
+        ],
+        meanings: ["to tidy up", "to clean up"],
+        infinitive: "aufräumen",
+        conjugation: {
+          ich: "räume auf",
+          du: "räumst auf",
+          er_sie_es: "räumt auf",
+          wir: "räumen auf",
+          ihr: "räumt auf",
+          sie_Sie: "räumen auf",
+        },
+        pp: "aufgeräumt",
+      } as VerbSpec,
     },
     {
       word: "Stern",
@@ -1227,6 +2179,10 @@ export const data: Data = {
           {
             sample: "Ich habe meinen Ausweis verloren.",
             translation: "I lost my ID.",
+          },
+          {
+            sample: "Ich habe meinen Ausweis dabei.",
+            translation: "I have my ID with me.",
           },
         ],
         article: "Der",
@@ -3082,6 +4038,41 @@ export const data: Data = {
       } as NounSpec,
     },
     {
+      word: "Seitenruder",
+      level: "B2",
+      type: "NOUN",
+      categories: ["Transportation", "Aviation"],
+      spec: {
+        samples: [
+          {
+            translation: "The rudder helps control the airplane's yaw.",
+            sample:
+              "Das Seitenruder hilft, die Gierbewegung des Flugzeugs zu steuern.",
+          },
+          {
+            translation: "The rudder is located on the tail of the airplane.",
+            sample: "Das Seitenruder befindet sich am Heck des Flugzeugs.",
+          },
+          {
+            translation: "The pilot adjusted the rudder during the flight.",
+            sample:
+              "Der Pilot hat das Seitenruder während des Fluges eingestellt.",
+          },
+          {
+            translation: "Rudders should be checked before each flight.",
+            sample: "Die Seitenruder sollten vor jedem Flug überprüft werden.",
+          },
+          {
+            translation: "I check the rudders before takeoff.",
+            sample: "Ich überprüfe die Seitenruder vor dem Start.",
+          },
+        ],
+        article: "Das",
+        meanings: ["rudder"],
+        plural: "Seitenruder",
+      } as NounSpec,
+    },
+    {
       word: "Querruder",
       level: "B2",
       type: "NOUN",
@@ -3544,6 +4535,235 @@ export const data: Data = {
         article: "Der",
         meanings: ["passenger"],
         plural: "Passagiere",
+      } as NounSpec,
+    },
+    {
+      word: "Flugschein",
+      level: "A2",
+      type: "NOUN",
+      categories: ["Transportation", "Aviation", "Occupation"],
+      spec: {
+        samples: [
+          {
+            translation: "He is studying to get his pilot's license.",
+            sample: "Er studiert, um seinen Flugschein zu bekommen.",
+          },
+          {
+            translation: "She passed her flight exam and received her license.",
+            sample:
+              "Sie hat ihre Flugprüfung bestanden und ihren Flugschein erhalten.",
+          },
+        ],
+        article: "Der",
+        meanings: ["pilot's license", "aviation certificate"],
+        plural: "Flugscheine",
+      } as NounSpec,
+    },
+    {
+      word: "Antrag",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters"],
+      spec: {
+        samples: [
+          {
+            translation: "I submitted my application for the job.",
+            sample: "Ich habe meinen Antrag für den Job eingereicht.",
+          },
+          {
+            translation: "The application was approved.",
+            sample: "Der Antrag wurde genehmigt.",
+          },
+          {
+            translation: "You need to fill out an application form.",
+            sample: "Sie müssen ein Antragsformular ausfüllen.",
+          },
+        ],
+        article: "Der",
+        meanings: ["application", "request", "petition"],
+        plural: "Anträge",
+      } as NounSpec,
+    },
+    {
+      word: "Formular",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Official matters"],
+      spec: {
+        samples: [
+          {
+            translation: "Please fill out this form.",
+            sample: "Bitte füllen Sie dieses Formular aus.",
+          },
+          {
+            translation: "The form is available online.",
+            sample: "Das Formular ist online verfügbar.",
+          },
+        ],
+        article: "Das",
+        meanings: ["form", "document"],
+        plural: "Formulare",
+      } as NounSpec,
+    },
+    {
+      word: "Unterschrift",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Official matters"],
+      spec: {
+        samples: [
+          {
+            translation: "The document requires a signature.",
+            sample: "Das Dokument erfordert eine Unterschrift.",
+          },
+        ],
+        article: "Die",
+        meanings: ["signature"],
+        plural: "Unterschriften",
+      } as NounSpec,
+    },
+    {
+      word: "Bewerbung",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Occupation"],
+      spec: {
+        samples: [
+          {
+            translation: "I sent my application for the job.",
+            sample: "Ich habe meine Bewerbung für den Job geschickt.",
+          },
+          {
+            translation: "Her application was successful.",
+            sample: "Ihre Bewerbung war erfolgreich.",
+          },
+        ],
+        article: "Die",
+        meanings: ["application", "job application"],
+        plural: "Bewerbungen",
+      } as NounSpec,
+    },
+    {
+      word: "Lebenslauf",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Occupation"],
+      spec: {
+        samples: [
+          {
+            translation: "Please attach your resume to the application.",
+            sample: "Bitte fügen Sie Ihren Lebenslauf der Bewerbung bei.",
+          },
+          {
+            translation: "I have read your resume.",
+            sample: "Ich habe Ihren Lebenslauf gelesen.",
+          },
+        ],
+        article: "Der",
+        meanings: ["resume", "curriculum vitae (CV)"],
+        plural: "Lebensläufe",
+      } as NounSpec,
+    },
+    {
+      word: "Zeugnis",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Occupation", "Education"],
+      spec: {
+        samples: [
+          {
+            translation: "I need to get my diploma translated.",
+            sample: "Ich muss mein Zeugnis übersetzen lassen.",
+          },
+          {
+            translation:
+              "She received a certificate for completing the course.",
+            sample: "Sie erhielt ein Zeugnis für den Abschluss des Kurses.",
+          },
+        ],
+        article: "Das",
+        meanings: ["certificate", "diploma", "report card"],
+        plural: "Zeugnisse",
+      } as NounSpec,
+    },
+    {
+      word: "Abschluss",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Occupation", "Education"],
+      spec: {
+        samples: [
+          {
+            translation: "He is proud of his degree.",
+            sample: "Er ist stolz auf seinen Abschluss.",
+          },
+          {
+            translation: "The graduation ceremony was very emotional.",
+            sample: "Die Abschlussfeier war sehr emotional.",
+          },
+        ],
+        article: "Der",
+        meanings: ["degree", "graduation", "completion"],
+        plural: "Abschlüsse",
+      } as NounSpec,
+    },
+    {
+      word: "Note",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Education"],
+      spec: {
+        samples: [
+          {
+            translation: "She got a good grade on her exam.",
+            sample: "Sie hat eine gute Note in ihrer Prüfung bekommen.",
+          },
+        ],
+        article: "Die",
+        meanings: ["grade", "mark"],
+        plural: "Noten",
+      } as NounSpec,
+    },
+    {
+      word: "Prüfung",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Education"],
+      spec: {
+        samples: [
+          {
+            translation: "The exam was very difficult.",
+            sample: "Die Prüfung war sehr schwierig.",
+          },
+          {
+            translation: "I have to study for my exam.",
+            sample: "Ich muss für meine Prüfung lernen.",
+          },
+        ],
+        article: "Die",
+        meanings: ["exam", "test"],
+        plural: "Prüfungen",
+      } as NounSpec,
+    },
+    {
+      word: "Fach",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Education"],
+      spec: {
+        samples: [
+          {
+            translation: "My favorite subject is mathematics.",
+            sample: "Mein Lieblingsfach ist Mathematik.",
+          },
+          {
+            translation:
+              "She is studying a subject related to computer science.",
+            sample: "Sie studiert ein Fach, das mit Informatik zu tun hat.",
+          },
+        ],
+        article: "Das",
+        meanings: ["subject", "field of study"],
       } as NounSpec,
     },
   ],

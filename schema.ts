@@ -35,18 +35,16 @@ export type Category =
   | "Sport"
   | "Vegetables"
   | "Fruits"
-  | "Entertainment";
+  | "Entertainment"
+  | "Official matters";
 
 export type PersonalPronouns =
   | "ich"
   | "du"
-  | "er"
-  | "sie_her"
-  | "es"
+  | "er_sie_es"
   | "wir"
   | "ihr"
-  | "sie_they"
-  | "Sie_formal";
+  | "sie_Sie";
 
 export type Type = "NOUN" | "VERB" | "ADJECTIVE" | "ADVERB";
 export type Level = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
@@ -133,7 +131,7 @@ export interface NounSpec extends WordSpec {
 export interface VerbSpec extends WordSpec {
   infinitive: string;
   pp: string;
-  present: Record<PersonalPronouns, string>;
+  conjugation: Record<PersonalPronouns, string>;
 }
 
 export interface Word {
