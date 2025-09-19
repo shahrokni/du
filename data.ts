@@ -58,6 +58,115 @@ export const data: Data = {
       } as NounSpec,
     },
     {
+      word: "veranstalten",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Work"],
+      spec: {
+        samples: [
+          {
+            sample: "Wir veranstalten eine Party am Samstag.",
+            translation: "We are hosting a party on Saturday.",
+          },
+          {
+            sample: "Die Firma veranstaltet ein Meeting.",
+            translation: "The company is organizing a meeting.",
+          },
+          {
+            translation: "I organized a conference last year.",
+            sample: "Ich habe letztes Jahr eine Konferenz veranstaltet.",
+          },
+          {
+            translation: "She is hosting a workshop next week.",
+            sample: "Sie veranstaltet nächste Woche einen Workshop.",
+          },
+          {
+            translation: "We need to organize an event for our clients.",
+            sample:
+              "Wir müssen eine Veranstaltung für unsere Kunden organisieren.",
+          },
+        ],
+        meanings: ["to organize", "to host"],
+        infinitive: "veranstalten",
+        conjugation: {
+          ich: "veranstalte",
+          du: "veranstaltest",
+          er_sie_es: "veranstaltet",
+          wir: "veranstalten",
+          ihr: "veranstaltet",
+          sie_Sie: "veranstalten",
+        },
+        pp: "veranstaltet",
+      } as VerbSpec,
+    },
+    {
+      word: "einpacken",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Travel and Holidays"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich packe meinen Koffer ein.",
+            translation: "I am packing my suitcase.",
+          },
+          {
+            sample: "Kannst du bitte meine Sachen einpacken?",
+            translation: "Can you please pack my things?",
+          },
+          {
+            translation: "I packed my clothes for the trip.",
+            sample: "Ich habe meine Kleidung für die Reise eingepackt.",
+          },
+          {
+            translation: "Please pack your things and leave the room.",
+            sample:
+              "Bitte packen Sie Ihre Sachen ein und verlassen Sie das Zimmer.",
+          },
+        ],
+        meanings: ["to pack", "to wrap up"],
+        infinitive: "einpacken",
+        conjugation: {
+          ich: "packe ein",
+          du: "packst ein",
+          er_sie_es: "packt ein",
+          wir: "packen ein",
+          ihr: "packt ein",
+          sie_Sie: "packen ein",
+        },
+        pp: "eingepackt",
+      } as VerbSpec,
+    },
+    {
+      word: "verlassen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Travel and Holidays"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich verlasse das Haus um 8 Uhr.",
+            translation: "I leave the house at 8 o'clock.",
+          },
+          {
+            translation: "When are you leaving the party?",
+            sample: "Wann verlässt du die Party?",
+          },
+        ],
+        meanings: ["to leave", "to abandon"],
+        infinitive: "verlassen",
+        conjugation: {
+          ich: "verlasse",
+          du: "verlässt",
+          er_sie_es: "verlässt",
+          wir: "verlassen",
+          ihr: "verlasst",
+          sie_Sie: "verlassen",
+        },
+        pp: "verlassen",
+      } as VerbSpec,
+    },
+    {
       word: "scheinen",
       level: "A1",
       type: "VERB",
@@ -81,6 +190,51 @@ export const data: Data = {
           sie_Sie: "scheinen",
         },
         pp: "geschienen",
+      } as VerbSpec,
+    },
+    {
+      word: "sprechen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Communication", "Education"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich spreche Deutsch.",
+            translation: "I speak German.",
+          },
+          {
+            sample: "Kannst du Englisch sprechen?",
+            translation: "Can you speak English?",
+          },
+          {
+            translation: "I spoke with my friend yesterday.",
+            sample: "Ich habe gestern mit meinem Freund gesprochen.",
+          },
+          {
+            translation: "She is speaking at the conference.",
+            sample: "Sie spricht auf der Konferenz.",
+          },
+          {
+            translation: "We need to speak about the project.",
+            sample: "Wir müssen über das Projekt sprechen.",
+          },
+          {
+            translation: "I need to talk to you about something.",
+            sample: "Ich muss mit dir über etwas sprechen.",
+          },
+        ],
+        meanings: ["to speak", "to talk"],
+        infinitive: "sprechen",
+        conjugation: {
+          ich: "spreche",
+          du: "sprichst",
+          er_sie_es: "spricht",
+          wir: "sprechen",
+          ihr: "sprecht",
+          sie_Sie: "sprechen",
+        },
+        pp: "gesprochen",
       } as VerbSpec,
     },
     {
@@ -1008,6 +1162,35 @@ export const data: Data = {
         },
         pp: "aufgeräumt",
       } as VerbSpec,
+    },
+    {
+      word: "Versammlung",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Work"],
+      spec: {
+        samples: [
+          {
+            sample: "Die Versammlung beginnt um 10 Uhr.",
+            translation: "The meeting starts at 10 o'clock.",
+          },
+          {
+            sample: "Wir haben eine Versammlung im Büro.",
+            translation: "We have a meeting at the office.",
+          },
+          {
+            translation: "The assembly will be held in the main hall.",
+            sample: "Die Versammlung findet im Hauptsaal statt.",
+          },
+          {
+            translation: "The meeting was very productive.",
+            sample: "Die Versammlung war sehr produktiv.",
+          },
+        ],
+        article: "Die",
+        meanings: ["meeting", "assembly"],
+        plural: "Versammlungen",
+      } as NounSpec,
     },
     {
       word: "Stern",
@@ -2608,6 +2791,31 @@ export const data: Data = {
         article: "Die",
         meanings: ["board", "blackboard", "chalkboard"],
         plural: "Tafeln",
+      } as NounSpec,
+    },
+    {
+      word: "Unterricht",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Education"],
+      spec: {
+        samples: [
+          {
+            translation: "Could you come to my office after the class?",
+            sample: "Könntest du nach dem Unterricht in mein Büro kommen?",
+          },
+          {
+            translation: "The class was very interesting.",
+            sample: "Der Unterricht war sehr interessant.",
+          },
+          {
+            translation: "I have German lessons twice a week.",
+            sample: "Ich habe zweimal pro Woche Deutschunterricht.",
+          },
+        ],
+        article: "Der",
+        meanings: ["lesson", "class", "instruction"],
+        plural: "Unterrichte",
       } as NounSpec,
     },
     {
@@ -4552,6 +4760,10 @@ export const data: Data = {
             translation: "She passed her flight exam and received her license.",
             sample:
               "Sie hat ihre Flugprüfung bestanden und ihren Flugschein erhalten.",
+          },
+          {
+            translation: "I don't have a pilot's license yet.",
+            sample: "Ich habe noch keinen Flugschein.",
           },
         ],
         article: "Der",
