@@ -36,7 +36,8 @@ export type Category =
   | "Vegetables"
   | "Fruits"
   | "Entertainment"
-  | "Official matters";
+  | "Official matters"
+  | "Religion";
 
 export type PersonalPronouns =
   | "ich"

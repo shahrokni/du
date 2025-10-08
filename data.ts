@@ -4,6 +4,52 @@ export const data: Data = {
   prepositions: [],
   words: [
     {
+      word: "Stadtzentrum",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Places", "City life and errands"],
+      spec: {
+        samples: [
+          {
+            sample: "Das Stadtzentrum ist sehr belebt.",
+            translation: "The city center is very busy.",
+          },
+          {
+            sample: "Ich wohne im Stadtzentrum.",
+            translation: "I live in the city center.",
+          },
+          {
+            sample: "Das Stadtzentrum hat viele Geschäfte und Restaurants.",
+            translation: "The city center has many shops and restaurants.",
+          },
+        ],
+        article: "Das",
+        meanings: ["city center", "downtown"],
+        plural: "Stadtzentren",
+      } as NounSpec,
+    },
+    {
+      word: "Geschäft",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Shopping and Clothing", "City life and errands"],
+      spec: {
+        samples: [
+          {
+            sample: "Die Geschäfte sind geöffnet.",
+            translation: "The shops are open.",
+          },
+          {
+            sample: "Ich gehe gerne in die Geschäfte.",
+            translation: "I like to go to the shops.",
+          },
+        ],
+        article: "Das",
+        meanings: ["shops", "stores", "businesses"],
+        plural: "Geschäfte",
+      } as NounSpec,
+    },
+    {
       word: "Wolke",
       level: "A1",
       type: "NOUN",
@@ -56,6 +102,43 @@ export const data: Data = {
         meanings: ["moon"],
         plural: "Monde",
       } as NounSpec,
+    },
+    {
+      word: "dauern",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Date and Time"],
+      spec: {
+        samples: [
+          {
+            sample: "Der Film dauert zwei Stunden.",
+            translation: "The movie lasts two hours.",
+          },
+          {
+            sample: "Wie lange dauert die Reise? ",
+            translation: "How long does the trip take?",
+          },
+          {
+            translation: "The meeting lasted for three hours.",
+            sample: "Das Meeting hat drei Stunden gedauert.",
+          },
+          {
+            translation: "The concert lasted all night.",
+            sample: "Das Konzert hat die ganze Nacht gedauert.",
+          },
+        ],
+        meanings: ["to last", "to take (time)"],
+        infinitive: "dauern",
+        conjugation: {
+          ich: "dauere",
+          du: "dauerst",
+          er_sie_es: "dauert",
+          wir: "dauern",
+          ihr: "dauert",
+          sie_Sie: "dauern",
+        },
+        pp: "gedauert",
+      } as VerbSpec,
     },
     {
       word: "veranstalten",
@@ -541,6 +624,52 @@ export const data: Data = {
         },
         pp: "eingekauft",
       } as VerbSpec,
+    },
+    {
+      word: "Friseur",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Places"],
+      spec: {
+        samples: [
+          {
+            sample: "Der Friseur schneidet meine Haare.",
+            translation: "The hairdresser is cutting my hair.",
+          },
+          {
+            sample: "Ich habe einen Termin beim Friseur.",
+            translation: "I have an appointment at the hairdresser's.",
+          },
+        ],
+        article: "Der",
+        meanings: ["hairdresser", "barber"],
+        plural: "Friseure",
+      } as NounSpec,
+    },
+    {
+      word: "Polizei",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Places", "Official matters"],
+      spec: {
+        samples: [
+          {
+            sample: "Die Polizei ist sehr hilfsbereit.",
+            translation: "The police are very helpful.",
+          },
+          {
+            sample: "Ich muss zur Polizei gehen.",
+            translation: "I need to go to the police station.",
+          },
+          {
+            translation: "Ï have to call the police.",
+            sample: "Ich muss die Polizei rufen.",
+          },
+        ],
+        article: "Die",
+        meanings: ["police", "police station"],
+        plural: "Polizeien",
+      } as NounSpec,
     },
     {
       word: "einsteigen",
@@ -1832,6 +1961,253 @@ export const data: Data = {
       } as NounSpec,
     },
     {
+      word: "Station",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation", "Places"],
+      spec: {
+        samples: [
+          {
+            sample: "Die Station ist in der Nähe.",
+            translation: "The station is nearby.",
+          },
+          {
+            sample: "Ich warte an der Station.",
+            translation: "I am waiting at the station.",
+          },
+        ],
+        article: "Die",
+        meanings: ["station", "stop"],
+        plural: "Stationen",
+      } as NounSpec,
+    },
+    {
+      word: "Anzeigetafel",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          {
+            sample: "Die Anzeigetafel zeigt die Abfahrtszeiten an.",
+            translation: "The display board shows the departure times.",
+          },
+          {
+            sample: "Ich habe die Informationen auf der Anzeigetafel gelesen.",
+            translation: "I read the information on the display board.",
+          },
+        ],
+        article: "Die",
+        meanings: ["display board", "information board"],
+        plural: "Anzeigetafeln",
+      } as NounSpec,
+    },
+    {
+      word: "Teilnahme",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General"],
+      spec: {
+        samples: [
+          {
+            sample: "Die Teilnahme an der Versammlung ist wichtig.",
+            translation: "Participation in the meeting is important.",
+          },
+          {
+            translation: "Your participation in the event is appreciated.",
+            sample: "Ihre Teilnahme an der Veranstaltung wird geschätzt.",
+          },
+          {
+            translation: "Your participation matters.",
+            sample: "Ihre Teilnahme zählt.",
+          },
+        ],
+        article: "Die",
+        meanings: ["participation", "attendance"],
+        plural: "Teilnahmen",
+      } as NounSpec,
+    },
+    {
+      word: "bestätigen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General"],
+      spec: {
+        samples: [
+          {
+            sample: "Kannst du den Termin bestätigen?",
+            translation: "Can you confirm the appointment?",
+          },
+          {
+            translation: "I confirmed my reservation at the hotel.",
+            sample: "Ich habe meine Reservierung im Hotel bestätigt.",
+          },
+          {
+            translation: "She is confirming the details of the project.",
+            sample: "Sie bestätigt die Details des Projekts.",
+          },
+          {
+            translation: "We need to confirm our attendance at the event.",
+            sample:
+              "Wir müssen unsere Teilnahme an der Veranstaltung bestätigen.",
+          },
+        ],
+        meanings: ["to confirm", "to verify"],
+        infinitive: "bestätigen",
+        conjugation: {
+          ich: "bestätige",
+          du: "bestätigst",
+          er_sie_es: "bestätigt",
+          wir: "bestätigen",
+          ihr: "bestätigt",
+          sie_Sie: "bestätigen",
+        },
+        pp: "bestätigt",
+      } as VerbSpec,
+    },
+    {
+      word: "überprüfen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General"],
+      spec: {
+        samples: [
+          {
+            sample: "Kannst du den Fahrplan überprüfen?",
+            translation: "Can you check the timetable?",
+          },
+          {
+            translation: "I checked my email this morning.",
+            sample: "Ich habe heute Morgen meine E-Mails überprüft.",
+          },
+          {
+            translation: "She is checking the schedule for the meeting.",
+            sample: "Sie überprüft den Zeitplan für das Meeting.",
+          },
+          {
+            translation: "We need to check the details before confirming.",
+            sample: "Wir müssen die Details überprüfen, bevor wir bestätigen.",
+          },
+          {
+            translation: "I checked the panel",
+            sample: "Ich habe die Tafel überprüft.",
+          },
+        ],
+        meanings: ["to check", "to verify"],
+        infinitive: "überprüfen",
+        conjugation: {
+          ich: "überprüfe",
+          du: "überprüfst",
+          er_sie_es: "überprüft",
+          wir: "überprüfen",
+          ihr: "überprüft",
+          sie_Sie: "überprüfen",
+        },
+        pp: "überprüft",
+      } as VerbSpec,
+    },
+    {
+      word: "Fahrplan",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Transportation"],
+      spec: {
+        samples: [
+          {
+            sample: "Der Fahrplan ist an der Haltestelle.",
+            translation: "The timetable is at the stop.",
+          },
+          {
+            sample: "Ich habe den Fahrplan überprüft.",
+            translation: "I checked the timetable.",
+          },
+        ],
+        article: "Der",
+        meanings: ["timetable", "schedule"],
+        plural: "Fahrpläne",
+      } as NounSpec,
+    },
+    {
+      word: "Spielplatz",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Places"],
+      spec: {
+        samples: [
+          {
+            sample: "Die Kinder spielen auf dem Spielplatz.",
+            translation: "The children are playing on the playground.",
+          },
+        ],
+        article: "Der",
+        meanings: ["playground"],
+        plural: "Spielplätze",
+      } as NounSpec,
+    },
+    {
+      word: "Sportplatz",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Places", "Sports"],
+      spec: {
+        samples: [
+          {
+            sample: "Der Sportplatz ist groß.",
+            translation: "The sports field is big.",
+          },
+          {
+            sample: "Wir spielen Fußball auf dem Sportplatz.",
+            translation: "We play soccer on the sports field.",
+          },
+        ],
+        article: "Der",
+        meanings: ["sports field", "playing field"],
+        plural: "Sportplätze",
+      } as NounSpec,
+    },
+    {
+      word: "Volkshochschule",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Education", "Places"],
+      spec: {
+        samples: [
+          {
+            sample: "Ich besuche einen Kurs an der Volkshochschule.",
+            translation: "I am attending a course at the community college.",
+          },
+          {
+            sample: "Die Volkshochschule bietet viele Kurse an.",
+            translation: "The community college offers many courses.",
+          },
+        ],
+        article: "Die",
+        meanings: ["community college", "adult education center"],
+        plural: "Volkshochschulen",
+      } as NounSpec,
+    },
+    {
+      word: "Schwimmbad",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Places", "Sports"],
+      spec: {
+        samples: [
+          {
+            sample: "Wir gehen ins Schwimmbad.",
+            translation: "We are going to the swimming pool.",
+          },
+          {
+            sample: "Das Schwimmbad ist sehr sauber.",
+            translation: "The swimming pool is very clean.",
+          },
+        ],
+        article: "Das",
+        meanings: ["swimming pool", "pool"],
+        plural: "Schwimmbäder",
+      } as NounSpec,
+    },
+    {
       word: "U-Bahn",
       level: "A1",
       type: "NOUN",
@@ -2957,6 +3333,48 @@ export const data: Data = {
       } as NounSpec,
     },
     {
+      word: "Gebäude",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Places"],
+      spec: {
+        samples: [
+          {
+            sample: "Das Gebäude ist sehr alt.",
+            translation: "The building is very old.",
+          },
+          {
+            sample: "In diesem Gebäude gibt es viele Wohnungen.",
+            translation: "There are many apartments in this building.",
+          },
+        ],
+        article: "Das",
+        meanings: ["building"],
+        plural: "Gebäude",
+      } as NounSpec,
+    },
+    {
+      word: "Kirche",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Places", "Religion"],
+      spec: {
+        samples: [
+          {
+            sample: "Die Kirche ist ein historisches Gebäude.",
+            translation: "The church is a historic building.",
+          },
+          {
+            sample: "Wir gehen jeden Sonntag in die Kirche.",
+            translation: "We go to church every Sunday.",
+          },
+        ],
+        article: "Die",
+        meanings: ["church"],
+        plural: "Kirchen",
+      } as NounSpec,
+    },
+    {
       word: "Krankenhaus",
       level: "A1",
       type: "NOUN",
@@ -2966,6 +3384,10 @@ export const data: Data = {
           {
             translation: "She works as a nurse in a hospital.",
             sample: "Sie arbeitet als Krankenschwester in einem Krankenhaus.",
+          },
+          {
+            translation: "The hospital was full of patients.",
+            sample: "Das Krankenhaus war voller Patienten.",
           },
         ],
         article: "Das",
@@ -3165,6 +3587,27 @@ export const data: Data = {
         article: "Die",
         meanings: ["allergy"],
         plural: "Allergien",
+      } as NounSpec,
+    },
+    {
+      word: "Bäckerei",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Food and Drinks", "Places"],
+      spec: {
+        samples: [
+          {
+            translation: "I buy fresh bread from the bakery every morning.",
+            sample: "Ich kaufe jeden Morgen frisches Brot von der Bäckerei.",
+          },
+          {
+            translation: "The bakery is located on Main Street.",
+            sample: "Die Bäckerei befindet sich in der Hauptstraße.",
+          },
+        ],
+        article: "Die",
+        meanings: ["bakery"],
+        plural: "Bäckereien",
       } as NounSpec,
     },
     {
@@ -3761,6 +4204,10 @@ export const data: Data = {
             translation: "His foot is swollen.",
             sample: "Sein Fuß ist geschwollen.",
           },
+          {
+            sample: "Er geht zu Fuß zur Arbeit.",
+            translation: "He walks to work.",
+          },
         ],
         article: "Der",
         meanings: ["foot"],
@@ -3969,6 +4416,31 @@ export const data: Data = {
         article: "Das",
         meanings: ["bacterium", "bacteria"],
         plural: "Bakterien",
+      } as NounSpec,
+    },
+    {
+      word: "Bank",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Places"],
+      spec: {
+        samples: [
+          {
+            translation: "I need to go to the bank to withdraw some money.",
+            sample: "Ich muss zur Bank gehen, um etwas Geld abzuheben.",
+          },
+          {
+            translation: "The bank is closed on Sundays.",
+            sample: "Die Bank ist sonntags geschlossen.",
+          },
+          {
+            translation: "I recieved a warning letter from the bank.",
+            sample: "Ich habe einen Mahnbrief von der Bank erhalten.",
+          },
+        ],
+        article: "Die",
+        meanings: ["bank"],
+        plural: "Banken",
       } as NounSpec,
     },
     {
