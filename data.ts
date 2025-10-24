@@ -1,13 +1,319 @@
-import { Data, NounSpec, VerbSpec } from "./schema";
+type Category =
+  | "General"
+  | "Introduction"
+  | "Greeting"
+  | "Date and time"
+  | "Family and friends"
+  | "Food and drinks"
+  | "Daily routines"
+  | "Weather and seasons"
+  | "Housing and furniture"
+  | "Shopping and clothing"
+  | "Directions and transportation"
+  | "Health"
+  | "Work"
+  | "Occupation"
+  | "Hobbies"
+  | "Basic cultural topics"
+  | "Travel and holidays"
+  | "Leisure"
+  | "Environment"
+  | "Media"
+  | "City life and errands"
+  | "Plans"
+  | "Communication"
+  | "Education"
+  | "Living"
+  | "Animals and pets"
+  | "Nature"
+  | "Sports"
+  | "Places"
+  | "Emergency"
+  | "Appointment"
+  | "Aviation"
+  | "Sport"
+  | "Entertainment"
+  | "Official matters"
+  | "Religion"
+  | "Technology"
+  | "Events"
+  | "Tools and equipment"
+  | "Household";
 
-export const data: Data = {
+type PersonalPronouns = "ich" | "du" | "er_sie_es" | "wir" | "ihr" | "sie_Sie";
+
+type Type = "NOUN" | "VERB" | "ADJECTIVE" | "ADVERB";
+type Level = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
+type Case = "Nominative" | "Accusative" | "Dative" | "Genitive";
+type NominativeArticles = "Die" | "Der" | "Das";
+type Preposition =
+  | "mit"
+  | "nach"
+  | "aus"
+  | "zu"
+  | "von"
+  | "bei"
+  | "seit"
+  | "außer"
+  | "entgegen"
+  | "gegenüber"
+  | "durch"
+  | "ohne"
+  | "gegen"
+  | "für"
+  | "um"
+  | "bis"
+  | "an"
+  | "auf"
+  | "hinter"
+  | "in"
+  | "neben"
+  | "über"
+  | "unter"
+  | "vor"
+  | "zwischen"
+  | "statt"
+  | "trotz"
+  | "während"
+  | "wegen"
+  | "innerhalb"
+  | "außerhalb";
+
+type Connectors =
+  | "und"
+  | "oder"
+  | "aber"
+  | "denn"
+  | "sondern"
+  | "weil"
+  | "dass"
+  | "wenn"
+  | "obwohl"
+  | "ob"
+  | "als"
+  | "bevor"
+  | "nachdem"
+  | "während"
+  | "bis"
+  | "damit"
+  | "deshalb"
+  | "trotzdem"
+  | "außerdem"
+  | "dann"
+  | "dannach"
+  | "zuerst"
+  | "sonst"
+  | "schließlich"
+  | "jedoch"
+  | "also"
+  | "na ja"
+  | "übrigens"
+  | "eigentlich"
+  | "halt"
+  | "eben";
+
+type Contraction = "beim" | "zum" | "zur" | "im" | "am" | "ins" | "aufs";
+
+interface WordSample {
+  sample: string;
+  translation: string;
+  explanations?: Explain[];
+}
+
+interface QuickGrammar {
+  key: string;
+  title: string;
+  explain: string[];
+  example: Array<{ example: string; translation: string }>;
+  important_notes?: string[];
+}
+
+interface Explain {
+  question?: string;
+  answer?: string;
+  grammars?: string[];
+}
+
+interface WordSpec {
+  samples: Array<WordSample>;
+}
+
+interface NounSpec extends WordSpec {
+  article: NominativeArticles;
+  plural?: string;
+  meanings: string[];
+}
+
+interface VerbSpec extends WordSpec {
+  infinitive: string;
+  pp: string;
+  conjugation: Record<PersonalPronouns, string>;
+}
+
+interface Word {
+  word: string;
+  type: Type;
+  level: Level;
+  spec: WordSpec;
+  important?: boolean;
+  categories: Category[];
+}
+
+interface PrepositionDetail {
+  preposition: Preposition;
+  case: Case[];
+}
+
+interface Data {
+  prepositions: PrepositionDetail[];
+  grammar: QuickGrammar[];
+  words: Word[];
+}
+
+const data: Data = {
   prepositions: [],
+  grammar: [
+    {
+      key: "von",
+      title: "von Preposition",
+      explain: [
+        `The German preposition "von" is primarily used to indicate origin, possession, authorship, and certain relationships. It is always followed by the dative case.`,
+        `1. Origin or Source: "von" indicates where someone or something comes from.`,
+        `2. Possession: It shows ownership or association.`,
+        `3. Authorship: It is used to indicate the creator of a work.`,
+        `4. Relationships: "von" can denote relationships between people or things.`,
+        `When using "von," ensure that the noun following it is in the dative case, which may involve changing the article or adjective endings accordingly.`,
+      ],
+      example: [
+        {
+          example: "Das Buch ist von dem Autor geschrieben.",
+          translation: "The book is written by the author.",
+        },
+        {
+          example: "Ich komme von der Schule.",
+          translation: "I am coming from the school.",
+        },
+      ],
+    },
+    {
+      key: "vom",
+      title: "vom Contraction",
+      explain: [
+        `The contraction "vom" is a combination of the preposition "von" (from/of) and the definite article "dem" (the) in the dative case. It is used to indicate origin, possession, authorship, and certain relationships, just like "von," but specifically when referring to masculine or neuter nouns in the dative case.`,
+        `When using "vom," ensure that the noun following it is in the dative case, which may involve changing the article or adjective endings accordingly.`,
+      ],
+      example: [
+        {
+          example: "Ich komme vom Arzt.",
+          translation: "I am coming from the doctor.",
+        },
+        {
+          example: "Das Geschenk ist vom Freund.",
+          translation: "The gift is from the friend.",
+        },
+      ],
+    },
+    {
+      key: "vor",
+      title: "vor Preposition",
+      explain: [
+        `The German preposition "vor" is used to indicate position, time, and causation. It can be followed by either the dative or accusative case, depending on the context.`,
+        `1. Position: When "vor" indicates a static position (where something is located), it is followed by the dative case.`,
+        `2. Movement: When "vor" indicates movement towards a place (where something is going), it is followed by the accusative case.`,
+        `3. Time: "vor" is used to express time before an event or action and is typically followed by the dative case.`,
+        `4. Causation: It can also indicate a reason or cause for something and is usually followed by the dative case.`,
+      ],
+      example: [
+        {
+          example: "Das Auto steht vor dem Haus.",
+          translation: "The car is in front of the house.",
+        },
+        {
+          example: "Ich gehe vor das Haus.",
+          translation: "I am going in front of the house.",
+        },
+      ],
+    },
+    {
+      key: "Akkusativ",
+      title: "Akkusativ",
+      explain: [
+        `In German, the accusative case (der Akkusativ) is used for the direct object of a sentence—the person or thing that receives the action of the verb. It affects the articles and pronouns used with nouns, with changes being most noticeable for masculine nouns.`,
+        `To determine if a noun is in the accusative case, you can ask the question "Wen?" (whom?) for people or "Was?" (what?) for things.`,
+        `The most significant change in the accusative case is the masculine definite article "der," which changes to "den."`,
+        `Many German verbs are "transitive," meaning they must have a direct object. When you use one of these verbs, the object is always in the accusative case.`,
+        `Some prepositions are always followed by the accusative case, regardless of context. A mnemonic to remember some of these is "FUDGEBO" (für, um, durch, gegen, ohne).`,
+        `A group of prepositions can take either the accusative or dative case, depending on whether they express movement/direction (accusative) or a fixed location (dative).`,
+      ],
+      example: [
+        {
+          example: "Ich sehe den Hund.",
+          translation: "I see the dog.",
+        },
+        {
+          example: "Sie kauft einen Apfel.",
+          translation: "She buys an apple.",
+        },
+      ],
+    },
+    {
+      key: "wenn",
+      title: "wenn Connector",
+      explain: [
+        `In German, "wenn" is a subordinating conjunction used to introduce conditional clauses (if-clauses) and temporal clauses (when-clauses). It is similar to the English "if" or "when," depending on the context.`,
+        `1. Conditional Clauses: "wenn" is used to express conditions or hypothetical situations. The verb in the "wenn" clause is placed at the end of the clause.`,
+        `2. Temporal Clauses: "wenn" can also indicate that one action occurs when another action takes place. Again, the verb in the "wenn" clause goes to the end.`,
+        `When using "wenn," remember that it is a subordinating conjunction, which means it sends the conjugated verb to the end of the clause it introduces.`,
+      ],
+      example: [
+        {
+          example: "Wenn es regnet, bleibe ich zu Hause.",
+          translation: "If it rains, I stay at home.",
+        },
+        {
+          example: "Ich rufe dich an, wenn ich zu Hause bin.",
+          translation: "I will call you when I am at home.",
+        },
+        {
+          translation: "If the weather is good, we will go for a walk.",
+          example: "Wenn das Wetter gut ist, gehen wir spazieren.",
+        },
+      ],
+    },
+    {
+      key: "weil",
+      title: "weil Connector",
+      explain: [
+        `In German, "weil" is a subordinating conjunction used to introduce causal clauses, similar to the English "because." It explains the reason or cause for an action or situation.`,
+        `When using "weil," the verb in the clause introduced by "weil" is placed at the end of that clause.`,
+        `Remember that "weil" is a subordinating conjunction, which means it sends the conjugated verb to the end of the clause it introduces.`,
+      ],
+      example: [
+        {
+          example: "Ich bleibe zu Hause, weil es regnet.",
+          translation: "I stay at home because it is raining.",
+        },
+        {
+          example: "Sie ist müde, weil sie nicht geschlafen hat.",
+          translation: "She is tired because she did not sleep.",
+        },
+        {
+          translation: "We are going to the park because the weather is nice.",
+          example: "Wir gehen in den Park, weil das Wetter schön ist.",
+        },
+      ],
+    },
+  ],
   words: [
     {
       word: "Stadtzentrum",
       level: "A1",
       type: "NOUN",
-      categories: ["Places", "City life and errands"],
+      categories: [
+        "Places",
+        "City life and errands",
+        "Directions and transportation",
+      ],
       spec: {
         samples: [
           {
@@ -32,7 +338,7 @@ export const data: Data = {
       word: "Geschäft",
       level: "A1",
       type: "NOUN",
-      categories: ["Shopping and Clothing", "City life and errands"],
+      categories: ["Shopping and clothing", "City life and errands", "Places"],
       spec: {
         samples: [
           {
@@ -53,7 +359,7 @@ export const data: Data = {
       word: "Wolke",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature", "Weather and seasons"],
       spec: {
         samples: [
           { sample: "Die Wolke ist weiß.", translation: "The cloud is white." },
@@ -71,7 +377,7 @@ export const data: Data = {
       word: "Sonne",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature", "Weather and seasons"],
       spec: {
         samples: [
           { sample: "Die Sonne scheint.", translation: "The sun is shining." },
@@ -89,7 +395,7 @@ export const data: Data = {
       word: "Mond",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature", "Weather and seasons"],
       spec: {
         samples: [
           { sample: "Der Mond ist rund.", translation: "The moon is round." },
@@ -107,7 +413,7 @@ export const data: Data = {
       word: "dauern",
       level: "A1",
       type: "VERB",
-      categories: ["General", "Date and Time"],
+      categories: ["General", "Date and time"],
       spec: {
         samples: [
           {
@@ -144,7 +450,7 @@ export const data: Data = {
       word: "veranstalten",
       level: "A1",
       type: "VERB",
-      categories: ["General", "Work"],
+      categories: ["General", "Work", "Entertainment"],
       spec: {
         samples: [
           {
@@ -186,7 +492,7 @@ export const data: Data = {
       word: "einpacken",
       level: "A1",
       type: "VERB",
-      categories: ["General", "Travel and Holidays"],
+      categories: ["General", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -224,7 +530,7 @@ export const data: Data = {
       word: "verlassen",
       level: "A1",
       type: "VERB",
-      categories: ["General", "Travel and Holidays"],
+      categories: ["General", "Travel and holidays", "Daily routines"],
       spec: {
         samples: [
           {
@@ -253,7 +559,7 @@ export const data: Data = {
       word: "scheinen",
       level: "A1",
       type: "VERB",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature", "Weather and seasons"],
       spec: {
         samples: [
           { sample: "Die Sonne scheint.", translation: "The sun is shining." },
@@ -279,7 +585,7 @@ export const data: Data = {
       word: "sprechen",
       level: "A1",
       type: "VERB",
-      categories: ["Communication", "Education"],
+      categories: ["Communication", "Education", "Daily routines"],
       spec: {
         samples: [
           {
@@ -324,7 +630,11 @@ export const data: Data = {
       word: "verbinden",
       level: "A1",
       type: "VERB",
-      categories: ["Transportation", "Places"],
+      categories: [
+        "Directions and transportation",
+        "Communication",
+        "Technology",
+      ],
       spec: {
         samples: [
           {
@@ -439,7 +749,7 @@ export const data: Data = {
       word: "ankommen",
       level: "A1",
       type: "VERB",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -457,6 +767,10 @@ export const data: Data = {
           {
             translation: "I arrived at the airport two hours ago.",
             sample: "Ich bin vor zwei Stunden am Flughafen angekommen.",
+          },
+          {
+            sample: "Wann kommst du in Berlin an?",
+            translation: "When do you arrive in Berlin?",
           },
         ],
         meanings: ["to arrive", "to reach"],
@@ -476,7 +790,7 @@ export const data: Data = {
       word: "abfahren",
       level: "A1",
       type: "VERB",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -588,7 +902,7 @@ export const data: Data = {
       word: "einkaufen",
       level: "A1",
       type: "VERB",
-      categories: ["Shopping and Clothing"],
+      categories: ["Shopping and clothing", "Daily routines"],
       spec: {
         samples: [
           {
@@ -675,7 +989,7 @@ export const data: Data = {
       word: "einsteigen",
       level: "A1",
       type: "VERB",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -716,7 +1030,7 @@ export const data: Data = {
       word: "umsteigen",
       level: "A1",
       type: "VERB",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -757,7 +1071,7 @@ export const data: Data = {
       word: "aussteigen",
       level: "A1",
       type: "VERB",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -794,7 +1108,7 @@ export const data: Data = {
       word: "akzeptieren",
       level: "A1",
       type: "VERB",
-      categories: ["General", "Communication"],
+      categories: ["General", "Communication", "Official matters"],
       spec: {
         samples: [
           {
@@ -993,6 +1307,18 @@ export const data: Data = {
             translation: "Could you wait 5 minutes?",
             sample: "Könntest du 5 Minuten warten?",
           },
+          {
+            sample: "Ich warte auf dich.",
+            translation: "I am waiting for you.",
+            explanations: [
+              {
+                question: "Why is dich used?",
+                answer:
+                  '"Dich" is the accusative form of "du" (you) in German. In this sentence, "warten auf" (to wait for) requires the accusative case for the object being waited for. Therefore, we use "dich" instead of "du".',
+                grammars: ["Akkusativ"],
+              },
+            ],
+          },
         ],
         meanings: ["to wait", "to await"],
         infinitive: "warten",
@@ -1131,7 +1457,7 @@ export const data: Data = {
       word: "fahren",
       level: "A1",
       type: "VERB",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -1172,7 +1498,7 @@ export const data: Data = {
       word: "abholen",
       level: "A1",
       type: "VERB",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -1325,7 +1651,7 @@ export const data: Data = {
       word: "Stern",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature"],
       spec: {
         samples: [
           {
@@ -1346,7 +1672,7 @@ export const data: Data = {
       word: "Himmel",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature", "Weather and seasons"],
       spec: {
         samples: [
           { sample: "Der Himmel ist blau.", translation: "The sky is blue." },
@@ -1376,7 +1702,7 @@ export const data: Data = {
       word: "Wind",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature", "Weather and seasons", "Aviation"],
       spec: {
         samples: [
           {
@@ -1405,7 +1731,7 @@ export const data: Data = {
       word: "Regen",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature", "Weather and seasons"],
       spec: {
         samples: [
           { sample: "Der Regen fällt.", translation: "The rain is falling." },
@@ -1432,7 +1758,7 @@ export const data: Data = {
       word: "Schnee",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature", "Weather and seasons"],
       spec: {
         samples: [
           { sample: "Der Schnee ist weiß.", translation: "The snow is white." },
@@ -1454,7 +1780,7 @@ export const data: Data = {
       word: "Winter",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           { sample: "Der Winter ist kalt.", translation: "Winter is cold." },
@@ -1476,7 +1802,7 @@ export const data: Data = {
       word: "Sommer",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1497,12 +1823,19 @@ export const data: Data = {
       word: "Frühling",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
             sample: "Im Frühling blühen die Blumen.",
             translation: "In spring, the flowers bloom.",
+            explanations: [
+              {
+                question: "Why is Im used here?",
+                answer:
+                  '"Im" is a contraction of "in dem," which is used to indicate a specific time or season in German. In this case, "im Frühling" means "in spring." The preposition "in" is used with the dative case when referring to seasons, hence "dem Frühling."',
+              },
+            ],
           },
           {
             translation: "Spring is my favorite season.",
@@ -1518,7 +1851,7 @@ export const data: Data = {
       word: "Herbst",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1540,7 +1873,7 @@ export const data: Data = {
       word: "April",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1561,7 +1894,7 @@ export const data: Data = {
       word: "Januar",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1582,7 +1915,7 @@ export const data: Data = {
       word: "Februar",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1603,7 +1936,7 @@ export const data: Data = {
       word: "März",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1624,7 +1957,7 @@ export const data: Data = {
       word: "Juni",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1645,7 +1978,7 @@ export const data: Data = {
       word: "Juli",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1666,7 +1999,7 @@ export const data: Data = {
       word: "August",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1687,7 +2020,7 @@ export const data: Data = {
       word: "Mai",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1708,7 +2041,7 @@ export const data: Data = {
       word: "Dezember",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1729,7 +2062,7 @@ export const data: Data = {
       word: "Oktober",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1750,7 +2083,7 @@ export const data: Data = {
       word: "November",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature", "Weather and Seasons", "Date and Time"],
+      categories: ["Nature", "Weather and seasons", "Date and time"],
       spec: {
         samples: [
           {
@@ -1828,7 +2161,7 @@ export const data: Data = {
       word: "Katze",
       level: "A1",
       type: "NOUN",
-      categories: ["Animals and Pets"],
+      categories: ["Animals and pets"],
       spec: {
         samples: [
           { sample: "Die Katze schläft.", translation: "The cat is sleeping." },
@@ -1843,7 +2176,7 @@ export const data: Data = {
       word: "Auto",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           { sample: "Das Auto ist schnell.", translation: "The car is fast." },
@@ -1866,7 +2199,7 @@ export const data: Data = {
       word: "Baum",
       level: "A1",
       type: "NOUN",
-      categories: ["Nature"],
+      categories: ["Nature", "Environment"],
       spec: {
         samples: [
           { sample: "Der Baum ist hoch.", translation: "The tree is tall." },
@@ -1884,7 +2217,7 @@ export const data: Data = {
       word: "Bus",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -1914,7 +2247,7 @@ export const data: Data = {
       word: "Zug",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -1947,7 +2280,11 @@ export const data: Data = {
       word: "Fahrrad",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Sports"],
+      categories: [
+        "Directions and transportation",
+        "Sports",
+        "Travel and holidays",
+      ],
       spec: {
         samples: [
           {
@@ -1964,7 +2301,11 @@ export const data: Data = {
       word: "Station",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Places"],
+      categories: [
+        "Directions and transportation",
+        "Places",
+        "Travel and holidays",
+      ],
       spec: {
         samples: [
           {
@@ -1985,7 +2326,7 @@ export const data: Data = {
       word: "Anzeigetafel",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -2006,7 +2347,7 @@ export const data: Data = {
       word: "Teilnahme",
       level: "A1",
       type: "NOUN",
-      categories: ["General"],
+      categories: ["Education", "Events"],
       spec: {
         samples: [
           {
@@ -2110,7 +2451,7 @@ export const data: Data = {
       word: "Fahrplan",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -2211,7 +2552,7 @@ export const data: Data = {
       word: "U-Bahn",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -2236,7 +2577,7 @@ export const data: Data = {
       word: "S-Bahn",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -2257,7 +2598,7 @@ export const data: Data = {
       word: "Supermarkt",
       level: "A1",
       type: "NOUN",
-      categories: ["Places", "Shopping and Clothing"],
+      categories: ["Places", "Shopping and clothing", "Food and drinks"],
       spec: {
         samples: [
           {
@@ -2278,7 +2619,11 @@ export const data: Data = {
       word: "Tankstelle",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Places"],
+      categories: [
+        "Directions and transportation",
+        "Places",
+        "Travel and holidays",
+      ],
       spec: {
         samples: [
           {
@@ -2299,7 +2644,11 @@ export const data: Data = {
       word: "Parkplatz",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Places"],
+      categories: [
+        "Directions and transportation",
+        "Places",
+        "Travel and holidays",
+      ],
       spec: {
         samples: [
           {
@@ -2337,7 +2686,7 @@ export const data: Data = {
       word: "Rathaus",
       level: "A1",
       type: "NOUN",
-      categories: ["Places", "City life and errands"],
+      categories: ["Places", "City life and errands", "Official matters"],
       spec: {
         samples: [
           {
@@ -2354,7 +2703,7 @@ export const data: Data = {
       word: "Morgen",
       level: "A1",
       type: "NOUN",
-      categories: ["Date and Time"],
+      categories: ["Date and time"],
       spec: {
         samples: [
           {
@@ -2375,7 +2724,7 @@ export const data: Data = {
       word: "Abend",
       level: "A1",
       type: "NOUN",
-      categories: ["Date and Time"],
+      categories: ["Date and time"],
       spec: {
         samples: [
           {
@@ -2396,7 +2745,7 @@ export const data: Data = {
       word: "Nacht",
       level: "A1",
       type: "NOUN",
-      categories: ["Date and Time"],
+      categories: ["Date and time"],
       spec: {
         samples: [
           {
@@ -2417,7 +2766,12 @@ export const data: Data = {
       word: "Straße",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Places"],
+      categories: [
+        "Directions and transportation",
+        "Places",
+        "Travel and holidays",
+        "City life and errands",
+      ],
       spec: {
         samples: [
           {
@@ -2438,7 +2792,7 @@ export const data: Data = {
       word: "Brücke",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Places"],
+      categories: ["Directions and transportation", "Places"],
       spec: {
         samples: [
           {
@@ -2455,7 +2809,7 @@ export const data: Data = {
       word: "Ampel",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Places"],
+      categories: ["Directions and transportation"],
       spec: {
         samples: [
           {
@@ -2476,7 +2830,7 @@ export const data: Data = {
       word: "Kreuzung",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Places"],
+      categories: ["Directions and transportation"],
       spec: {
         samples: [
           {
@@ -2493,7 +2847,11 @@ export const data: Data = {
       word: "Bahnhof",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Places"],
+      categories: [
+        "Directions and transportation",
+        "Places",
+        "Travel and holidays",
+      ],
       spec: {
         samples: [
           {
@@ -2518,7 +2876,7 @@ export const data: Data = {
       word: "Straßenbahn",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -2539,7 +2897,7 @@ export const data: Data = {
       word: "Taxi",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation"],
+      categories: ["Directions and transportation"],
       spec: {
         samples: [
           {
@@ -2560,7 +2918,7 @@ export const data: Data = {
       word: "Bushaltestelle",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Places"],
+      categories: ["Directions and transportation", "Places"],
       spec: {
         samples: [
           {
@@ -2581,7 +2939,7 @@ export const data: Data = {
       word: "Gleis",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Places"],
+      categories: ["Directions and transportation", "Places"],
       spec: {
         samples: [
           {
@@ -2753,7 +3111,7 @@ export const data: Data = {
       word: "Pass",
       level: "A1",
       type: "NOUN",
-      categories: ["General", "Introduction"],
+      categories: ["General", "Introduction", "Travel and holidays"],
       spec: {
         samples: [
           {
@@ -2799,7 +3157,7 @@ export const data: Data = {
       word: "Familie",
       level: "A1",
       type: "NOUN",
-      categories: ["Family and Friends"],
+      categories: ["Family and friends"],
       spec: {
         samples: [
           {
@@ -2820,7 +3178,7 @@ export const data: Data = {
       word: "Bruder",
       level: "A1",
       type: "NOUN",
-      categories: ["Family and Friends"],
+      categories: ["Family and friends"],
       spec: {
         samples: [
           {
@@ -2841,7 +3199,7 @@ export const data: Data = {
       word: "Schwester",
       level: "A1",
       type: "NOUN",
-      categories: ["Family and Friends"],
+      categories: ["Family and friends"],
       spec: {
         samples: [
           {
@@ -2862,7 +3220,7 @@ export const data: Data = {
       word: "Mutter",
       level: "A1",
       type: "NOUN",
-      categories: ["Family and Friends"],
+      categories: ["Family and friends"],
       spec: {
         samples: [
           {
@@ -2883,7 +3241,7 @@ export const data: Data = {
       word: "Kind",
       level: "A1",
       type: "NOUN",
-      categories: ["Family and Friends"],
+      categories: ["Family and friends"],
       spec: {
         samples: [
           {
@@ -2908,7 +3266,7 @@ export const data: Data = {
       word: "Vater",
       level: "A1",
       type: "NOUN",
-      categories: ["Family and Friends"],
+      categories: ["Family and friends"],
       spec: {
         samples: [
           {
@@ -2929,7 +3287,7 @@ export const data: Data = {
       word: "Eltern",
       level: "A1",
       type: "NOUN",
-      categories: ["Family and Friends"],
+      categories: ["Family and friends"],
       spec: {
         samples: [
           {
@@ -2955,7 +3313,7 @@ export const data: Data = {
       word: "Freund",
       level: "A1",
       type: "NOUN",
-      categories: ["Family and Friends"],
+      categories: ["Family and friends"],
       spec: {
         samples: [
           {
@@ -2980,7 +3338,7 @@ export const data: Data = {
       word: "Oma",
       level: "A1",
       type: "NOUN",
-      categories: ["Family and Friends"],
+      categories: ["Family and friends"],
       spec: {
         samples: [
           {
@@ -3001,7 +3359,7 @@ export const data: Data = {
       word: "Opa",
       level: "A1",
       type: "NOUN",
-      categories: ["Family and Friends"],
+      categories: ["Family and friends"],
       spec: {
         samples: [
           {
@@ -3445,7 +3803,7 @@ export const data: Data = {
       word: "Krankenwagen",
       level: "A1",
       type: "NOUN",
-      categories: ["Health", "Transportation"],
+      categories: ["Health", "Directions and transportation"],
       spec: {
         samples: [
           {
@@ -3593,7 +3951,7 @@ export const data: Data = {
       word: "Bäckerei",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks", "Places"],
+      categories: ["Food and drinks", "Places"],
       spec: {
         samples: [
           {
@@ -3614,7 +3972,7 @@ export const data: Data = {
       word: "Brot",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3639,7 +3997,7 @@ export const data: Data = {
       word: "Tomate",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks", "Vegetables"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3664,7 +4022,7 @@ export const data: Data = {
       word: "Käse",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3693,7 +4051,7 @@ export const data: Data = {
       word: "Milch",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3718,7 +4076,7 @@ export const data: Data = {
       word: "Wasser",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks", "Health"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3739,7 +4097,7 @@ export const data: Data = {
       word: "Saft",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3760,7 +4118,7 @@ export const data: Data = {
       word: "Bier",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3781,7 +4139,7 @@ export const data: Data = {
       word: "Wein",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3802,7 +4160,7 @@ export const data: Data = {
       word: "Kaffee",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3823,7 +4181,7 @@ export const data: Data = {
       word: "Tee",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3840,7 +4198,7 @@ export const data: Data = {
       word: "Fleisch",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3862,7 +4220,7 @@ export const data: Data = {
       word: "Gemüse",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks", "Vegetables"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3879,7 +4237,7 @@ export const data: Data = {
       word: "Obst",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks", "Fruits"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3904,7 +4262,7 @@ export const data: Data = {
       word: "Zucker",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3925,7 +4283,7 @@ export const data: Data = {
       word: "Salz",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3946,7 +4304,7 @@ export const data: Data = {
       word: "Pfeffer",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3963,7 +4321,7 @@ export const data: Data = {
       word: "Wurst",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks"],
+      categories: ["Food and drinks"],
       spec: {
         samples: [
           {
@@ -3984,7 +4342,7 @@ export const data: Data = {
       word: "Alkohol",
       level: "A1",
       type: "NOUN",
-      categories: ["Food and Drinks", "Health"],
+      categories: ["Food and drinks", "Health"],
       spec: {
         samples: [
           {
@@ -4538,7 +4896,12 @@ export const data: Data = {
       word: "Flughafen",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Places", "Aviation"],
+      categories: [
+        "Directions and transportation",
+        "Places",
+        "Aviation",
+        "Travel and holidays",
+      ],
       spec: {
         samples: [
           {
@@ -4555,7 +4918,7 @@ export const data: Data = {
       word: "Flugplatz",
       level: "B1",
       type: "NOUN",
-      categories: ["Transportation", "Places", "Aviation"],
+      categories: ["Directions and transportation", "Places", "Aviation"],
       spec: {
         samples: [
           {
@@ -4572,7 +4935,7 @@ export const data: Data = {
       word: "Landebahn",
       level: "B1",
       type: "NOUN",
-      categories: ["Transportation", "Places", "Aviation"],
+      categories: ["Directions and transportation", "Places", "Aviation"],
       spec: {
         samples: [
           {
@@ -4601,7 +4964,7 @@ export const data: Data = {
       word: "Pilot",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Occupation", "Aviation"],
       spec: {
         samples: [
           {
@@ -4622,7 +4985,11 @@ export const data: Data = {
       word: "Flugzeug",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: [
+        "Directions and transportation",
+        "Aviation",
+        "Travel and holidays",
+      ],
       spec: {
         samples: [
           {
@@ -4643,12 +5010,16 @@ export const data: Data = {
       word: "Flug",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Travel and holidays", "Aviation"],
       spec: {
         samples: [
           {
             translation: "The flight was delayed due to bad weather.",
             sample: "Der Flug wurde wegen schlechten Wetters verspätet.",
+          },
+          {
+            sample: "Mein Flug geht um 10 Uhr ab.",
+            translation: "My flight departs at 10 o'clock.",
           },
         ],
         article: "Der",
@@ -4660,7 +5031,7 @@ export const data: Data = {
       word: "Copilot",
       level: "B1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation", "Occupation"],
       spec: {
         samples: [
           {
@@ -4677,7 +5048,7 @@ export const data: Data = {
       word: "Flügel",
       level: "B1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -4704,7 +5075,7 @@ export const data: Data = {
       word: "Cockpit",
       level: "B1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -4721,7 +5092,7 @@ export const data: Data = {
       word: "Seitenruder",
       level: "B2",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -4756,7 +5127,7 @@ export const data: Data = {
       word: "Querruder",
       level: "B2",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -4796,7 +5167,7 @@ export const data: Data = {
       word: "Höhenruder",
       level: "B2",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -4830,7 +5201,7 @@ export const data: Data = {
       word: "Haube",
       level: "B2",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -4865,7 +5236,7 @@ export const data: Data = {
       word: "Triebwerk",
       level: "B1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -4899,7 +5270,7 @@ export const data: Data = {
       word: "Fallschirm",
       level: "B1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation", "Sport"],
+      categories: ["Aviation", "Sport"],
       spec: {
         samples: [
           {
@@ -4924,7 +5295,7 @@ export const data: Data = {
       word: "Radio",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Directions and transportation", "Technology", "Aviation"],
       spec: {
         samples: [
           {
@@ -4950,7 +5321,7 @@ export const data: Data = {
       word: "Kontrollturm",
       level: "B1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -4977,7 +5348,7 @@ export const data: Data = {
       word: "Höhenmesser",
       level: "B2",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -5008,7 +5379,7 @@ export const data: Data = {
       word: "Geschwindigkeitmesser",
       level: "B2",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -5042,7 +5413,7 @@ export const data: Data = {
       word: "Ruder",
       level: "B1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -5075,7 +5446,7 @@ export const data: Data = {
       word: "Spornkuller",
       level: "B2",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -5105,7 +5476,7 @@ export const data: Data = {
       word: "Seil",
       level: "A1",
       type: "NOUN",
-      categories: ["General"],
+      categories: ["General", "Tools and equipment"],
       spec: {
         samples: [
           {
@@ -5133,7 +5504,7 @@ export const data: Data = {
       word: "Landung",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -5158,7 +5529,7 @@ export const data: Data = {
       word: "Fahrwerk",
       level: "B1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Aviation"],
       spec: {
         samples: [
           {
@@ -5183,7 +5554,7 @@ export const data: Data = {
       word: "Crew",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation", "Occupation"],
+      categories: ["Aviation", "Occupation"],
       spec: {
         samples: [
           {
@@ -5200,7 +5571,7 @@ export const data: Data = {
       word: "Passagier",
       level: "A1",
       type: "NOUN",
-      categories: ["Transportation", "Aviation"],
+      categories: ["Travel and holidays"],
       spec: {
         samples: [
           {
@@ -5221,7 +5592,7 @@ export const data: Data = {
       word: "Flugschein",
       level: "A2",
       type: "NOUN",
-      categories: ["Transportation", "Aviation", "Occupation"],
+      categories: ["Education", "Aviation", "Occupation"],
       spec: {
         samples: [
           {
@@ -5448,7 +5819,779 @@ export const data: Data = {
         ],
         article: "Das",
         meanings: ["subject", "field of study"],
+        plural: "Fächer",
       } as NounSpec,
+    },
+    {
+      word: "Minute",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Date and time"],
+      spec: {
+        samples: [
+          {
+            translation: "The meeting will start in five minutes.",
+            sample: "Das Treffen beginnt in fünf Minuten.",
+          },
+          {
+            sample: "Ich bin da in zehn Minuten.",
+            translation: "I will be there in ten minutes.",
+          },
+          {
+            sample: "Ich komme in zehn Minuten zurück.",
+            translation: "I will be back in ten minutes.",
+          },
+        ],
+        article: "Die",
+        meanings: ["minute"],
+        plural: "Minuten",
+      } as NounSpec,
+    },
+    {
+      word: "Stunde",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Date and time"],
+      spec: {
+        samples: [
+          {
+            translation: "The class lasts for two hours.",
+            sample: "Der Unterricht dauert zwei Stunden.",
+          },
+          {
+            sample: "Ich bin in einer Stunde zurück.",
+            translation: "I will be back in an hour.",
+          },
+          {
+            sample: "Das Meeting dauert drei Stunden.",
+            translation: "The meeting lasts three hours.",
+          },
+        ],
+        article: "Die",
+        meanings: ["hour"],
+        plural: "Stunden",
+      } as NounSpec,
+    },
+    {
+      word: "Bett",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "I need a new bed for my bedroom.",
+            sample: "Ich brauche ein neues Bett für mein Schlafzimmer.",
+          },
+          {
+            translation: "The bed is very comfortable.",
+            sample: "Das Bett ist sehr bequem.",
+          },
+        ],
+        article: "Das",
+        meanings: ["bed"],
+        plural: "Betten",
+      } as NounSpec,
+    },
+    {
+      word: "Kissen",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "I like to sleep with two pillows.",
+            sample: "Ich schlafe gerne mit zwei Kissen.",
+          },
+          {
+            translation: "The pillow is soft and fluffy.",
+            sample: "Das Kissen ist weich und flauschig.",
+          },
+        ],
+        article: "Das",
+        meanings: ["pillow", "cushion"],
+        plural: "Kissen",
+      } as NounSpec,
+    },
+    {
+      word: "Decke",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "I need a warm blanket for the winter.",
+            sample: "Ich brauche eine warme Decke für den Winter.",
+          },
+          {
+            translation: "The blanket is soft and cozy.",
+            sample: "Die Decke ist weich und gemütlich.",
+          },
+        ],
+        article: "Die",
+        meanings: ["blanket", "cover"],
+        plural: "Decken",
+      } as NounSpec,
+    },
+    {
+      word: "Matratze",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "I need a new mattress for my bed.",
+            sample: "Ich brauche eine neue Matratze für mein Bett.",
+          },
+        ],
+        article: "Die",
+        meanings: ["mattress"],
+        plural: "Matratzen",
+      } as NounSpec,
+    },
+    {
+      word: "Bettwäsche",
+      level: "A2",
+      type: "NOUN",
+      categories: ["Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "I bought new bed linens for my bedroom.",
+            sample: "Ich habe neue Bettwäsche für mein Schlafzimmer gekauft.",
+          },
+          {
+            trnslation: "Plesae cover the bed with fresh bedding.",
+            sample: "Bitte beziehen Sie das Bett mit frischer Bettwäsche.",
+          },
+        ],
+        article: "Die",
+        meanings: ["bed linens", "bedding"],
+        plural: "Bettwäschen",
+      } as NounSpec,
+    },
+    {
+      word: "Schrank",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "I need a new wardrobe for my clothes.",
+            sample: "Ich brauche einen neuen Schrank für meine Kleidung.",
+          },
+          {
+            translation: "The wardrobe is made of wood.",
+            sample: "Der Schrank ist aus Holz gefertigt.",
+          },
+        ],
+        article: "Der",
+        meanings: ["wardrobe", "closet"],
+        plural: "Schränke",
+      } as NounSpec,
+    },
+    {
+      word: "Waschmaschine",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "The washing machine is broken.",
+            sample: "Die Waschmaschine ist kaputt.",
+          },
+          {
+            translation: "I need to do laundry in the washing machine.",
+            sample: "Ich muss Wäsche in der Waschmaschine waschen.",
+          },
+        ],
+        article: "Die",
+        meanings: ["washing machine"],
+        plural: "Waschmaschinen",
+      } as NounSpec,
+    },
+    {
+      word: "Jacke",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Shopping and clothing"],
+      spec: {
+        samples: [
+          {
+            translation: "I bought a new jacket for the winter.",
+            sample: "Ich habe eine neue Jacke für den Winter gekauft.",
+          },
+          {
+            translation: "The jacket is warm and waterproof.",
+            sample: "Die Jacke ist warm und wasserdicht.",
+          },
+        ],
+        article: "Die",
+        meanings: ["jacket", "coat"],
+        plural: "Jacken",
+      } as NounSpec,
+    },
+    {
+      word: "Mantel",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Shopping and clothing"],
+      spec: {
+        samples: [
+          {
+            translation: "The coat is made of wool.",
+            sample: "Der Mantel ist aus Wolle gefertigt.",
+          },
+        ],
+        article: "Der",
+        meanings: ["coat"],
+        plural: "Mäntel",
+      } as NounSpec,
+    },
+    {
+      word: "Hut",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Shopping and clothing"],
+      spec: {
+        samples: [
+          {
+            translation: "The hat protects you from the sun.",
+            sample: "Der Hut schützt dich vor der Sonne.",
+          },
+        ],
+        article: "Der",
+        meanings: ["hat", "cap"],
+        plural: "Hüte",
+      } as NounSpec,
+    },
+    {
+      word: "Handschuh",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Shopping and clothing"],
+      spec: {
+        samples: [
+          {
+            translation: "The gloves are warm and comfortable.",
+            sample: "Die Handschuhe sind warm und bequem.",
+          },
+        ],
+        article: "Der",
+        meanings: ["glove"],
+        plural: "Handschuhe",
+      } as NounSpec,
+    },
+    {
+      word: "Schal",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Shopping and clothing"],
+      spec: {
+        samples: [
+          {
+            translation: "The scarf is made of silk.",
+            sample: "Der Schal ist aus Seide gefertigt.",
+          },
+        ],
+        article: "Der",
+        meanings: ["scarf"],
+        plural: "Schals",
+      } as NounSpec,
+    },
+    {
+      word: "Hose",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Shopping and clothing"],
+      spec: {
+        article: "Die",
+        meanings: ["pants", "trousers"],
+        plural: "Hosen",
+        samples: [
+          {
+            translation: "I bought new pants for work.",
+            sample: "Ich habe neue Hosen für die Arbeit gekauft.",
+          },
+          {
+            translation: "The pants are too long, so I need to shorten them.",
+            sample: "Die Hosen sind zu lang, also muss ich sie kürzen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Rock",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Shopping and clothing"],
+      spec: {
+        samples: [
+          {
+            translation: "She is wearing a beautiful skirt.",
+            sample: "Sie trägt einen schönen Rock.",
+          },
+        ],
+        article: "Der",
+        meanings: ["skirt"],
+        plural: "Röcke",
+      } as NounSpec,
+    },
+    {
+      word: "Hemden",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Shopping and clothing"],
+      spec: {
+        samples: [
+          {
+            translation: "He ironed his shirts before the meeting.",
+            sample: "Er hat seine Hemden vor dem Meeting gebügelt.",
+          },
+        ],
+        article: "Das",
+        meanings: ["shirt"],
+        plural: "Hemden",
+      } as NounSpec,
+    },
+    {
+      word: "Socken",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Shopping and clothing"],
+      spec: {
+        samples: [
+          {
+            translation: "The socks are made of cotton.",
+            sample: "Die Socken sind aus Baumwolle gefertigt.",
+          },
+        ],
+        article: "Die",
+        meanings: ["socks"],
+        plural: "Socken",
+      } as NounSpec,
+    },
+    {
+      word: "Brille",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Shopping and clothing", "Health"],
+      spec: {
+        samples: [
+          {
+            translation: "I need new glasses for reading.",
+            sample: "Ich brauche eine neue Brille zum Lesen.",
+          },
+          {
+            translation: "You should clean your glasses.",
+            sample: "Du solltest deine Brille reinigen.",
+          },
+        ],
+        article: "Die",
+        meanings: ["glasses", "spectacles"],
+        plural: "Brillen",
+      } as NounSpec,
+    },
+    {
+      word: "reinigen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Household"],
+      spec: {
+        samples: [
+          {
+            translation: "You should clean your glasses.",
+            sample: "Du solltest deine Brille reinigen.",
+          },
+          {
+            translation: "I need to clean the house.",
+            sample: "Ich muss das Haus reinigen.",
+          },
+        ],
+        meanings: ["to clean", "to purify"],
+        conjugation: {
+          ich: "reinige",
+          du: "reinigst",
+          er_sie_es: "reinigt",
+          wir: "reinigen",
+          ihr: "reinigt",
+          sie_Sie: "reinigen",
+        },
+        infinitive: "reinigen",
+        pp: "gereinigt",
+      } as VerbSpec,
+    },
+    {
+      word: "Teppich",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "The carpet is very soft and comfortable.",
+            sample: "Der Teppich ist sehr weich und bequem.",
+          },
+          {
+            translation: "The Persian carpet is very expensive.",
+            sample: "Der Perserteppich ist sehr teuer.",
+          },
+        ],
+        article: "Der",
+        meanings: ["carpet", "rug"],
+        plural: "Teppiche",
+      } as NounSpec,
+    },
+    {
+      word: "Vorhang",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "The curtains are made of silk.",
+            sample: "Die Vorhänge sind aus Seide gefertigt.",
+          },
+          {
+            translation: "Please close the curtains to block the sunlight.",
+            sample:
+              "Bitte schließen Sie die Vorhänge, um das Sonnenlicht zu blockieren.",
+          },
+        ],
+        article: "Der",
+        meanings: ["curtain", "drape"],
+        plural: "Vorhänge",
+      } as NounSpec,
+    },
+    {
+      word: "Tisch",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "The table is made of wood.",
+            sample: "Der Tisch ist aus Holz gefertigt.",
+          },
+          {
+            translation: "We need a bigger table for the dining room.",
+            sample: "Wir brauchen einen größeren Tisch für das Esszimmer.",
+          },
+        ],
+        article: "Der",
+        meanings: ["table", "desk"],
+        plural: "Tische",
+      } as NounSpec,
+    },
+    {
+      word: "hören",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Education", "Health"],
+      spec: {
+        infinitive: "hören",
+        pp: "gehört",
+        meanings: ["to hear", "to listen"],
+        conjugation: {
+          ich: "höre",
+          du: "hörst",
+          er_sie_es: "hört",
+          wir: "hören",
+          ihr: "hört",
+          sie_Sie: "hören",
+        },
+        samples: [
+          {
+            translation: "Did you hear that noise?",
+            sample: "Hast du dieses Geräusch gehört?",
+          },
+          {
+            translation: "Did you hear me?",
+            sample: "Hast du mich gehört?",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "Herd",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Household"],
+      spec: {
+        samples: [
+          {
+            translation: "The stove is hot, be careful.",
+            sample: "Der Herd ist heiß, sei vorsichtig.",
+          },
+          {
+            translation: "I cooked dinner on the stove.",
+            sample: "Ich habe das Abendessen auf dem Herd gekocht.",
+          },
+        ],
+        article: "Der",
+        meanings: ["stove", "range"],
+        plural: "Herde",
+      } as NounSpec,
+    },
+    {
+      word: "springen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Sports", "Health"],
+      spec: {
+        samples: [
+          {
+            translation: "The cat jumps over the fence.",
+            sample: "Die Katze springt über den Zaun.",
+          },
+          {
+            translation: "He can jump very high.",
+            sample: "Er kann sehr hoch springen.",
+          },
+        ],
+        meanings: ["to jump", "to leap"],
+        conjugation: {
+          ich: "springe",
+          du: "springst",
+          er_sie_es: "springt",
+          wir: "springen",
+          ihr: "springt",
+          sie_Sie: "springen",
+        },
+        infinitive: "springen",
+        pp: "gesprungen",
+      } as VerbSpec,
+    },
+    {
+      word: "laufen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Sports", "Health"],
+      spec: {
+        samples: [
+          {
+            translation: "I like to run in the park.",
+            sample: "Ich laufe gerne im Park.",
+          },
+          {
+            translation: "He runs every morning to stay fit.",
+            sample: "Er läuft jeden Morgen, um fit zu bleiben.",
+          },
+          {
+            translation: "Run faster to catch the bus!",
+            sample: "Lauf schneller, um den Bus zu erwischen!",
+          },
+        ],
+        meanings: ["to run", "to walk"],
+        conjugation: {
+          ich: "laufe",
+          du: "läufst",
+          er_sie_es: "läuft",
+          wir: "laufen",
+          ihr: "lauft",
+          sie_Sie: "laufen",
+        },
+        infinitive: "laufen",
+        pp: "gelaufen",
+      } as VerbSpec,
+    },
+    {
+      word: "rauchen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Health", "General"],
+      spec: {
+        samples: [
+          {
+            translation: "He smokes a pack of cigarettes a day.",
+            sample: "Er raucht eine Packung Zigaretten pro Tag.",
+          },
+          {
+            translation: "He does not smoke in the house.",
+            sample: "Er raucht nicht im Haus.",
+          },
+          {
+            translation: "Do not smoke in front of the children.",
+            sample: "Rauchen Sie nicht vor den Kindern.",
+          },
+          {
+            translation: "You are not allowed to smoke here.",
+            sample: "Sie dürfen hier nicht rauchen.",
+          },
+        ],
+        meanings: ["to smoke"],
+        conjugation: {
+          ich: "rauche",
+          du: "rauchst",
+          er_sie_es: "raucht",
+          wir: "rauchen",
+          ihr: "raucht",
+          sie_Sie: "rauchen",
+        },
+        infinitive: "rauchen",
+        pp: "geraucht",
+      } as VerbSpec,
+    },
+    {
+      word: "kontrollieren",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Household", "Occupation", "Tools and equipment"],
+      spec: {
+        samples: [
+          {
+            translation: "Please check the engine before the flight.",
+            sample: "Bitte kontrollieren Sie den Motor vor dem Flug.",
+          },
+          {
+            translation: "The technician is checking the equipment.",
+            sample: "Der Techniker kontrolliert die Ausrüstung.",
+          },
+        ],
+        meanings: ["to check", "to control", "to inspect"],
+        conjugation: {
+          ich: "kontrolliere",
+          du: "kontrollierst",
+          er_sie_es: "kontrolliert",
+          wir: "kontrollieren",
+          ihr: "kontrolliert",
+          sie_Sie: "kontrollieren",
+        },
+        infinitive: "kontrollieren",
+        pp: "kontrolliert",
+      } as VerbSpec,
+    },
+    {
+      word: "anfassen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General"],
+      spec: {
+        samples: [
+          {
+            translation: "Please do not touch the artwork.",
+            sample: "Bitte fassen Sie das Kunstwerk nicht an.",
+          },
+          {
+            translation: "He touched the hot stove and burned his hand.",
+            sample:
+              "Er fasste den heißen Herd an und verbrannte sich die Hand.",
+          },
+        ],
+        meanings: ["to touch", "to handle"],
+        conjugation: {
+          ich: "fasse an",
+          du: "fasst an",
+          er_sie_es: "fasst an",
+          wir: "fassen an",
+          ihr: "fasst an",
+          sie_Sie: "fassen an",
+        },
+        infinitive: "anfassen",
+        pp: "angefasst",
+      } as VerbSpec,
+    },
+    {
+      word: "lesen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Education"],
+      spec: {
+        samples: [
+          {
+            translation: "I like to read books in my free time.",
+            sample: "Ich lese gerne Bücher in meiner Freizeit.",
+          },
+          {
+            translation: "She is reading a newspaper.",
+            sample: "Sie liest eine Zeitung.",
+          },
+        ],
+        meanings: ["to read"],
+        conjugation: {
+          ich: "lese",
+          du: "liest",
+          er_sie_es: "liest",
+          wir: "lesen",
+          ihr: "lest",
+          sie_Sie: "lesen",
+        },
+        infinitive: "lesen",
+        pp: "gelesen",
+      } as VerbSpec,
+    },
+    {
+      word: "benützen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Household"],
+      spec: {
+        samples: [
+          {
+            translation: "You can use my computer if you need it.",
+            sample: "Du kannst meinen Computer benützen, wenn du ihn brauchst.",
+            explanations: [{ grammars: ["wenn"] }],
+          },
+          {
+            translation: "Please use the hand sanitizer before entering.",
+            sample:
+              "Bitte benützen Sie das Handdesinfektionsmittel vor dem Betreten.",
+          },
+          {
+            translation: "I can not use my computer because it is broken.",
+            sample:
+              "Ich kann meinen Computer nicht benützen, weil er kaputt ist.",
+            explanations: [{ grammars: ["weil"] }],
+          },
+        ],
+        meanings: ["to use", "to utilize"],
+        conjugation: {
+          ich: "benütze",
+          du: "benützt",
+          er_sie_es: "benützt",
+          wir: "benützen",
+          ihr: "benützt",
+          sie_Sie: "benützen",
+        },
+        infinitive: "benützen",
+        pp: "benützt",
+      } as VerbSpec,
+    },
+    {
+      word: "reparieren",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Household", "Tools and equipment", "Occupation"],
+      spec: {
+        samples: [
+          {
+            translation: "I need to repair my car.",
+            sample: "Ich muss mein Auto reparieren.",
+          },
+          {
+            translation: "The technician is repairing the machine.",
+            sample: "Der Techniker repariert die Maschine.",
+          },
+        ],
+        meanings: ["to repair", "to fix"],
+        conjugation: {
+          ich: "repariere",
+          du: "reparierst",
+          er_sie_es: "repariert",
+          wir: "reparieren",
+          ihr: "repariert",
+          sie_Sie: "reparieren",
+        },
+        infinitive: "reparieren",
+        pp: "repariert",
+      } as VerbSpec,
     },
   ],
 };

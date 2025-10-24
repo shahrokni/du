@@ -119,8 +119,27 @@ export type Connectors =
 
 export type Contraction = "beim" | "zum" | "zur" | "im" | "am" | "ins" | "aufs";
 
+export interface WordSample {
+  sample: string;
+  translation: string;
+  explanations?: Explain[];
+}
+
+export interface QuickGrammar {
+  key: string;
+  explain: string[];
+  example: string[];
+  important_notes?: string[];
+}
+
+export interface Explain {
+  question: string;
+  answer: string;
+  grammars?: string[];
+}
+
 export interface WordSpec {
-  samples: Array<{ sample: string; translation: string }>;
+  samples: Array<WordSample>;
 }
 
 export interface NounSpec extends WordSpec {
@@ -151,5 +170,6 @@ export interface PrepositionDetail {
 
 export interface Data {
   prepositions: PrepositionDetail[];
+  grammar: QuickGrammar[];
   words: Word[];
 }
