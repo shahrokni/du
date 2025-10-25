@@ -38,7 +38,8 @@ type Category =
   | "Technology"
   | "Events"
   | "Tools and equipment"
-  | "Household";
+  | "Household"
+  | "Relationships";
 
 type PersonalPronouns = "ich" | "du" | "er_sie_es" | "wir" | "ihr" | "sie_Sie";
 
@@ -136,18 +137,23 @@ interface Explain {
 
 interface WordSpec {
   samples: Array<WordSample>;
+  meanings: string[];
 }
 
 interface NounSpec extends WordSpec {
   article: NominativeArticles;
   plural?: string;
-  meanings: string[];
 }
 
 interface VerbSpec extends WordSpec {
   infinitive: string;
   pp: string;
   conjugation: Record<PersonalPronouns, string>;
+}
+
+interface AdjectiveSpec extends WordSpec {
+  comparative?: string;
+  superlative?: string;
 }
 
 interface Word {
@@ -468,11 +474,6 @@ const data: Data = {
           {
             translation: "She is hosting a workshop next week.",
             sample: "Sie veranstaltet nächste Woche einen Workshop.",
-          },
-          {
-            translation: "We need to organize an event for our clients.",
-            sample:
-              "Wir müssen eine Veranstaltung für unsere Kunden organisieren.",
           },
         ],
         meanings: ["to organize", "to host"],
@@ -835,7 +836,7 @@ const data: Data = {
             sample: "Ich habe meinen Freund gestern Abend angerufen.",
           },
           {
-            translatio: "She called the doctor.",
+            translation: "She called the doctor.",
             sample: "Sie hat den Arzt angerufen.",
           },
           {
@@ -913,10 +914,7 @@ const data: Data = {
             sample: "Kannst du Brot und Milch einkaufen?",
             translation: "Can you buy bread and milk?",
           },
-          {
-            translation: "I went shopping for clothes yesterday.",
-            sample: "Ich bin gestern zum Einkaufen von Kleidung gegangen.",
-          },
+
           {
             translation: "She likes to shop for groceries on weekends.",
             sample: "Sie kauft am Wochenende gerne Lebensmittel ein.",
@@ -1626,6 +1624,10 @@ const data: Data = {
       spec: {
         samples: [
           {
+            translation: "When does the meeting start?",
+            sample: "Wann beginnt die Versammlung?",
+          },
+          {
             sample: "Die Versammlung beginnt um 10 Uhr.",
             translation: "The meeting starts at 10 o'clock.",
           },
@@ -2164,8 +2166,15 @@ const data: Data = {
       categories: ["Animals and pets"],
       spec: {
         samples: [
-          { sample: "Die Katze schläft.", translation: "The cat is sleeping." },
           { sample: "Ich habe eine Katze.", translation: "I have a cat." },
+          {
+            sample: "The cat and the dog are playing together.",
+            translation: "Die Katze und der Hund spielen zusammen.",
+          },
+          {
+            translation: "The cat is chaising a mouse.",
+            sample: "Die Katze jagt eine Maus.",
+          },
         ],
         article: "Die",
         meanings: ["cat"],
@@ -2206,6 +2215,10 @@ const data: Data = {
           {
             sample: "Der Wald hat viele Bäume.",
             translation: "The forest has many trees.",
+          },
+          {
+            translation: "The tall tree was swaying in the wind.",
+            sample: "Der hohe Baum schwankte im Wind.",
           },
         ],
         article: "Der",
@@ -2290,6 +2303,10 @@ const data: Data = {
           {
             sample: "Ich fahre mit dem Fahrrad zur Arbeit.",
             translation: "I ride my bicycle to work.",
+          },
+          {
+            sample: "The kid is riding a bicycle in the park.",
+            translation: "Das Kind fährt im Park Fahrrad.",
           },
         ],
         article: "Das",
@@ -2707,12 +2724,16 @@ const data: Data = {
       spec: {
         samples: [
           {
-            sample: "Morgen habe ich einen Termin.",
-            translation: "I have an appointment tomorrow.",
-          },
-          {
             sample: "Am Morgen trinke ich Kaffee.",
             translation: "In the morning, I drink coffee.",
+          },
+          {
+            sample: "Morgen wird das Wetter besser.",
+            translation: "Tomorrow, the weather will be better.",
+          },
+          {
+            translation: "I have an appointment tomorrow.",
+            sample: "Ich habe morgen einen Termin.",
           },
         ],
         article: "Der",
@@ -2775,12 +2796,16 @@ const data: Data = {
       spec: {
         samples: [
           {
-            sample: "Die Straße ist lang.",
-            translation: "The street is long.",
+            translation: "My apartment is on this street.",
+            sample: "Meine Wohnung ist in dieser Straße.",
           },
           {
-            sample: "Die Straße ist heute gesperrt.",
-            translation: "The street is closed today.",
+            translation: "The street is full of shops.",
+            sample: "Die Straße ist voller Geschäfte.",
+          },
+          {
+            translation: "The was a church at the end of the street.",
+            sample: "Am Ende der Straße gab es eine Kirche.",
           },
         ],
         article: "Die",
@@ -2798,6 +2823,14 @@ const data: Data = {
           {
             sample: "Die Brücke verbindet zwei Städte.",
             translation: "The bridge connects two cities.",
+          },
+          {
+            translation: "She is watching the sunset from the bridge.",
+            sample: "Sie schaut den Sonnenuntergang von der Brücke aus.",
+          },
+          {
+            translation: "The bridge is under construction.",
+            sample: "Die Brücke ist im Bau.",
           },
         ],
         article: "Die",
@@ -2819,6 +2852,14 @@ const data: Data = {
           {
             sample: "An der Ampel musst du warten.",
             translation: "You have to wait at the traffic light.",
+          },
+          {
+            sample: "An der Ampel kannst du rechts abbiegen.",
+            translation: "You can turn right at the traffic light.",
+          },
+          {
+            translation: "You can not turn left at the traffic light.",
+            sample: "An der Ampel darfst du nicht links abbiegen.",
           },
         ],
         article: "Die",
@@ -3674,7 +3715,7 @@ const data: Data = {
         samples: [
           {
             translation: "I have a toothache and need to see the dentist.",
-            sample: "Ich habe Zahnschmerzen und muss zum Zahnarzt.",
+            sample: "Ich habe Zahnschmerzen und muss zum Zahnarzt gehen.",
           },
           {
             translation: "The dentist cleaned my teeth.",
@@ -6592,6 +6633,933 @@ const data: Data = {
         infinitive: "reparieren",
         pp: "repariert",
       } as VerbSpec,
+    },
+    {
+      word: "losgehen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General"],
+      spec: {
+        samples: [
+          {
+            translation: "The event starts at 7 PM.",
+            sample: "Die Veranstaltung geht um 19 Uhr los.",
+          },
+          {
+            translation: "Let's go! The show is about to start.",
+            sample: "Los geht's! Die Show beginnt gleich.",
+          },
+        ],
+        meanings: ["to start", "to begin", "to set off"],
+        conjugation: {
+          ich: "gehe los",
+          du: "gehst los",
+          er_sie_es: "geht los",
+          wir: "gehen los",
+          ihr: "geht los",
+          sie_Sie: "gehen los",
+        },
+        infinitive: "losgehen",
+        pp: "losgegangen",
+      } as VerbSpec,
+    },
+    {
+      word: "denken",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Education"],
+      spec: {
+        infinitive: "denken",
+        pp: "gedacht",
+        meanings: ["to think"],
+        conjugation: {
+          ich: "denke",
+          du: "denkst",
+          er_sie_es: "denkt",
+          wir: "denken",
+          ihr: "denkt",
+          sie_Sie: "denken",
+        },
+        samples: [
+          {
+            translation: "I think we should leave now.",
+            sample: "Ich denke, wir sollten jetzt gehen.",
+          },
+          {
+            translation: "Who do you think will win the game?",
+            sample: "Wer denkst du, wird das Spiel gewinnen?",
+          },
+          {
+            translation: "Do you think it will rain tomorrow?",
+            sample: "Denkst du, dass es morgen regnen wird?",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "glauben",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Education"],
+      spec: {
+        infinitive: "glauben",
+        pp: "geglaubt",
+        meanings: ["to believe", "to think"],
+        conjugation: {
+          ich: "glaube",
+          du: "glaubst",
+          er_sie_es: "glaubt",
+          wir: "glauben",
+          ihr: "glaubt",
+          sie_Sie: "glauben",
+        },
+        samples: [
+          {
+            translation: "I believe in your abilities.",
+            sample: "Ich glaube an deine Fähigkeiten.",
+            explanations: [
+              {
+                question: "What does 'an' govern here?",
+                answer:
+                  "'an' is used with the accusative case when expressing belief in something.",
+              },
+            ],
+          },
+          {
+            translation: "Do you believe it will rain today?",
+            sample: "Glaubst du, dass es heute regnen wird?",
+          },
+          {
+            translation: "She believes that honesty is the best policy.",
+            sample: "Sie glaubt, dass Ehrlichkeit die beste Politik ist.",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "Ehrlichkeit",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Relationships"],
+      spec: {
+        samples: [
+          {
+            translation: "Honesty is the best policy.",
+            sample: "Ehrlichkeit ist die beste Politik.",
+          },
+          {
+            translation: "He values honesty in his relationships.",
+            sample: "Er schätzt Ehrlichkeit in seinen Beziehungen.",
+          },
+        ],
+        article: "Die",
+        meanings: ["honesty", "integrity"],
+        plural: "Ehrlichkeiten",
+      } as NounSpec,
+    },
+    {
+      word: "Beziehung",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Relationships"],
+      spec: {
+        samples: [
+          {
+            translation: "They have a strong relationship.",
+            sample: "Sie haben eine starke Beziehung.",
+          },
+          {
+            translation: "Building trust is important in any relationship.",
+            sample: "Vertrauen aufzubauen ist in jeder Beziehung wichtig.",
+          },
+        ],
+        article: "Die",
+        meanings: ["relationship", "connection"],
+        plural: "Beziehungen",
+      } as NounSpec,
+    },
+    {
+      word: "schätzen",
+      level: "A2",
+      type: "VERB",
+      categories: ["General", "Relationships"],
+      spec: {
+        samples: [
+          {
+            translation: "I appreciate your help.",
+            sample: "Ich schätze deine Hilfe.",
+          },
+          {
+            translation: "She values honesty in her relationships.",
+            sample: "Sie schätzt Ehrlichkeit in ihren Beziehungen.",
+          },
+        ],
+        meanings: ["to appreciate", "to value"],
+        conjugation: {
+          ich: "schätze",
+          du: "schätzt",
+          er_sie_es: "schätzt",
+          wir: "schätzen",
+          ihr: "schätzt",
+          sie_Sie: "schätzen",
+        },
+        infinitive: "schätzen",
+        pp: "geschätzt",
+      } as VerbSpec,
+    },
+    {
+      word: "Koffer",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Travel and holidays"],
+      spec: {
+        samples: [
+          {
+            translation: "I packed my suitcase for the trip.",
+            sample: "Ich habe meinen Koffer für die Reise gepackt.",
+          },
+          {
+            translation: "The suitcase is heavy.",
+            sample: "Der Koffer ist schwer.",
+          },
+        ],
+        article: "Der",
+        meanings: ["suitcase", "luggage"],
+        plural: "Koffer",
+      } as NounSpec,
+    },
+    {
+      word: "Hochzeit",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Relationships", "Events"],
+      spec: {
+        samples: [
+          {
+            translation: "They are planning their wedding.",
+            sample: "Sie planen ihre Hochzeit.",
+          },
+          {
+            translation: "The wedding ceremony was beautiful.",
+            sample: "Die Hochzeitszeremonie war wunderschön.",
+          },
+        ],
+        article: "Die",
+        meanings: ["wedding", "marriage ceremony"],
+        plural: "Hochzeiten",
+      } as NounSpec,
+    },
+    {
+      word: "Nachbar",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Relationships", "Household"],
+      spec: {
+        samples: [
+          {
+            translation: "My neighbor is very friendly.",
+            sample: "Mein Nachbar ist sehr freundlich.",
+          },
+          {
+            translation: "I borrowed sugar from my neighbor.",
+            sample: "Ich habe Zucker von meinem Nachbarn geliehen.",
+          },
+          {
+            trnaslation: "Our neighbors were very helpful during the move.",
+            sample: "Unsere Nachbarn waren beim Umzug sehr hilfsbereit.",
+          },
+        ],
+        article: "Der",
+        meanings: ["neighbor"],
+        plural: "Nachbarn",
+      } as NounSpec,
+    },
+    {
+      word: "Umzug",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Household", "Relationships"],
+      spec: {
+        samples: [
+          {
+            translation: "We are planning our move to a new apartment.",
+            sample: "Wir planen unseren Umzug in eine neue Wohnung.",
+          },
+          {
+            translation: "The move was stressful but successful.",
+            sample: "Der Umzug war stressig, aber erfolgreich.",
+          },
+        ],
+        article: "Der",
+        meanings: ["move", "relocation"],
+        plural: "Umzüge",
+      } as NounSpec,
+    },
+    {
+      word: "Lebensmittel",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Shopping and clothing", "Food and drinks"],
+      spec: {
+        samples: [
+          {
+            translation: "I need to buy groceries for the week.",
+            sample: "Ich muss Lebensmittel für die Woche kaufen.",
+          },
+          {
+            translation: "The store sells fresh groceries.",
+            sample: "Der Laden verkauft frische Lebensmittel.",
+          },
+        ],
+        article: "Die",
+        meanings: ["groceries", "food items"],
+        plural: "Lebensmittel",
+      } as NounSpec,
+    },
+    {
+      word: "verkaufen",
+      level: "A1",
+      type: "VERB",
+      categories: ["Shopping and clothing", "Occupation"],
+      spec: {
+        samples: [
+          {
+            translation: "I want to sell my old car.",
+            sample: "Ich möchte mein altes Auto verkaufen.",
+          },
+          {
+            translation: "The store sells fresh groceries.",
+            sample: "Der Laden verkauft frische Lebensmittel.",
+          },
+          {
+            translation: "We do not sell electronics here.",
+            sample: "Wir verkaufen hier keine Elektronik.",
+          },
+        ],
+        meanings: ["to sell"],
+        conjugation: {
+          ich: "verkaufe",
+          du: "verkaufst",
+          er_sie_es: "verkauft",
+          wir: "verkaufen",
+          ihr: "verkauft",
+          sie_Sie: "verkaufen",
+        },
+        infinitive: "verkaufen",
+        pp: "verkauft",
+      } as VerbSpec,
+    },
+    {
+      word: "Meinung",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General"],
+      spec: {
+        samples: [
+          {
+            translation: "In my opinion, this is a great idea.",
+            sample: "Meiner Meinung nach ist das eine großartige Idee.",
+          },
+          {
+            translation: "What is your opinion on this matter?",
+            sample: "Was ist deine Meinung zu diesem Thema?",
+          },
+          {
+            translation: "Could you share your opinion with us?",
+            sample: "Könntest du uns deine Meinung mitteilen?",
+          },
+        ],
+        article: "Die",
+        meanings: ["opinion", "view"],
+        plural: "Meinungen",
+      } as NounSpec,
+    },
+    {
+      word: "mitteilen",
+      level: "A2",
+      type: "VERB",
+      categories: ["General"],
+      spec: {
+        samples: [
+          {
+            translation: "Please inform me about any changes.",
+            sample: "Bitte teilen Sie mir alle Änderungen mit.",
+          },
+          {
+            translation: "He communicated the news to his friends.",
+            sample: "Er teilte die Neuigkeiten seinen Freunden mit.",
+          },
+        ],
+        meanings: ["to inform", "to communicate", "to share"],
+        conjugation: {
+          ich: "teile mit",
+          du: "teilst mit",
+          er_sie_es: "teilt mit",
+          wir: "teilen mit",
+          ihr: "teilt mit",
+          sie_Sie: "teilen mit",
+        },
+        infinitive: "mitteilen",
+        pp: "mitgeteilt",
+      } as VerbSpec,
+    },
+    {
+      word: "Änderung",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General"],
+      spec: {
+        samples: [
+          {
+            translation: "The schedule has undergone several changes.",
+            sample: "Der Zeitplan hat mehrere Änderungen erfahren.",
+          },
+          {
+            translation: "A list of recent changes was provided.",
+            sample: "Eine Liste der jüngsten Änderungen wurde bereitgestellt.",
+          },
+        ],
+        article: "Die",
+        meanings: ["change", "modification"],
+        plural: "Änderungen",
+      } as NounSpec,
+    },
+    {
+      word: "Neuigkeiten",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General"],
+      spec: {
+        samples: [
+          {
+            translation: "He communicated the news to his friends.",
+            sample: "Er teilte die Neuigkeiten seinen Freunden mit.",
+          },
+          {
+            translation: "I have some exciting news to share.",
+            sample: "Ich habe einige aufregende Neuigkeiten zu teilen.",
+          },
+        ],
+        article: "Die",
+        meanings: ["news", "updates"],
+        plural: "Neuigkeiten",
+      } as NounSpec,
+    },
+    {
+      word: "Angebot",
+      level: "A2",
+      type: "NOUN",
+      categories: ["Shopping and clothing", "General"],
+      spec: {
+        samples: [
+          {
+            translation: "The store has a special offer on electronics.",
+            sample: "Der Laden hat ein spezielles Angebot für Elektronik.",
+          },
+          {
+            translation: "I received a great offer for a new car.",
+            sample: "Ich habe ein tolles Angebot für ein neues Auto erhalten.",
+          },
+        ],
+        article: "Das",
+        meanings: ["offer", "deal"],
+        plural: "Angebote",
+      } as NounSpec,
+    },
+    {
+      word: "erhalten",
+      level: "A2",
+      type: "VERB",
+      categories: ["General"],
+      spec: {
+        samples: [
+          {
+            translation: "I received a letter from my friend.",
+            sample: "Ich habe einen Brief von meinem Freund erhalten.",
+          },
+          {
+            translation: "She received a gift from her friend.",
+            sample: "Sie hat ein Geschenk von ihrer Freundin erhalten.",
+          },
+        ],
+        meanings: ["to receive", "to obtain"],
+        conjugation: {
+          ich: "erhalte",
+          du: "erhältst",
+          er_sie_es: "erhält",
+          wir: "erhalten",
+          ihr: "erhaltet",
+          sie_Sie: "erhalten",
+        },
+        infinitive: "erhalten",
+        pp: "erhalten",
+      } as VerbSpec,
+    },
+    {
+      word: "Regel",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters"],
+      spec: {
+        samples: [
+          {
+            translation: "You must follow the rules of the game.",
+            sample: "Du musst die Regeln des Spiels befolgen.",
+          },
+          {
+            translation: "The school has strict rules about attendance.",
+            sample: "Die Schule hat strenge Regeln bezüglich der Anwesenheit.",
+          },
+        ],
+        article: "Die",
+        meanings: ["rule", "regulation"],
+        plural: "Regeln",
+      } as NounSpec,
+    },
+    {
+      word: "Anwesenheit",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Education"],
+      spec: {
+        samples: [
+          {
+            translation: "Attendance is mandatory for all students.",
+            sample: "Die Anwesenheit ist für alle Schüler obligatorisch.",
+          },
+        ],
+        article: "Die",
+        meanings: ["attendance", "presence"],
+        plural: "Anwesenheiten",
+      } as NounSpec,
+    },
+    {
+      word: "befolgen",
+      level: "A2",
+      type: "VERB",
+      categories: ["General", "Official matters", "Education"],
+      spec: {
+        samples: [
+          {
+            translation: "It is important to follow safety guidelines.",
+            sample: "Es ist wichtig, Sicherheitsrichtlinien zu befolgen.",
+          },
+          {
+            translation: "You should follow the instructions carefully.",
+            sample: "Du solltest die Anweisungen sorgfältig befolgen.",
+          },
+        ],
+        meanings: ["to follow", "to comply with"],
+        conjugation: {
+          ich: "befolge",
+          du: "befolgst",
+          er_sie_es: "befolgt",
+          wir: "befolgen",
+          ihr: "befolgt",
+          sie_Sie: "befolgen",
+        },
+        infinitive: "befolgen",
+        pp: "befolgt",
+      } as VerbSpec,
+    },
+    {
+      word: "Anweisung",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Education"],
+      spec: {
+        samples: [
+          {
+            translation: "Please follow the instructions carefully.",
+            sample: "Bitte befolge die Anweisungen sorgfältig.",
+          },
+        ],
+        article: "Die",
+        meanings: ["instruction", "directive"],
+        plural: "Anweisungen",
+      } as NounSpec,
+    },
+    {
+      word: "Sicherheit",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Health"],
+      spec: {
+        samples: [
+          {
+            translation: "Safety is a top priority in this workplace.",
+            sample: "Sicherheit hat in diesem Arbeitsplatz oberste Priorität.",
+          },
+          {
+            translation: "Her safety is my main concern.",
+            sample: "Ihre Sicherheit ist meine Hauptsorge.",
+          },
+        ],
+        article: "Die",
+        meanings: ["safety", "security"],
+        plural: "Sicherheiten",
+      } as NounSpec,
+    },
+    {
+      word: "Hauptsorge",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Health"],
+      spec: {
+        samples: [
+          {
+            translation: "What are your main concerns?",
+            sample: "Was sind deine Hauptsorgen?",
+          },
+        ],
+        article: "Die",
+        meanings: ["main concern", "primary worry"],
+        plural: "Hauptsorgen",
+      } as NounSpec,
+    },
+    {
+      word: "Blume",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature"],
+      spec: {
+        samples: [
+          {
+            translation: "The flower is blooming in the garden.",
+            sample: "Die Blume blüht im Garten.",
+          },
+        ],
+        article: "Die",
+        meanings: ["flower"],
+        plural: "Blumen",
+      } as NounSpec,
+    },
+    {
+      word: "Urlaub",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Travel and holidays"],
+      spec: {
+        samples: [
+          {
+            translation: "I am going on vacation next week.",
+            sample: "Ich mache nächste Woche Urlaub.",
+          },
+          {
+            translation: "We had a great time on our holiday.",
+            sample: "Wir hatten eine tolle Zeit in unserem Urlaub.",
+          },
+        ],
+        article: "Der",
+        meanings: ["vacation", "holiday"],
+        plural: "Urlaube",
+      } as NounSpec,
+    },
+    {
+      word: "zeigen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Education"],
+      spec: {
+        pp: "gezeigt",
+        infinitive: "zeigen",
+        meanings: ["to show", "to display"],
+        conjugation: {
+          ich: "zeige",
+          du: "zeigst",
+          er_sie_es: "zeigt",
+          wir: "zeigen",
+          ihr: "zeigt",
+          sie_Sie: "zeigen",
+        },
+        samples: [
+          {
+            sample: "Can you show me the way to the station?",
+            translation: "Kannst du mir den Weg zum Bahnhof zeigen?",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "vergessen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General"],
+      spec: {
+        pp: "vergessen",
+        infinitive: "vergessen",
+        meanings: ["to forget"],
+        conjugation: {
+          ich: "vergesse",
+          du: "vergisst",
+          er_sie_es: "vergisst",
+          wir: "vergessen",
+          ihr: "vergesst",
+          sie_Sie: "vergessen",
+        },
+        samples: [
+          {
+            sample: "I forgot my keys at home.",
+            translation: "Ich habe meine Schlüssel zu Hause vergessen.",
+          },
+          {
+            translation: "I often forget people's names.",
+            sample: "Ich vergesse oft die Namen von Leuten.",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "besuchen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Travel and holidays"],
+      spec: {
+        pp: "besucht",
+        infinitive: "besuchen",
+        meanings: ["to visit", "to attend"],
+        conjugation: {
+          ich: "besuche",
+          du: "besuchst",
+          er_sie_es: "besucht",
+          wir: "besuchen",
+          ihr: "besucht",
+          sie_Sie: "besuchen",
+        },
+        samples: [
+          {
+            sample: "I am going to visit my grandparents this weekend.",
+            translation:
+              "Ich werde dieses Wochenende meine Großeltern besuchen.",
+          },
+          {
+            translation: "She visits the museum every month.",
+            sample: "Sie besucht jeden Monat das Museum.",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "Leistung",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Education", "Occupation"],
+      spec: {
+        samples: [
+          {
+            translation: "His performance at work has improved significantly.",
+            sample:
+              "Seine Leistung bei der Arbeit hat sich erheblich verbessert.",
+          },
+          {
+            translation:
+              "The athlete's performance in the competition was outstanding.",
+            sample: "Die Leistung des Athleten im Wettkampf war herausragend.",
+          },
+        ],
+        article: "Die",
+        meanings: ["performance", "achievement"],
+        plural: "Leistungen",
+      } as NounSpec,
+    },
+    {
+      word: "Wettkampf",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Sports"],
+      spec: {
+        samples: [
+          {
+            translation: "She trains hard for the upcoming competition.",
+            sample: "Sie trainiert hart für den bevorstehenden Wettkampf.",
+          },
+          {
+            translation: "Are you ready for the competition?",
+            sample: "Bist du bereit für den Wettkampf?",
+          },
+        ],
+        article: "Der",
+        meanings: ["competition", "contest"],
+        plural: "Wettkämpfe",
+      } as NounSpec,
+    },
+    {
+      word: "verbessern",
+      level: "A2",
+      type: "VERB",
+      categories: ["General", "Education", "Occupation"],
+      spec: {
+        samples: [
+          {
+            translation: "I want to improve my German skills.",
+            sample: "Ich möchte meine Deutschkenntnisse verbessern.",
+          },
+          {
+            translation:
+              "The company is working to improve its customer service.",
+            sample:
+              "Das Unternehmen arbeitet daran, seinen Kundenservice zu verbessern.",
+          },
+        ],
+        meanings: ["to improve", "to enhance"],
+        conjugation: {
+          ich: "verbessere",
+          du: "verbesserst",
+          er_sie_es: "verbessert",
+          wir: "verbessern",
+          ihr: "verbessert",
+          sie_Sie: "verbessern",
+        },
+        infinitive: "verbessern",
+        pp: "verbessert",
+      } as VerbSpec,
+    },
+    {
+      word: "erzählen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Education"],
+      spec: {
+        samples: [
+          {
+            translation: "Can you tell me a story?",
+            sample: "Kannst du mir eine Geschichte erzählen?",
+          },
+          {
+            translation: "She told me about her trip to Paris.",
+            sample: "Sie erzählte mir von ihrer Reise nach Paris.",
+          },
+        ],
+        meanings: ["to tell", "to narrate"],
+        conjugation: {
+          ich: "erzähle",
+          du: "erzählst",
+          er_sie_es: "erzählt",
+          wir: "erzählen",
+          ihr: "erzählt",
+          sie_Sie: "erzählen",
+        },
+        infinitive: "erzählen",
+        pp: "erzählt",
+      } as VerbSpec,
+    },
+    {
+      word: "Geschichte",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Education"],
+      spec: {
+        samples: [
+          {
+            translation: "I love reading history books.",
+            sample: "Ich liebe es, Geschichtsbücher zu lesen.",
+          },
+          {
+            translation: "She told me a fascinating story.",
+            sample: "Sie erzählte mir eine faszinierende Geschichte.",
+          },
+        ],
+        article: "Die",
+        meanings: ["history", "story"],
+        plural: "Geschichten",
+      } as NounSpec,
+    },
+    {
+      word: "Erfahrung",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Education", "Occupation"],
+      spec: {
+        samples: [
+          {
+            translation: "She has a lot of experience in teaching.",
+            sample: "Sie hat viel Erfahrung im Unterrichten.",
+          },
+          {
+            translation: "What experience do you have in this field?",
+            sample: "Welche Erfahrung hast du in diesem Bereich?",
+          },
+        ],
+        article: "Die",
+        meanings: ["experience"],
+        plural: "Erfahrungen",
+      } as NounSpec,
+    },
+    {
+      word: "untersuchen",
+      level: "A2",
+      type: "VERB",
+      categories: ["General", "Health", "Occupation"],
+      spec: {
+        samples: [
+          {
+            translation: "The doctor is examining the patient.",
+            sample: "Der Arzt untersucht den Patienten.",
+          },
+          {
+            translation: "They are investigating the cause of the problem.",
+            sample: "Sie untersuchen die Ursache des Problems.",
+          },
+        ],
+        meanings: ["to examine", "to investigate", "to inspect"],
+        conjugation: {
+          ich: "untersuche",
+          du: "untersuchst",
+          er_sie_es: "untersucht",
+          wir: "untersuchen",
+          ihr: "untersucht",
+          sie_Sie: "untersuchen",
+        },
+        infinitive: "untersuchen",
+        pp: "untersucht",
+      } as VerbSpec,
+    },
+    {
+      word: "Ursache",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Health", "Occupation"],
+      spec: {
+        samples: [
+          {
+            translation: "The cause of the accident is still unknown.",
+            sample: "Die Ursache des Unfalls ist noch unbekannt.",
+          },
+          {
+            translation: "They are investigating the cause of the problem.",
+            sample: "Sie untersuchen die Ursache des Problems.",
+          },
+        ],
+        article: "Die",
+        meanings: ["cause", "reason"],
+        plural: "Ursachen",
+      } as NounSpec,
+    },
+    {
+      word: "Angst",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Health"],
+      spec: {
+        samples: [
+          {
+            translation: "She has a fear of heights.",
+            sample: "Sie hat Angst vor Höhen.",
+          },
+          {
+            translation: "If you have a fear of spiders, avoid that area.",
+            sample: "Wenn du Angst vor Spinnen hast, vermeide dieses Gebiet.",
+          },
+          {
+            translation: "He overcame his fear of public speaking.",
+            sample:
+              "Er hat seine Angst vor dem öffentlichen Sprechen überwunden.",
+          },
+        ],
+        article: "Die",
+        meanings: ["fear", "anxiety"],
+        plural: "Ängste",
+      } as NounSpec,
     },
   ],
 };
