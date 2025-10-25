@@ -291,7 +291,7 @@
       "word": "veranstalten",
       "level": "A1",
       "type": "VERB",
-      "categories": ["General", "Work", "Entertainment"],
+      "categories": ["General", "Occupation", "Entertainment"],
       "spec": {
         "samples": [
           {
@@ -1453,7 +1453,7 @@
       "word": "Versammlung",
       "level": "A1",
       "type": "NOUN",
-      "categories": ["General", "Work"],
+      "categories": ["General", "Occupation", "Official matters"],
       "spec": {
         "samples": [
           {
@@ -5163,7 +5163,7 @@
       "word": "Fallschirm",
       "level": "B1",
       "type": "NOUN",
-      "categories": ["Aviation", "Sport"],
+      "categories": ["Aviation", "Sports"],
       "spec": {
         "samples": [
           {

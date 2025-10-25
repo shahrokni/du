@@ -11,7 +11,6 @@ type Category =
   | "Shopping and clothing"
   | "Directions and transportation"
   | "Health"
-  | "Work"
   | "Occupation"
   | "Hobbies"
   | "Basic cultural topics"
@@ -31,7 +30,6 @@ type Category =
   | "Emergency"
   | "Appointment"
   | "Aviation"
-  | "Sport"
   | "Entertainment"
   | "Official matters"
   | "Religion"
@@ -456,7 +454,7 @@ const data: Data = {
       word: "veranstalten",
       level: "A1",
       type: "VERB",
-      categories: ["General", "Work", "Entertainment"],
+      categories: ["General", "Occupation", "Entertainment"],
       spec: {
         samples: [
           {
@@ -1620,7 +1618,7 @@ const data: Data = {
       word: "Versammlung",
       level: "A1",
       type: "NOUN",
-      categories: ["General", "Work"],
+      categories: ["General", "Occupation", "Official matters"],
       spec: {
         samples: [
           {
@@ -5311,7 +5309,7 @@ const data: Data = {
       word: "Fallschirm",
       level: "B1",
       type: "NOUN",
-      categories: ["Aviation", "Sport"],
+      categories: ["Aviation", "Sports"],
       spec: {
         samples: [
           {
