@@ -37,7 +37,11 @@ type Category =
   | "Events"
   | "Tools and equipment"
   | "Household"
-  | "Relationships";
+  | "Relationships"
+  | "Art, music and culture"
+  | "Constitution"
+  | "Law and order"
+  | "Financial matters";
 
 type PersonalPronouns = "ich" | "du" | "er_sie_es" | "wir" | "ihr" | "sie_Sie";
 
@@ -257,6 +261,27 @@ const data: Data = {
         {
           example: "Sie kauft einen Apfel.",
           translation: "She buys an apple.",
+        },
+        {
+          example: "Wir gehen durch den Park.",
+          translation: "We are walking through the park.",
+        },
+      ],
+    },
+    {
+      key: "Dativ",
+      title: "Dativ",
+      explain: [
+        `In German, the dative case (der Dativ) is used for the indirect object of a sentence—the person or thing that receives the direct object or benefits from the action of the verb. It affects the articles and pronouns used with nouns, with changes being most noticeable for masculine and neuter nouns.`,
+        `To determine if a noun is in the dative case, you can ask the question "Wem?" (to whom?) or "Was?" (to what?).`,
+        `Masculine and neuter nouns follow the same pattern in the dative case, changing to dem for the definite article and einem for the indefinite article.`,
+        `Feminine nouns change their definite article die to der and their indefinite article eine to einer.`,
+        `Plural nouns change their definite article die to den. They also typically take an additional "-n" at the end of the noun itself, unless the noun already ends in "-n" or "-s".`,
+      ],
+      example: [
+        {
+          example: "Ich gebe dem Mann das Buch.",
+          translation: "I give the book to the man.",
         },
       ],
     },
@@ -7557,6 +7582,1198 @@ const data: Data = {
         article: "Die",
         meanings: ["fear", "anxiety"],
         plural: "Ängste",
+      } as NounSpec,
+    },
+    {
+      word: "Bild",
+      level: "A1",
+      type: "NOUN",
+      categories: [
+        "General",
+        "Housing and furniture",
+        "Art, music and culture",
+      ],
+      spec: {
+        samples: [
+          {
+            translation: "The picture hangs on the wall.",
+            sample: "Das Bild hängt an der Wand.",
+          },
+          {
+            translation: "She took a beautiful picture of the sunset.",
+            sample: "Sie hat ein schönes Bild vom Sonnenuntergang gemacht.",
+          },
+        ],
+        article: "Das",
+        meanings: ["picture", "image"],
+        plural: "Bilder",
+      } as NounSpec,
+    },
+    {
+      word: "Wand",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "The picture hangs on the wall.",
+            sample: "Das Bild hängt an der Wand.",
+          },
+          {
+            translation: "He painted the wall in a bright color.",
+            sample: "Er hat die Wand in einer hellen Farbe gestrichen.",
+          },
+        ],
+        article: "Die",
+        meanings: ["wall"],
+        plural: "Wände",
+      } as NounSpec,
+    },
+    {
+      word: "Couch",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "I like to relax on the couch after work.",
+            sample: "Ich entspanne mich gerne auf der Couch nach der Arbeit.",
+          },
+          {
+            translation: "The couch is very comfortable.",
+            sample: "Die Couch ist sehr bequem.",
+          },
+        ],
+        article: "Die",
+        meanings: ["couch", "sofa"],
+        plural: "Couches",
+      } as NounSpec,
+    },
+    {
+      word: "Sofa",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "We bought a new sofa for the living room.",
+            sample: "Wir haben ein neues Sofa für das Wohnzimmer gekauft.",
+          },
+          {
+            translation: "The sofa is very comfortable.",
+            sample: "Das Sofa ist sehr bequem.",
+          },
+        ],
+        article: "Das",
+        meanings: ["sofa", "couch"],
+        plural: "Sofas",
+      } as NounSpec,
+    },
+    {
+      word: "Lampe",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "The lamp provides good lighting for reading.",
+            sample: "Die Lampe sorgt für gute Beleuchtung zum Lesen.",
+          },
+          {
+            translation: "I need to buy a new lamp for my desk.",
+            sample: "Ich muss eine neue Lampe für meinen Schreibtisch kaufen.",
+          },
+        ],
+        article: "Die",
+        meanings: ["lamp", "light"],
+        plural: "Lampen",
+      } as NounSpec,
+    },
+    {
+      word: "Teller",
+      level: "A1",
+      type: "NOUN",
+      categories: [
+        "General",
+        "Food and drinks",
+        "Household",
+        "Housing and furniture",
+      ],
+      spec: {
+        samples: [
+          {
+            translation: "Please put the plates on the table.",
+            sample: "Bitte stelle die Teller auf den Tisch.",
+          },
+          {
+            translation: "The plate is full of food.",
+            sample: "Der Teller ist voll mit Essen.",
+          },
+        ],
+        article: "Der",
+        meanings: ["plate", "dish"],
+        plural: "Teller",
+      } as NounSpec,
+    },
+    {
+      word: "Messer",
+      level: "A1",
+      type: "NOUN",
+      categories: [
+        "General",
+        "Food and drinks",
+        "Household",
+        "Housing and furniture",
+      ],
+      spec: {
+        samples: [
+          {
+            translation: "Be careful with the knife; it's sharp.",
+            sample: "Sei vorsichtig mit dem Messer; es ist scharf.",
+          },
+          {
+            translation: "I need a knife to cut the bread.",
+            sample: "Ich brauche ein Messer, um das Brot zu schneiden.",
+          },
+        ],
+        article: "Das",
+        meanings: ["knife"],
+        plural: "Messer",
+      } as NounSpec,
+    },
+    {
+      word: "Gabel",
+      level: "A1",
+      type: "NOUN",
+      categories: [
+        "General",
+        "Food and drinks",
+        "Household",
+        "Housing and furniture",
+      ],
+      spec: {
+        samples: [
+          {
+            translation: "I need a fork to eat my salad.",
+            sample: "Ich brauche eine Gabel, um meinen Salat zu essen.",
+          },
+          {
+            translation: "The fork is on the table next to the knife.",
+            sample: "Die Gabel liegt auf dem Tisch neben dem Messer.",
+          },
+        ],
+        article: "Die",
+        meanings: ["fork"],
+        plural: "Gabeln",
+      } as NounSpec,
+    },
+    {
+      word: "Löffel",
+      level: "A1",
+      type: "NOUN",
+      categories: [
+        "General",
+        "Food and drinks",
+        "Household",
+        "Housing and furniture",
+      ],
+      spec: {
+        samples: [
+          {
+            translation: "I need a spoon to eat my soup.",
+            sample: "Ich brauche einen Löffel, um meine Suppe zu essen.",
+          },
+          {
+            translation: "The spoon is in the drawer.",
+            sample: "Der Löffel ist in der Schublade.",
+          },
+        ],
+        article: "Der",
+        meanings: ["spoon"],
+        plural: "Löffel",
+      } as NounSpec,
+    },
+    {
+      word: "Schublade",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Housing and furniture", "Household"],
+      spec: {
+        samples: [
+          {
+            translation: "The spoon is in the drawer.",
+            sample: "Der Löffel ist in der Schublade.",
+          },
+          {
+            translation: "I keep my clothes in the drawer.",
+            sample: "Ich bewahre meine Kleidung in der Schublade auf.",
+          },
+        ],
+        article: "Die",
+        meanings: ["drawer"],
+        plural: "Schubladen",
+      } as NounSpec,
+    },
+    {
+      word: "Mülleimer",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Household", "Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "Please take out the trash to the garbage can.",
+            sample: "Bitte bring den Müll zum Mülleimer.",
+          },
+          {
+            translation: "The garbage can is full.",
+            sample: "Der Mülleimer ist voll.",
+          },
+          {
+            translation: "Don't forget to empty the trash bin.",
+            sample: "Vergiss nicht, den Mülleimer zu leeren.",
+          },
+        ],
+        article: "Der",
+        meanings: ["garbage can", "trash bin"],
+        plural: "Mülleimer",
+      } as NounSpec,
+    },
+    {
+      word: "Vase",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Housing and furniture", "Nature"],
+      spec: {
+        samples: [
+          {
+            translation: "The vase is filled with fresh flowers.",
+            sample: "Die Vase ist mit frischen Blumen gefüllt.",
+          },
+          {
+            translation: "She bought a beautiful vase for the living room.",
+            sample: "Sie hat eine schöne Vase für das Wohnzimmer gekauft.",
+          },
+        ],
+        article: "Die",
+        meanings: ["vase"],
+        plural: "Vasen",
+      } as NounSpec,
+    },
+    {
+      word: "Hocker",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Housing and furniture"],
+      spec: {
+        samples: [
+          {
+            translation: "The stool is made of wood.",
+            sample: "Der Hocker ist aus Holz gefertigt.",
+          },
+        ],
+        article: "Der",
+        meanings: ["stool", "footstool"],
+        plural: "Hocker",
+      } as NounSpec,
+    },
+    {
+      word: "Tablett",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Housing and furniture", "Household"],
+      spec: {
+        samples: [
+          {
+            translation: "She carried the drinks on a tray.",
+            sample: "Sie trug die Getränke auf einem Tablett.",
+          },
+          {
+            translation: "The tray is made of plastic.",
+            sample: "Das Tablett ist aus Plastik gefertigt.",
+          },
+        ],
+        article: "Das",
+        meanings: ["tray"],
+        plural: "Tabletts",
+      } as NounSpec,
+    },
+    {
+      word: "Aschenbecher",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Housing and furniture", "Household"],
+      spec: {
+        samples: [
+          {
+            translation: "The ashtray is on the balcony.",
+            sample: "Der Aschenbecher ist auf dem Balkon.",
+          },
+          {
+            translation: "Please use the ashtray when smoking.",
+            sample: "Bitte benutze den Aschenbecher beim Rauchen.",
+          },
+          {
+            translation: "I could not find the ashtray in the living room.",
+            sample: "Ich konnte den Aschenbecher im Wohnzimmer nicht finden.",
+          },
+        ],
+        article: "Der",
+        meanings: ["ashtray"],
+        plural: "Aschenbecher",
+      } as NounSpec,
+    },
+    {
+      word: "Schuh",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Shopping and clothing"],
+      spec: {
+        samples: [
+          {
+            translation: "I bought new shoes for the party.",
+            sample: "Ich habe neue Schuhe für die Party gekauft.",
+          },
+          {
+            translation: "The shoes are very comfortable.",
+            sample: "Die Schuhe sind sehr bequem.",
+          },
+        ],
+        article: "Der",
+        meanings: ["shoe"],
+        plural: "Schuhe",
+      } as NounSpec,
+    },
+    {
+      word: "Zahnbürste",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Health", "Household"],
+      spec: {
+        samples: [
+          {
+            translation: "The toothbrush is on the bathroom sink.",
+            sample: "Die Zahnbürste liegt auf dem Badezimmerwaschbecken.",
+          },
+        ],
+        article: "Die",
+        meanings: ["toothbrush"],
+        plural: "Zahnbürsten",
+      } as NounSpec,
+    },
+    {
+      word: "Zahnpasta",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Health", "Household"],
+      spec: {
+        samples: [
+          {
+            translation: "The toothpaste is mint flavored.",
+            sample: "Die Zahnpasta ist minzgeschmack.",
+          },
+        ],
+        article: "Die",
+        meanings: ["toothpaste"],
+        plural: "Zahnpasten",
+      } as NounSpec,
+    },
+    {
+      word: "Handtuch",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Health", "Household"],
+      spec: {
+        samples: [
+          {
+            translation: "You should dry your hands with a towel.",
+            sample: "Du solltest deine Hände mit einem Handtuch trocknen.",
+          },
+        ],
+        article: "Das",
+        meanings: ["towel"],
+        plural: "Handtücher",
+      } as NounSpec,
+    },
+    {
+      word: "Kamm",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Health", "Household"],
+      spec: {
+        samples: [
+          {
+            translation: "He combs his hair with a comb.",
+            sample: "Er kämmt sein Haar mit einem Kamm.",
+          },
+        ],
+        article: "Der",
+        meanings: ["comb"],
+        plural: "Kämme",
+      } as NounSpec,
+    },
+    {
+      word: "trocknen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General"],
+      spec: {
+        conjugation: {
+          ich: "trockne",
+          du: "trocknest",
+          er_sie_es: "trocknet",
+          wir: "trocknen",
+          ihr: "trocknet",
+          sie_Sie: "trocknen",
+        },
+        infinitive: "trocknen",
+        pp: "getrocknet",
+        meanings: ["to dry"],
+        samples: [
+          {
+            translation: "Please dry your hands with a towel.",
+            sample: "Bitte trockne deine Hände mit einem Handtuch.",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "Kühlschrank",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Household", "Housing and furniture"],
+      spec: {
+        article: "Der",
+        meanings: ["refrigerator", "fridge"],
+        plural: "Kühlschränke",
+        samples: [
+          {
+            translation: "The refrigerator is full of food.",
+            sample: "Der Kühlschrank ist voll mit Essen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Gurke",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Food and drinks"],
+      spec: {
+        plural: "Gurken",
+        article: "Die",
+        meanings: ["cucumber"],
+        samples: [
+          {
+            translation: "I like to eat cucumber in my salad.",
+            sample: "Ich esse gerne Gurke in meinem Salat.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Banane",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Food and drinks"],
+      spec: {
+        plural: "Bananen",
+        article: "Die",
+        meanings: ["banana"],
+        samples: [
+          {
+            translation: "She eats a banana for breakfast every day.",
+            sample: "Sie isst jeden Tag eine Banane zum Frühstück.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Apfel",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Food and drinks"],
+      spec: {
+        plural: "Äpfel",
+        article: "Der",
+        meanings: ["apple"],
+        samples: [
+          {
+            translation: "An apple a day keeps the doctor away.",
+            sample: "Ein Apfel am Tag hält den Doktor fern.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Joghurt",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Food and drinks"],
+      spec: {
+        plural: "Joghurts",
+        article: "Der",
+        meanings: ["yogurt"],
+        samples: [
+          {
+            translation: "I like to eat yogurt with fruit.",
+            sample: "Ich esse gerne Joghurt mit Obst.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Kartoffel",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Food and drinks"],
+      spec: {
+        plural: "Kartoffeln",
+        article: "Die",
+        meanings: ["potato"],
+        samples: [
+          {
+            translation: "Potatoes can be prepared in many different ways.",
+            sample:
+              "Kartoffeln können auf viele verschiedene Arten zubereitet werden.",
+          },
+          {
+            translation: "I like to eat potatoes with butter and herbs.",
+            sample: "Ich esse gerne Kartoffeln mit Butter und Kräutern.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Salat",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Food and drinks"],
+      spec: {
+        plural: "Salate",
+        article: "Der",
+        meanings: ["salad"],
+        samples: [
+          {
+            translation: "I like to eat salad for lunch.",
+            sample: "Ich esse gerne Salat zum Mittagessen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Vorteil",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Occupation"],
+      spec: {
+        article: "Der",
+        meanings: ["advantage", "benefit"],
+        plural: "Vorteile",
+        samples: [
+          {
+            translation: "One advantage of working from home is flexibility.",
+            sample: "Ein Vorteil der Arbeit von zu Hause ist die Flexibilität.",
+          },
+          {
+            translation: "What are the benefits of this new technology?",
+            sample: "Was sind die Vorteile dieser neuen Technologie?",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Nachteil",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Occupation"],
+      spec: {
+        article: "Der",
+        meanings: ["disadvantage", "drawback"],
+        plural: "Nachteile",
+        samples: [
+          {
+            translation: "One disadvantage of living in the city is noise.",
+            sample: "Ein Nachteil des Lebens in der Stadt ist der Lärm.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Grundlage",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Education", "Occupation", "Constitution"],
+      spec: {
+        article: "Die",
+        meanings: ["basis", "foundation", "groundwork"],
+        plural: "Grundlagen",
+        samples: [
+          {
+            translation:
+              "A strong foundation is essential for building a house.",
+            sample: "Eine starke Grundlage ist für den Hausbau unerlässlich.",
+          },
+          {
+            translation:
+              "The basics of mathematics are taught in primary school.",
+            sample:
+              "Die Grundlagen der Mathematik werden in der Grundschule gelehrt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Gefängnis",
+      level: "A2",
+      type: "NOUN",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "Constitution",
+      ],
+      spec: {
+        article: "Das",
+        meanings: ["prison", "jail"],
+        plural: "Gefängnisse",
+        samples: [
+          {
+            translation: "He was sentenced to five years in prison.",
+            sample: "Er wurde zu fünf Jahren Gefängnis verurteilt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Wähler",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Constitution"],
+      spec: {
+        article: "Der",
+        meanings: ["voter", "elector"],
+        plural: "Wähler",
+        samples: [
+          {
+            translation:
+              "Every voter has the right to participate in elections.",
+            sample: "Jeder Wähler hat das Recht, an Wahlen teilzunehmen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Wahl",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Constitution"],
+      spec: {
+        article: "Die",
+        meanings: ["election", "choice"],
+        plural: "Wahlen",
+        samples: [
+          {
+            translation: "The election will be held next month.",
+            sample: "Die Wahl wird nächsten Monat stattfinden.",
+          },
+          {
+            translation: "You have the choice to vote for any candidate.",
+            sample: "Du hast die Wahl, für jeden Kandidaten zu stimmen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Grundrecht",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Constitution"],
+      spec: {
+        article: "Das",
+        meanings: ["fundamental right", "basic right"],
+        plural: "Grundrechte",
+        samples: [
+          {
+            translation: "Freedom of speech is a fundamental right.",
+            sample: "Die Meinungsfreiheit ist ein Grundrecht.",
+          },
+          {
+            translation: "Everyone has the right to education.",
+            sample: "Jeder hat das Recht auf Bildung.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Steuer",
+      level: "A2",
+      type: "NOUN",
+      categories: [
+        "General",
+        "Official matters",
+        "Occupation",
+        "Financial matters",
+      ],
+      spec: {
+        article: "Das",
+        meanings: ["tax"],
+        plural: "Steuern",
+        samples: [
+          {
+            translation: "Citizens are required to pay taxes on their income.",
+            sample:
+              "Bürger sind verpflichtet, Steuern auf ihr Einkommen zu zahlen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Regierung",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Constitution"],
+      spec: {
+        article: "Die",
+        meanings: ["government"],
+        plural: "Regierungen",
+        samples: [
+          {
+            translation: "The government is responsible for making laws.",
+            sample: "Die Regierung ist verantwortlich für die Gesetzgebung.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Wahlrecht",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Constitution"],
+      spec: {
+        article: "Das",
+        meanings: ["right to vote", "suffrage"],
+        plural: "Wahlrechte",
+        samples: [
+          {
+            translation:
+              "The right to vote is a fundamental aspect of democracy.",
+            sample:
+              "Das Wahlrecht ist ein grundlegender Aspekt der Demokratie.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Gesetz",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Constitution"],
+      spec: {
+        article: "Das",
+        meanings: ["law", "act"],
+        plural: "Gesetze",
+        samples: [
+          {
+            translation: "The law was passed by the parliament.",
+            sample: "Das Gesetz wurde vom Parlament verabschiedet.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Gericht",
+      level: "A2",
+      type: "NOUN",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "Constitution",
+      ],
+      spec: {
+        article: "Das",
+        meanings: ["court"],
+        plural: "Gerichte",
+        samples: [
+          {
+            translation: "The court will hear the case next week.",
+            sample: "Das Gericht wird den Fall nächste Woche verhandeln.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Rechtsstaat",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Constitution"],
+      spec: {
+        article: "Der",
+        meanings: ["constitutional state", "rule of law"],
+        plural: "Rechtsstaaten",
+        samples: [
+          {
+            translation:
+              "A constitutional state ensures the protection of citizens' rights.",
+            sample:
+              "Ein Rechtsstaat gewährleistet den Schutz der Rechte der Bürger.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Bürger",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Constitution"],
+      spec: {
+        article: "Der",
+        meanings: ["citizen"],
+        plural: "Bürger",
+        samples: [
+          {
+            translation: "Every citizen has the right to vote.",
+            sample: "Jeder Bürger hat das Recht zu wählen.",
+          },
+          {
+            translation: "Citizens have the duty to obey the law.",
+            sample: "Bürger haben die Pflicht, das Gesetz zu befolgen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Einkommen",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Financial matters", "Occupation"],
+      spec: {
+        article: "Das",
+        meanings: ["income", "earnings"],
+        plural: "Einkommen",
+        samples: [
+          {
+            translation:
+              "Many people rely on their income to support their families.",
+            sample:
+              "Viele Menschen sind auf ihr Einkommen angewiesen, um ihre Familien zu unterstützen.",
+          },
+          {
+            translation: "His income has increased significantly this year.",
+            sample: "Sein Einkommen ist in diesem Jahr erheblich gestiegen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Waffe",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Law and order", "Occupation"],
+      spec: {
+        article: "Die",
+        meanings: ["weapon", "arms"],
+        plural: "Waffen",
+        samples: [
+          {
+            translation:
+              "The police found illegal weapons in the suspect's car.",
+            sample:
+              "Die Polizei fand illegale Waffen im Auto des Verdächtigen.",
+          },
+          {
+            translation: "He collects antique weapons as a hobby.",
+            sample: "Er sammelt antike Waffen als Hobby.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Erziehung",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Education", "Occupation"],
+      spec: {
+        article: "Die",
+        meanings: ["education", "upbringing"],
+        plural: "Erziehungen",
+        samples: [
+          {
+            translation:
+              "Good upbringing is important for children's development.",
+            sample:
+              "Gute Erziehung ist wichtig für die Entwicklung von Kindern.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Entwicklung",
+      level: "B1",
+      type: "NOUN",
+      categories: ["General", "Education", "Occupation"],
+      spec: {
+        article: "Die",
+        meanings: ["development", "evolution", "progress"],
+        plural: "Entwicklungen",
+        samples: [
+          {
+            translation: "The development of new technologies is rapid.",
+            sample: "Die Entwicklung neuer Technologien ist schnell.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Wohnung",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Housing and furniture", "Household"],
+      spec: {
+        article: "Die",
+        meanings: ["apartment", "flat"],
+        plural: "Wohnungen",
+        samples: [
+          {
+            translation: "I live in a small apartment in the city center.",
+            sample: "Ich wohne in einer kleinen Wohnung im Stadtzentrum.",
+          },
+          {
+            translation: "The apartment has two bedrooms and a balcony.",
+            sample: "Die Wohnung hat zwei Schlafzimmer und einen Balkon.",
+          },
+          {
+            translation: "We are looking for a new apartment to rent.",
+            sample: "Wir suchen eine neue Wohnung zur Miete.",
+          },
+          {
+            translation: "The apartment is fully furnished.",
+            sample: "Die Wohnung ist komplett möbliert.",
+          },
+          {
+            translation: "The apartment is located near public transportation.",
+            sample:
+              "Die Wohnung liegt in der Nähe von öffentlichen Verkehrsmitteln.",
+          },
+          {
+            translation: "The apartment has a beautiful view of the park.",
+            sample: "Die Wohnung hat eine schöne Aussicht auf den Park.",
+          },
+          {
+            translation: "The apartment is spacious and bright.",
+            sample: "Die Wohnung ist geräumig und hell.",
+          },
+          {
+            translation: "The apartment is in a quiet neighborhood.",
+            sample: "Die Wohnung befindet sich in einer ruhigen Nachbarschaft.",
+          },
+          {
+            translation: "The apartment has a modern kitchen and bathroom.",
+            sample:
+              " Die Wohnung hat eine moderne Küche und ein modernes Badezimmer.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Nachbarschaft",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Housing and furniture", "Household"],
+      spec: {
+        article: "Die",
+        meanings: ["neighborhood", "community"],
+        plural: "Nachbarschaften",
+        samples: [
+          {
+            translation: "The apartment is in a quiet neighborhood.",
+            sample: "Die Wohnung befindet sich in einer ruhigen Nachbarschaft.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Geldstrafe",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["fine", "penalty"],
+        plural: "Geldstrafen",
+        samples: [
+          {
+            translation: "He had to pay a fine for speeding.",
+            sample:
+              "Er musste eine Geldstrafe für Geschwindigkeitsüberschreitung zahlen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Ausländer",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Constitution"],
+      spec: {
+        article: "Der",
+        meanings: ["foreigner", "alien"],
+        plural: "Ausländer",
+        samples: [
+          {
+            translation: "The country has many foreigners living in it.",
+            sample: "Das Land hat viele Ausländer, die darin leben.",
+          },
+          {
+            translation: "Foreigners must follow the same laws as citizens.",
+            sample:
+              "Ausländer müssen die gleichen Gesetze wie Bürger befolgen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Todesstrafe",
+      level: "B1",
+      type: "NOUN",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "Constitution",
+      ],
+      spec: {
+        article: "Die",
+        meanings: ["death penalty", "capital punishment"],
+        plural: "Todesstrafen",
+        samples: [
+          {
+            translation:
+              "The death penalty is a controversial topic worldwide.",
+            sample: "Die Todesstrafe ist ein kontroverses Thema weltweit.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Thema",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Education", "Occupation"],
+      spec: {
+        article: "Das",
+        meanings: ["topic", "subject", "theme"],
+        plural: "Themen",
+        samples: [
+          {
+            translation: "The topic was complex but interesting.",
+            sample: "Das Thema war komplex, aber interessant.",
+          },
+          {
+            translation: "We discussed various subjects in class.",
+            sample: "Wir haben verschiedene Themen im Unterricht besprochen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Folter",
+      level: "B1",
+      type: "NOUN",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "Constitution",
+      ],
+      spec: {
+        article: "Die",
+        meanings: ["torture"],
+        plural: "Foltern",
+        samples: [
+          {
+            translation: "Torture is prohibited under international law.",
+            sample: "Folter ist nach internationalem Recht verboten.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Asyl",
+      level: "B1",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Constitution"],
+      spec: {
+        article: "Das",
+        meanings: ["asylum", "refuge"],
+        plural: "Asyle",
+        samples: [
+          {
+            translation: "Many people seek asylum in foreign countries.",
+            sample: "Viele Menschen suchen in fremden Ländern Asyl.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Bundestag",
+      level: "B1",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Constitution"],
+      spec: {
+        article: "Der",
+        meanings: ["German Parliament"],
+        plural: "Bundestage",
+        samples: [
+          {
+            translation: "The Bundestag is the federal parliament of Germany.",
+            sample: "Der Bundestag ist das Bundesparlament Deutschlands.",
+          },
+          {
+            translation:
+              "Members of the Bundestag are elected by the citizens.",
+            sample: "Mitglieder des Bundestags werden von den Bürgern gewählt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Mitglied",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Official matters", "Constitution"],
+      spec: {
+        article: "Das",
+        meanings: ["member"],
+        plural: "Mitglieder",
+        samples: [
+          {
+            translation: "She is a member of the local community center.",
+            sample: "Sie ist Mitglied des örtlichen Gemeindezentrums.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Begriff",
+      level: "B1",
+      type: "NOUN",
+      categories: ["General", "Education", "Occupation"],
+      spec: {
+        article: "Der",
+        meanings: ["concept", "term", "notion"],
+        plural: "Begriffe",
+        samples: [
+          {
+            translation: "The concept was difficult to understand.",
+            sample: "Der Begriff war schwer zu verstehen.",
+          },
+        ],
       } as NounSpec,
     },
   ],
