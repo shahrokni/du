@@ -8589,6 +8589,615 @@
           }
         ]
       }
+    },
+    {
+      "word": "Anhänger",
+      "level": "B1",
+      "type": "NOUN",
+      "categories": ["General", "Directions and transportation"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["trailer"],
+        "plural": "Anhänger",
+        "samples": [
+          {
+            "translation": "The trailer is attached to the back of the truck.",
+            "sample": "Der Anhänger ist am hinteren Teil des Lastwagens befestigt."
+          },
+          {
+            "translation": "He towed the trailer with his car.",
+            "sample": "Er zog den Anhänger mit seinem Auto."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Hund",
+      "level": "A1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["dog"],
+        "plural": "Hunde",
+        "samples": [
+          {
+            "translation": "The dog is playing in the park.",
+            "sample": "Der Hund spielt im Park."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Wolf",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["wolf"],
+        "plural": "Wölfe",
+        "samples": [
+          {
+            "translation": "A wolf is a wild animal that lives in forests.",
+            "sample": "Ein Wolf ist ein wildes Tier, das in Wäldern lebt."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Tier",
+      "level": "A1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Das",
+        "meanings": ["animal", "creature"],
+        "plural": "Tiere",
+        "samples": [
+          {
+            "translation": "The zoo has many different animals.",
+            "sample": "Der Zoo hat viele verschiedene Tiere."
+          },
+          {
+            "translation": "Animals are an important part of our ecosystem.",
+            "sample": "Tiere sind ein wichtiger Teil unseres Ökosystems."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Affe",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["monkey", "ape"],
+        "plural": "Affen",
+        "samples": [
+          {
+            "translation": "The monkey swung from tree to tree.",
+            "sample": "Der Affe schwang sich von Baum zu Baum."
+          },
+          {
+            "translation": "Monkeys are known for their intelligence and agility.",
+            "sample": "Affen sind für ihre Intelligenz und Beweglichkeit bekannt."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Schlange",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Die",
+        "meanings": ["snake"],
+        "plural": "Schlangen",
+        "samples": [
+          {
+            "translation": "Snakes can be found in various habitats around the world.",
+            "sample": "Schlangen sind in verschiedenen Lebensräumen auf der ganzen Welt zu finden."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Lebensraum",
+      "level": "B1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets", "Nature"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["habitat", "living space"],
+        "plural": "Lebensräume",
+        "samples": [
+          {
+            "translation": "Protecting animal habitats is important.",
+            "sample": "Der Schutz von Lebensräumen für Tiere ist wichtig."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Pferd",
+      "level": "A1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Das",
+        "meanings": ["horse"],
+        "plural": "Pferde",
+        "samples": [
+          {
+            "translation": "The horse is running in the field.",
+            "sample": "Das Pferd läuft auf dem Feld."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Kuh",
+      "level": "A1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Die",
+        "meanings": ["cow"],
+        "plural": "Kühe",
+        "samples": [
+          {
+            "translation": "The cow is grazing in the meadow.",
+            "sample": "Die Kuh grast auf der Wiese."
+          },
+          {
+            "translation": "Cows produce milk for dairy products.",
+            "sample": "Kühe produzieren Milch für Milchprodukte."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Schaf",
+      "level": "A1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Das",
+        "meanings": ["sheep"],
+        "plural": "Schafe",
+        "samples": [
+          {
+            "translation": "The sheep are in the pasture.",
+            "sample": "Die Schafe sind auf der Weide."
+          },
+          {
+            "translation": "Sheep provide wool for clothing.",
+            "sample": "Schafe liefern Wolle für Kleidung."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Rind",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Das",
+        "meanings": ["cattle", "bovine"],
+        "plural": "Rinder",
+        "samples": [
+          {
+            "translation": "Cattle are raised for meat and dairy products.",
+            "sample": "Rinder werden für Fleisch- und Milchprodukte gezüchtet."
+          },
+          {
+            "translation": "The farm has a large herd of cattle.",
+            "sample": "Der Bauernhof hat eine große Rinderherde."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Schwein",
+      "level": "A1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Das",
+        "meanings": ["pig", "swine"],
+        "plural": "Schweine",
+        "samples": [
+          {
+            "translation": "The pig is rolling in the mud.",
+            "sample": "Das Schwein wälzt sich im Schlamm."
+          },
+          {
+            "translation": "Pigs are intelligent animals.",
+            "sample": "Schweine sind intelligente Tiere."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Adler",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["eagle"],
+        "plural": "Adler",
+        "samples": [
+          {
+            "translation": "The eagle soars high in the sky.",
+            "sample": "Der Adler schwebt hoch am Himmel."
+          },
+          {
+            "translation": "Eagles have excellent vision.",
+            "sample": "Adler haben ausgezeichnetes Sehvermögen."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Löwe",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["lion"],
+        "plural": "Löwen",
+        "samples": [
+          {
+            "translation": "The lion is known as the king of the jungle.",
+            "sample": "Der Löwe ist als König des Dschungels bekannt."
+          },
+          {
+            "translation": "Lions live in prides and hunt together.",
+            "sample": "Löwen leben in Rudeln und jagen gemeinsam."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Dschungel",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets", "Nature"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["jungle"],
+        "plural": "Dschungel",
+        "samples": [
+          {
+            "translation": "The jungle was dark and scary.",
+            "sample": "Der Dschungel war dunkel und unheimlich."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Tiger",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["tiger"],
+        "plural": "Tiger",
+        "samples": [
+          {
+            "translation": "The tiger is a powerful animal.",
+            "sample": "Der Tiger ist ein mächtiges Tier."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Zebra",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Das",
+        "meanings": ["zebra"],
+        "plural": "Zebras",
+        "samples": [
+          {
+            "translation": "The zebra has distinctive black and white stripes.",
+            "sample": "Das Zebra hat markante schwarz-weiße Streifen."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Vogel",
+      "level": "A1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["bird"],
+        "plural": "Vögel",
+        "samples": [
+          {
+            "translation": "The bird is singing in the tree.",
+            "sample": "Der Vogel singt im Baum."
+          },
+          {
+            "translation": "Birds can fly high in the sky.",
+            "sample": "Vögel können hoch am Himmel fliegen."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Alligator",
+      "level": "B1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["alligator"],
+        "plural": "Alligatoren",
+        "samples": [
+          {
+            "translation": "The alligator lives in swamps and rivers.",
+            "sample": "Der Alligator lebt in Sümpfen und Flüssen."
+          }
+        ]
+      }
+    },
+    {
+      "word": "See",
+      "level": "A1",
+      "type": "NOUN",
+      "categories": ["General", "Nature"],
+      "spec": {
+        "article": "Die",
+        "meanings": ["lake", "sea"],
+        "plural": "Seen",
+        "samples": [
+          {
+            "translation": "We spent the weekend at the lake.",
+            "sample": "Wir verbrachten das Wochenende am See."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Elefant",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["elephant"],
+        "plural": "Elefanten",
+        "samples": [
+          {
+            "translation": "The elephant is the largest land animal.",
+            "sample": "Der Elefant ist das größte Landtier."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Maus",
+      "level": "A1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Die",
+        "meanings": ["mouse"],
+        "plural": "Mäuse",
+        "samples": [
+          {
+            "translation": "The mouse is small and quick.",
+            "sample": "Die Maus ist klein und flink."
+          },
+          {
+            "translation": "Mice like to eat cheese.",
+            "sample": "Mäuse essen gerne Käse."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Fisch",
+      "level": "A1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["fish"],
+        "plural": "Fische",
+        "samples": [
+          {
+            "translation": "The fish is swimming in the pond.",
+            "sample": "Der Fisch schwimmt im Teich."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Hai",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["shark"],
+        "plural": "Haie",
+        "samples": [
+          {
+            "translation": "Sharks are found in oceans around the world.",
+            "sample": "Haie sind in Ozeanen auf der ganzen Welt zu finden."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Frosch",
+      "level": "A1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["frog"],
+        "plural": "Frösche",
+        "samples": [
+          {
+            "translation": "The frog is jumping near the pond.",
+            "sample": "Der Frosch springt in der Nähe des Teichs."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Teich",
+      "level": "B1",
+      "type": "NOUN",
+      "categories": ["General", "Nature"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["pond"],
+        "plural": "Teiche",
+        "samples": [
+          {
+            "translation": "The pond is home to many frogs and fish.",
+            "sample": "Der Teich ist die Heimat vieler Frösche und Fische."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Heimat",
+      "level": "B1",
+      "type": "NOUN",
+      "categories": ["General", "Nature"],
+      "spec": {
+        "article": "Die",
+        "meanings": ["home", "homeland"],
+        "plural": "Heimaten",
+        "samples": [
+          {
+            "translation": "Many animals return to their homeland to breed.",
+            "sample": "Viele Tiere kehren in ihre Heimat zurück, um sich zu paaren."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Fuchs",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["fox"],
+        "plural": "Füchse",
+        "samples": [
+          {
+            "translation": "The fox is known for its cunning nature.",
+            "sample": "Der Fuchs ist für seine listige Natur bekannt."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Krähe",
+      "level": "B1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Die",
+        "meanings": ["crow"],
+        "plural": "Krähen",
+        "samples": [
+          {
+            "translation": "Crows are highly intelligent birds.",
+            "sample": "Krähen sind hochintelligente Vögel."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Ziege",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Die",
+        "meanings": ["goat"],
+        "plural": "Ziegen",
+        "samples": [
+          {
+            "translation": "The goat is climbing the rocky hill.",
+            "sample": "Die Ziege klettert den felsigen Hügel hinauf."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Esel",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["donkey"],
+        "plural": "Esel",
+        "samples": [
+          {
+            "translation": "The donkey is carrying a heavy load.",
+            "sample": "Der Esel trägt eine schwere Last."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Bär",
+      "level": "A2",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Der",
+        "meanings": ["bear"],
+        "plural": "Bären",
+        "samples": [
+          {
+            "translation": " A bear is a very strong animal.",
+            "sample": "Ein Bär ist ein sehr starkes Tier."
+          },
+          {
+            "translation": "Bears like eating honey and fish.",
+            "sample": "Bären essen gerne Honig und Fisch."
+          }
+        ]
+      }
+    },
+    {
+      "word": "Ente",
+      "level": "A1",
+      "type": "NOUN",
+      "categories": ["General", "Animals and pets"],
+      "spec": {
+        "article": "Die",
+        "meanings": ["duck"],
+        "plural": "Enten",
+        "samples": [
+          {
+            "translation": "The duck is swimming in the pond.",
+            "sample": "Die Ente schwimmt im Teich."
+          }
+        ]
+      }
     }
   ]
 }
