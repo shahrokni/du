@@ -41,7 +41,8 @@ type Category =
   | "Art, music and culture"
   | "Constitution"
   | "Law and order"
-  | "Financial matters";
+  | "Financial matters"
+  | "Children";
 
 type PersonalPronouns = "ich" | "du" | "er_sie_es" | "wir" | "ihr" | "sie_Sie";
 
@@ -120,15 +121,7 @@ type Contraction = "beim" | "zum" | "zur" | "im" | "am" | "ins" | "aufs";
 interface WordSample {
   sample: string;
   translation: string;
-  explanations?: Explain[];
-}
-
-interface QuickGrammar {
-  key: string;
-  title: string;
-  explain: string[];
-  example: Array<{ example: string; translation: string }>;
-  important_notes?: string[];
+  grammars: string[];
 }
 
 interface Explain {
@@ -173,166 +166,10 @@ interface PrepositionDetail {
 }
 
 interface Data {
-  prepositions: PrepositionDetail[];
-  grammar: QuickGrammar[];
   words: Word[];
 }
 
 const data: Data = {
-  prepositions: [],
-  grammar: [
-    {
-      key: "von",
-      title: "von Preposition",
-      explain: [
-        `The German preposition "von" is primarily used to indicate origin, possession, authorship, and certain relationships. It is always followed by the dative case.`,
-        `1. Origin or Source: "von" indicates where someone or something comes from.`,
-        `2. Possession: It shows ownership or association.`,
-        `3. Authorship: It is used to indicate the creator of a work.`,
-        `4. Relationships: "von" can denote relationships between people or things.`,
-        `When using "von," ensure that the noun following it is in the dative case, which may involve changing the article or adjective endings accordingly.`,
-      ],
-      example: [
-        {
-          example: "Das Buch ist von dem Autor geschrieben.",
-          translation: "The book is written by the author.",
-        },
-        {
-          example: "Ich komme von der Schule.",
-          translation: "I am coming from the school.",
-        },
-      ],
-    },
-    {
-      key: "vom",
-      title: "vom Contraction",
-      explain: [
-        `The contraction "vom" is a combination of the preposition "von" (from/of) and the definite article "dem" (the) in the dative case. It is used to indicate origin, possession, authorship, and certain relationships, just like "von," but specifically when referring to masculine or neuter nouns in the dative case.`,
-        `When using "vom," ensure that the noun following it is in the dative case, which may involve changing the article or adjective endings accordingly.`,
-      ],
-      example: [
-        {
-          example: "Ich komme vom Arzt.",
-          translation: "I am coming from the doctor.",
-        },
-        {
-          example: "Das Geschenk ist vom Freund.",
-          translation: "The gift is from the friend.",
-        },
-      ],
-    },
-    {
-      key: "vor",
-      title: "vor Preposition",
-      explain: [
-        `The German preposition "vor" is used to indicate position, time, and causation. It can be followed by either the dative or accusative case, depending on the context.`,
-        `1. Position: When "vor" indicates a static position (where something is located), it is followed by the dative case.`,
-        `2. Movement: When "vor" indicates movement towards a place (where something is going), it is followed by the accusative case.`,
-        `3. Time: "vor" is used to express time before an event or action and is typically followed by the dative case.`,
-        `4. Causation: It can also indicate a reason or cause for something and is usually followed by the dative case.`,
-      ],
-      example: [
-        {
-          example: "Das Auto steht vor dem Haus.",
-          translation: "The car is in front of the house.",
-        },
-        {
-          example: "Ich gehe vor das Haus.",
-          translation: "I am going in front of the house.",
-        },
-      ],
-    },
-    {
-      key: "Akkusativ",
-      title: "Akkusativ",
-      explain: [
-        `In German, the accusative case (der Akkusativ) is used for the direct object of a sentence—the person or thing that receives the action of the verb. It affects the articles and pronouns used with nouns, with changes being most noticeable for masculine nouns.`,
-        `To determine if a noun is in the accusative case, you can ask the question "Wen?" (whom?) for people or "Was?" (what?) for things.`,
-        `The most significant change in the accusative case is the masculine definite article "der," which changes to "den."`,
-        `Many German verbs are "transitive," meaning they must have a direct object. When you use one of these verbs, the object is always in the accusative case.`,
-        `Some prepositions are always followed by the accusative case, regardless of context. A mnemonic to remember some of these is "FUDGEBO" (für, um, durch, gegen, ohne).`,
-        `A group of prepositions can take either the accusative or dative case, depending on whether they express movement/direction (accusative) or a fixed location (dative).`,
-      ],
-      example: [
-        {
-          example: "Ich sehe den Hund.",
-          translation: "I see the dog.",
-        },
-        {
-          example: "Sie kauft einen Apfel.",
-          translation: "She buys an apple.",
-        },
-        {
-          example: "Wir gehen durch den Park.",
-          translation: "We are walking through the park.",
-        },
-      ],
-    },
-    {
-      key: "Dativ",
-      title: "Dativ",
-      explain: [
-        `In German, the dative case (der Dativ) is used for the indirect object of a sentence—the person or thing that receives the direct object or benefits from the action of the verb. It affects the articles and pronouns used with nouns, with changes being most noticeable for masculine and neuter nouns.`,
-        `To determine if a noun is in the dative case, you can ask the question "Wem?" (to whom?) or "Was?" (to what?).`,
-        `Masculine and neuter nouns follow the same pattern in the dative case, changing to dem for the definite article and einem for the indefinite article.`,
-        `Feminine nouns change their definite article die to der and their indefinite article eine to einer.`,
-        `Plural nouns change their definite article die to den. They also typically take an additional "-n" at the end of the noun itself, unless the noun already ends in "-n" or "-s".`,
-      ],
-      example: [
-        {
-          example: "Ich gebe dem Mann das Buch.",
-          translation: "I give the book to the man.",
-        },
-      ],
-    },
-    {
-      key: "wenn",
-      title: "wenn Connector",
-      explain: [
-        `In German, "wenn" is a subordinating conjunction used to introduce conditional clauses (if-clauses) and temporal clauses (when-clauses). It is similar to the English "if" or "when," depending on the context.`,
-        `1. Conditional Clauses: "wenn" is used to express conditions or hypothetical situations. The verb in the "wenn" clause is placed at the end of the clause.`,
-        `2. Temporal Clauses: "wenn" can also indicate that one action occurs when another action takes place. Again, the verb in the "wenn" clause goes to the end.`,
-        `When using "wenn," remember that it is a subordinating conjunction, which means it sends the conjugated verb to the end of the clause it introduces.`,
-      ],
-      example: [
-        {
-          example: "Wenn es regnet, bleibe ich zu Hause.",
-          translation: "If it rains, I stay at home.",
-        },
-        {
-          example: "Ich rufe dich an, wenn ich zu Hause bin.",
-          translation: "I will call you when I am at home.",
-        },
-        {
-          translation: "If the weather is good, we will go for a walk.",
-          example: "Wenn das Wetter gut ist, gehen wir spazieren.",
-        },
-      ],
-    },
-    {
-      key: "weil",
-      title: "weil Connector",
-      explain: [
-        `In German, "weil" is a subordinating conjunction used to introduce causal clauses, similar to the English "because." It explains the reason or cause for an action or situation.`,
-        `When using "weil," the verb in the clause introduced by "weil" is placed at the end of that clause.`,
-        `Remember that "weil" is a subordinating conjunction, which means it sends the conjugated verb to the end of the clause it introduces.`,
-      ],
-      example: [
-        {
-          example: "Ich bleibe zu Hause, weil es regnet.",
-          translation: "I stay at home because it is raining.",
-        },
-        {
-          example: "Sie ist müde, weil sie nicht geschlafen hat.",
-          translation: "She is tired because she did not sleep.",
-        },
-        {
-          translation: "We are going to the park because the weather is nice.",
-          example: "Wir gehen in den Park, weil das Wetter schön ist.",
-        },
-      ],
-    },
-  ],
   words: [
     {
       word: "Stadtzentrum",
@@ -9390,6 +9227,1227 @@ const data: Data = {
           },
         ],
       } as NounSpec,
+    },
+    {
+      word: "tragen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Shopping and clothing", "Daily routines"],
+      spec: {
+        meanings: ["to wear"],
+        samples: [
+          {
+            translation: "She likes to wear colorful dresses.",
+            sample: "Sie trägt gerne bunte Kleider.",
+          },
+          {
+            sample: "Ich trage meine Brille.",
+            translation: "I wear my glasses.",
+          },
+          {
+            sample: "Du trägst einen Hut.",
+            translation: "you wear a hat.",
+          },
+          {
+            sample: "Er trägt seine Brille, um besser zu sehen.",
+            translation: "He wears his glasses to see better.",
+          },
+          {
+            sample: "Wenn Papa seine Brille trägt, dann sieht er klarer.",
+            translation: "When dad wears his glasses, he sees more clearly.",
+          },
+        ],
+        infinitive: "tragen",
+        conjugation: {
+          ich: "trage",
+          du: "trägst",
+          er_sie_es: "trägt",
+          wir: "tragen",
+          ihr: "tragt",
+          sie_Sie: "tragen",
+        },
+        pp: "getragen",
+      } as VerbSpec,
+    },
+    {
+      word: "spielen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Hobbies", "Children"],
+      spec: {
+        meanings: ["to play"],
+        samples: [
+          {
+            translation: "The children love to play in the park.",
+            sample: "Die Kinder spielen gerne im Park.",
+          },
+          {
+            sample: "ich spiele Fußball",
+            translation: "I play soccer",
+          },
+          {
+            sample: "du spielst Gitarre",
+            translation: "you play guitar",
+          },
+          {
+            sample: "The kid is playing with toys",
+            translation: "Das Kind spielt mit Spielzeug",
+          },
+        ],
+        infinitive: "spielen",
+        conjugation: {
+          ich: "spiele",
+          du: "spielst",
+          er_sie_es: "spielt",
+          wir: "spielen",
+          ihr: "spielt",
+          sie_Sie: "spielen",
+        },
+        pp: "gespielt",
+      } as VerbSpec,
+    },
+    {
+      word: "verhandeln",
+      level: "B1",
+      type: "VERB",
+      categories: ["General", "Official matters", "Law and order"],
+      spec: {
+        meanings: ["to negotiate", "to discuss", "to hear (a case)"],
+        samples: [
+          {
+            translation: "The court will hear the case next week.",
+            sample: "Das Gericht wird den Fall nächste Woche verhandeln.",
+          },
+          {
+            translation: "They are negotiating a new contract.",
+            sample: "Sie verhandeln einen neuen Vertrag.",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "Vertrag",
+      level: "A2",
+      type: "NOUN",
+      categories: [
+        "General",
+        "Official matters",
+        "Law and order",
+        "Occupation",
+      ],
+      spec: {
+        article: "Der",
+        meanings: ["contract", "agreement"],
+        plural: "Verträge",
+        samples: [
+          {
+            translation: "They signed a contract for the new job.",
+            sample: "Sie haben einen Vertrag für den neuen Job unterschrieben.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "zahlen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Financial matters", "Shopping and clothing"],
+      spec: {
+        meanings: ["to pay"],
+        samples: [
+          {
+            sample: "ich zahle die Rechnung",
+            translation: "I pay the bill",
+          },
+          {
+            translation: "I did not pay the bill",
+            sample: "Ich habe die Rechnung nicht gezahlt.",
+          },
+          {
+            translation: "How can I pay the bill?",
+            sample: "Wie kann ich die Rechnung zahlen?",
+          },
+        ],
+        infinitive: "zahlen",
+        conjugation: {
+          ich: "zahle",
+          du: "zahlst",
+          er_sie_es: "zahlt",
+          wir: "zahlen",
+          ihr: "zahlt",
+          sie_Sie: "zahlen",
+        },
+        pp: "gezahlt",
+      } as VerbSpec,
+    },
+    {
+      word: "aufstehen",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Daily routines"],
+      spec: {
+        meanings: ["to get up", "to stand up"],
+        samples: [
+          {
+            sample: "ich stehe um 7 Uhr auf",
+            translation: "I get up at 7 o'clock",
+          },
+        ],
+        infinitive: "aufstehen",
+        conjugation: {
+          ich: "stehe auf",
+          du: "stehst auf",
+          er_sie_es: "steht auf",
+          wir: "stehen auf",
+          ihr: "steht auf",
+          sie_Sie: "stehen auf",
+        },
+        pp: "aufgestanden",
+      } as VerbSpec,
+    },
+    {
+      word: "Vorsprung",
+      level: "B2",
+      type: "NOUN",
+      categories: ["General", "Education", "Occupation", "Technology"],
+      spec: {
+        article: "Der",
+        meanings: ["advantage", "lead", "head start"],
+        plural: "Vorsprünge",
+        samples: [
+          {
+            translation:
+              "The company has a technological advantage over its competitors.",
+            sample:
+              "Das Unternehmen hat einen technologischen Vorsprung gegenüber seinen Wettbewerbern.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Unternehmen",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Education", "Occupation", "Technology"],
+      spec: {
+        article: "Das",
+        meanings: ["company", "enterprise", "business"],
+        plural: "Unternehmen",
+        samples: [
+          {
+            translation:
+              "The company is expanding its operations internationally.",
+            sample:
+              "Das Unternehmen erweitert seine Aktivitäten international.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "erweitern",
+      level: "B1",
+      type: "VERB",
+      categories: ["General", "Education", "Occupation", "Technology"],
+      spec: {
+        meanings: ["to expand", "to extend", "to broaden"],
+        samples: [
+          {
+            translation:
+              "To expand your knowledge, you should read more books.",
+            sample:
+              "Um Ihr Wissen zu erweitern, sollten Sie mehr Bücher lesen.",
+          },
+        ],
+        conjugation: {
+          ich: "erweitere",
+          du: "erweiterst",
+          er_sie_es: "erweitert",
+          wir: "erweitern",
+          ihr: "erweitert",
+          sie_Sie: "erweitern",
+        },
+        infinitive: "erweitern",
+        pp: "erweitert",
+      } as VerbSpec,
+    },
+    {
+      word: "Ziel",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Education", "Occupation", "Technology"],
+      spec: {
+        article: "Das",
+        meanings: ["goal", "target", "objective"],
+        plural: "Ziele",
+        samples: [
+          {
+            translation: "Our next target is to improve customer satisfaction.",
+            sample:
+              "Unser nächstes Ziel ist es, die Kundenzufriedenheit zu verbessern.",
+          },
+          {
+            translation: "What will be the main goal of the project?",
+            sample: "Was wird das Hauptziel des Projekts sein?",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "reden",
+      level: "A1",
+      type: "VERB",
+      categories: ["General", "Daily routines", "Communication"],
+      spec: {
+        meanings: ["to talk", "to speak"],
+        samples: [
+          {
+            translation: "They like to talk about their hobbies.",
+            sample: "Sie reden gerne über ihre Hobbys.",
+          },
+          {
+            sample: "ich rede mit meinem Freund",
+            translation: "I talk with my friend",
+          },
+        ],
+        conjugation: {
+          ich: "rede",
+          du: "redest",
+          er_sie_es: "redet",
+          wir: "reden",
+          ihr: "redet",
+          sie_Sie: "reden",
+        },
+        infinitive: "reden",
+        pp: "geredet",
+      } as VerbSpec,
+    },
+    {
+      word: "Ausflug",
+      level: "A2",
+      type: "NOUN",
+      categories: [
+        "General",
+        "Directions and transportation",
+        "Travel and holidays",
+        "Leisure",
+      ],
+      spec: {
+        article: "Der",
+        meanings: ["excursion", "trip", "outing"],
+        plural: "Ausflüge",
+        samples: [
+          {
+            translation: "How was the trip to the mountains?",
+            sample: "Wie war der Ausflug in die Berge?",
+          },
+          {
+            sample: "Wir machen einen Ausflug zum See",
+            translation: "We are going on a trip to the lake",
+          },
+          {
+            sample: "Der Ausflug war sehr schön",
+            translation: "The trip was very nice",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Berg",
+      level: "A1",
+      type: "NOUN",
+      categories: ["Nature"],
+      spec: {
+        article: "Der",
+        meanings: ["mountain"],
+        plural: "Berge",
+        samples: [
+          {
+            sample: "Der Berg ist hoch",
+            translation: "The mountain is tall",
+          },
+          {
+            translation: "We hiked up the mountain.",
+            sample: "Wir sind den Berg hinaufgewandert.",
+          },
+          {
+            sample: "Die Berge sind wunderschön",
+            translation: "The mountains are beautiful",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "erfinden",
+      level: "B2",
+      type: "VERB",
+      categories: ["General", "Education", "Occupation", "Technology"],
+      spec: {
+        meanings: ["to invent", "to devise"],
+        samples: [
+          {
+            translation: "Thomas Edison invented the light bulb.",
+            sample: "Thomas Edison hat die Glühbirne erfunden.",
+          },
+          {
+            translation: "I invented a new machine.",
+            sample: "Ich habe eine neue Maschine erfunden.",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "Anfang",
+      level: "A1",
+      type: "NOUN",
+      categories: ["General", "Date and time"],
+      spec: {
+        article: "Der",
+        meanings: ["beginning", "start"],
+        plural: "Anfänge",
+        samples: [
+          {
+            translation: "The beginning of the movie was exciting.",
+            sample: "Der Anfang des Films war spannend.",
+          },
+          {
+            translation: "At the beginning of the year, we set new goals.",
+            sample: "Am Anfang des Jahres haben wir uns neue Ziele gesetzt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "abnehmen",
+      level: "A2",
+      type: "VERB",
+      categories: ["General", "Health", "Daily routines"],
+      spec: {
+        meanings: ["to lose weight", "to decrease", "to take off"],
+        samples: [
+          {
+            translation: "He wants to lose weight before summer.",
+            sample: "Er möchte vor dem Sommer abnehmen.",
+          },
+          {
+            translation: "The number of cases is decreasing.",
+            sample: "Die Zahl der Fälle nimmt ab.",
+          },
+          {
+            translation: "Please take off your shoes before entering.",
+            sample: "Bitte nehmen Sie Ihre Schuhe vor dem Betreten ab.",
+          },
+        ],
+        conjugation: {
+          ich: "nehme ab",
+          du: "nimmst ab",
+          er_sie_es: "nimmt ab",
+          wir: "nehmen ab",
+          ihr: "nehmt ab",
+          sie_Sie: "nehmen ab",
+        },
+        infinitive: "abnehmen",
+        pp: "abgenommen",
+      } as VerbSpec,
+    },
+    {
+      word: "erkennen",
+      level: "B1",
+      type: "VERB",
+      categories: ["General", "Education", "Occupation", "Technology"],
+      spec: {
+        meanings: ["to recognize", "to identify", "to realize"],
+        samples: [
+          {
+            sample: "Ich erkenne das Lied sofort",
+            translation: "I recognize the song immediately",
+          },
+          {
+            translation: "No one could recognize him with the disguise.",
+            sample: "Niemand konnte ihn mit der Verkleidung erkennen.",
+          },
+        ],
+        conjugation: {
+          ich: "erkenne",
+          du: "erkennst",
+          er_sie_es: "erkennt",
+          wir: "erkennen",
+          ihr: "erkennt",
+          sie_Sie: "erkennen",
+        },
+        infinitive: "erkennen",
+        pp: "erkannt",
+      } as VerbSpec,
+    },
+    {
+      word: "Verkleidung",
+      level: "B1",
+      type: "NOUN",
+      categories: ["General", "Leisure", "Hobbies"],
+      spec: {
+        article: "Die",
+        meanings: ["disguise", "costume"],
+        plural: "Verkleidungen",
+        samples: [
+          {
+            translation: "She wore a disguise to the costume party.",
+            sample: "Sie trug eine Verkleidung zur Kostümparty.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "helfen",
+      level: "A1",
+      type: "VERB",
+      categories: [
+        "General",
+        "Daily routines",
+        "Communication",
+        "Children",
+        "Family and friends",
+      ],
+      spec: {
+        meanings: ["to help", "to assist"],
+        samples: [
+          {
+            translation: "Can you help me with my homework?",
+            sample: "Kannst du mir bei meinen Hausaufgaben helfen?",
+          },
+          {
+            sample: "No one will help me.",
+            translation: "Niemand wird mir helfen.",
+          },
+          {
+            translation: "Could you help me carry these bags?",
+            sample: "Könnten Sie mir helfen, diese Taschen zu tragen?",
+          },
+          {
+            translation: "If you help me, we can finish faster.",
+            sample: "Wenn du mir hilfst, können wir schneller fertig werden.",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "durchsuchen",
+      level: "B2",
+      type: "VERB",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        meanings: ["to search (a place)", "to examine"],
+        samples: [
+          {
+            translation: "The police will search the house for evidence.",
+            sample: "Die Polizei wird das Haus nach Beweisen durchsuchen.",
+          },
+          {
+            translation: "They searched the area thoroughly.",
+            sample: "Sie haben das Gebiet gründlich durchsucht.",
+          },
+        ],
+        conjugation: {
+          ich: "durchsuche",
+          du: "durchsuchst",
+          er_sie_es: "durchsucht",
+          wir: "durchsuchen",
+          ihr: "durchsucht",
+          sie_Sie: "durchsuchen",
+        },
+        infinitive: "durchsuchen",
+        pp: "durchsucht",
+      } as VerbSpec,
+    },
+    {
+      word: "Gebiet",
+      level: "A2",
+      type: "NOUN",
+      categories: ["General", "Nature"],
+      spec: {
+        article: "Das",
+        meanings: ["area", "region", "territory"],
+        plural: "Gebiete",
+        samples: [
+          {
+            translation: "The area is known for its beautiful landscapes.",
+            sample: "Das Gebiet ist für seine schönen Landschaften bekannt.",
+          },
+          {
+            translation: "They explored the region on foot.",
+            sample: "Sie haben das Gebiet zu Fuß erkundet.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "erkunden",
+      level: "B1",
+      type: "VERB",
+      categories: ["General", "Travel and holidays", "Nature"],
+      spec: {
+        meanings: ["to explore", "to scout"],
+        samples: [
+          {
+            translation: "We explored the new city during our vacation.",
+            sample:
+              "Wir haben die neue Stadt während unseres Urlaubs erkundet.",
+          },
+          {
+            translation: "The hikers explored the forest trails.",
+            sample: "Die Wanderer haben die Waldwege erkundet.",
+          },
+        ],
+        conjugation: {
+          ich: "erkunde",
+          du: "erkundest",
+          er_sie_es: "erkundet",
+          wir: "erkunden",
+          ihr: "erkundet",
+          sie_Sie: "erkunden",
+        },
+        infinitive: "erkunden",
+        pp: "erkundet",
+      } as VerbSpec,
+    },
+    {
+      word: "Anhänger",
+      level: "B1",
+      type: "NOUN",
+      categories: ["General", "Directions and transportation"],
+      spec: {
+        article: "Der",
+        meanings: ["trailer"],
+        plural: "Anhänger",
+        samples: [
+          {
+            translation: "The trailer is attached to the back of the truck.",
+            sample: "Der Anhänger ist am Heck des Lastwagens befestigt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "befestigen",
+      level: "B2",
+      type: "VERB",
+      categories: [
+        "General",
+        "Directions and transportation",
+        "Daily routines",
+        "Travel and holidays",
+      ],
+      spec: {
+        meanings: ["to attach", "to fasten", "to secure"],
+        samples: [
+          {
+            translation: "Please fasten your seatbelt before takeoff.",
+            sample: "Bitte befestigen Sie Ihren Sicherheitsgurt vor dem Start.",
+          },
+          {
+            sample: "Wir müssen unseren Gurt vor dem Start befestigen.",
+            translation: "We have to fasten our seatbelt before takeoff.",
+          },
+          {
+            sample: "Der Anhänger ist am Auto befestigt.",
+            translation: "The trailer is attached to the car.",
+          },
+        ],
+        conjugation: {
+          ich: "befestige",
+          du: "befestigst",
+          er_sie_es: "befestigt",
+          wir: "befestigen",
+          ihr: "befestigt",
+          sie_Sie: "befestigen",
+        },
+        infinitive: "befestigen",
+        pp: "befestigt",
+      } as VerbSpec,
+    },
+    {
+      word: "fangen",
+      type: "VERB",
+      level: "A1",
+      categories: ["General", "Animals and pets", "Children", "Leisure"],
+      spec: {
+        meanings: ["to catch"],
+        samples: [
+          {
+            translation: "The dog loves to catch the ball.",
+            sample: "Der Hund fängt gerne den Ball.",
+          },
+          {
+            translation: "I could not catch the ball.",
+            sample: "Ich konnte den Ball nicht fangen.",
+          },
+        ],
+        conjugation: {
+          ich: "fange",
+          du: "fängst",
+          er_sie_es: "fängt",
+          wir: "fangen",
+          ihr: "fangt",
+          sie_Sie: "fangen",
+        },
+        infinitive: "fangen",
+        pp: "gefangen",
+      } as VerbSpec,
+    },
+    {
+      word: "einpflanzen",
+      type: "VERB",
+      level: "A2",
+      categories: ["General", "Nature", "Daily routines", "Hobbies"],
+      spec: {
+        meanings: ["to plant", "to implant"],
+        samples: [
+          {
+            translation: "She likes to plant flowers in her garden.",
+            sample: "Sie pflanzt gerne Blumen in ihrem Garten.",
+          },
+        ],
+        conjugation: {
+          ich: "pflanze ein",
+          du: "pflanzt ein",
+          er_sie_es: "pflanzt ein",
+          wir: "pflanzen ein",
+          ihr: "pflanzt ein",
+          sie_Sie: "pflanzen ein",
+        },
+        infinitive: "einpflanzen",
+        pp: "eingepflanzt",
+      } as VerbSpec,
+    },
+    {
+      word: "Samen",
+      type: "NOUN",
+      level: "A2",
+      categories: ["General", "Nature", "Hobbies"],
+      spec: {
+        article: "Der",
+        meanings: ["seed"],
+        plural: "Samen",
+        samples: [
+          {
+            translation: "The seed will grow into a beautiful plant.",
+            sample: "Der Samen wird zu einer schönen Pflanze wachsen.",
+          },
+          {
+            translation: "She planted the seeds in the garden.",
+            sample: "Sie hat die Samen im Garten gepflanzt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "bohren",
+      type: "VERB",
+      level: "B1",
+      categories: ["General", "Nature", "Hobbies", "Technology"],
+      spec: {
+        meanings: ["to drill"],
+        samples: [
+          {
+            translation: "He is drilling a hole in the wall.",
+            sample: "Er bohrt ein Loch in die Wand.",
+          },
+          {
+            sample: "Wir bohren ein Loch im Garten.",
+            translation: "We are drilling a hole in the garden.",
+          },
+        ],
+        conjugation: {
+          ich: "bohre",
+          du: "bohrst",
+          er_sie_es: "bohrt",
+          wir: "bohren",
+          ihr: "bohrt",
+          sie_Sie: "bohren",
+        },
+        infinitive: "bohren",
+        pp: "gebohrt",
+      } as VerbSpec,
+    },
+    {
+      word: "Loch",
+      type: "NOUN",
+      level: "A2",
+      categories: ["General", "Nature"],
+      spec: {
+        article: "Das",
+        meanings: ["hole"],
+        plural: "Löcher",
+        samples: [
+          {
+            translation: "The hole in the ground is deep.",
+            sample: "Das Loch im Boden ist tief.",
+          },
+          {
+            translation: "He dug a hole to plant the tree.",
+            sample: "Er hat ein Loch gegraben, um den Baum zu pflanzen.",
+          },
+          {
+            translation: "The puppy fell into the hole.",
+            sample: "Der Welpe fiel in das Loch.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Boden",
+      type: "NOUN",
+      level: "A1",
+      categories: ["General", "Nature"],
+      spec: {
+        article: "Der",
+        meanings: ["ground", "soil", "floor"],
+        plural: "Böden",
+        samples: [
+          {
+            translation: "The ground is wet after the rain.",
+            sample: "Der Boden ist nach dem Regen nass.",
+          },
+          {
+            translation: "She is cleaning the floor.",
+            sample: "Sie reinigt den Boden.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "abdecken",
+      type: "VERB",
+      level: "A2",
+      categories: ["General", "Daily routines", "Nature"],
+      spec: {
+        meanings: ["to cover", "to uncover"],
+        samples: [
+          {
+            translation: "Please cover the plants to protect them from frost.",
+            sample:
+              "Bitte decke die Pflanzen ab, um sie vor Frost zu schützen.",
+          },
+          {
+            translation: "If you do not cover the soil, it will dry out.",
+            sample: "Wenn du den Boden nicht abdeckst, wird er austrocknen.",
+          },
+        ],
+        conjugation: {
+          ich: "decke ab",
+          du: "deckst ab",
+          er_sie_es: "deckt ab",
+          wir: "decken ab",
+          ihr: "deckt ab",
+          sie_Sie: "decken ab",
+        },
+        infinitive: "abdecken",
+        pp: "abgedeckt",
+      } as VerbSpec,
+    },
+    {
+      word: "Erde",
+      type: "NOUN",
+      level: "A1",
+      categories: ["General", "Nature"],
+      spec: {
+        article: "Die",
+        meanings: ["earth", "soil", "ground"],
+        plural: "Erden",
+        samples: [
+          {
+            translation: "The soil is rich in nutrients.",
+            sample: "Die Erde ist reich an Nährstoffen.",
+          },
+          {
+            translation: "Plants need good soil to grow.",
+            sample: "Pflanzen brauchen gute Erde zum Wachsen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Pflanze",
+      type: "NOUN",
+      level: "A1",
+      categories: ["General", "Nature", "Hobbies"],
+      spec: {
+        article: "Die",
+        meanings: ["plant"],
+        plural: "Pflanzen",
+        samples: [
+          {
+            translation: "The plant needs water and sunlight to grow.",
+            sample: "Die Pflanze braucht Wasser und Sonnenlicht zum Wachsen.",
+          },
+          {
+            translation: "She waters the plants every day.",
+            sample: "Sie gießt die Pflanzen jeden Tag.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Sonnenlicht",
+      type: "NOUN",
+      level: "A2",
+      categories: ["General", "Nature"],
+      spec: {
+        article: "Das",
+        meanings: ["sunlight"],
+        plural: "Sonnenlichter",
+        samples: [
+          {
+            translation: "Plants need sunlight to grow.",
+            sample: "Pflanzen brauchen Sonnenlicht zum Wachsen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "graben",
+      type: "VERB",
+      level: "A2",
+      categories: ["General", "Nature", "Hobbies"],
+      spec: {
+        meanings: ["to dig"],
+        samples: [
+          {
+            translation: "He is digging a hole in the garden.",
+            sample: "Er gräbt ein Loch im Garten.",
+          },
+          {
+            translation: "The dog dug a hole in the yard.",
+            sample: "Der Hund hat ein Loch im Hof gegraben.",
+          },
+        ],
+        conjugation: {
+          ich: "grabe",
+          du: "gräbst",
+          er_sie_es: "gräbt",
+          wir: "graben",
+          ihr: "grabt",
+          sie_Sie: "graben",
+        },
+        infinitive: "graben",
+        pp: "gegraben",
+      } as VerbSpec,
+    },
+    {
+      word: "Hof",
+      type: "NOUN",
+      level: "A2",
+      categories: ["General", "Nature"],
+      spec: {
+        article: "Der",
+        meanings: ["yard", "courtyard", "farm"],
+        plural: "Höfe",
+        samples: [
+          {
+            translation: "The dog is playing in the yard.",
+            sample: "Der Hund spielt im Hof.",
+          },
+          {
+            translation: "The farm has a large yard.",
+            sample: "Der Bauernhof hat einen großen Hof.",
+          },
+          {
+            translation: "We should plant flowers in the yard.",
+            sample: "Wir sollten Blumen im Hof pflanzen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "gießen",
+      type: "VERB",
+      level: "A2",
+      categories: ["General", "Nature", "Hobbies", "Daily routines"],
+      spec: {
+        meanings: ["to water", "to pour"],
+        samples: [
+          {
+            translation: "She waters the plants every morning.",
+            sample: "Sie gießt die Pflanzen jeden Morgen.",
+          },
+        ],
+        conjugation: {
+          ich: "gieße",
+          du: "gießt",
+          er_sie_es: "gießt",
+          wir: "gießen",
+          ihr: "gießt",
+          sie_Sie: "gießen",
+        },
+        infinitive: "gießen",
+        pp: "gegossen",
+      } as VerbSpec,
+    },
+    {
+      word: "Geduld",
+      type: "NOUN",
+      level: "A2",
+      categories: ["General", "Family and friends", "Relationships"],
+      spec: {
+        article: "Die",
+        meanings: ["patience"],
+        plural: "Gedulden",
+        samples: [],
+      } as NounSpec,
+    },
+    {
+      word: "herauskommen",
+      type: "VERB",
+      level: "B1",
+      categories: ["General", "Nature", "Hobbies"],
+      spec: {
+        meanings: ["to come out", "to emerge"],
+        samples: [
+          {
+            translation: "The flowers will come out in spring.",
+            sample: "Die Blumen werden im Frühling herauskommen.",
+          },
+          {
+            translation: "The truth will eventually come out.",
+            sample: "Die Wahrheit wird schließlich herauskommen.",
+          },
+        ],
+        conjugation: {
+          ich: "komme heraus",
+          du: "kommst heraus",
+          er_sie_es: "kommt heraus",
+          wir: "kommen heraus",
+          ihr: "kommt heraus",
+          sie_Sie: "kommen heraus",
+        },
+        infinitive: "herauskommen",
+        pp: "herausgekommen",
+      } as VerbSpec,
+    },
+    {
+      word: "Sorge",
+      type: "NOUN",
+      level: "A2",
+      categories: [
+        "General",
+        "Family and friends",
+        "Relationships",
+        "Occupation",
+      ],
+      spec: {
+        article: "Die",
+        meanings: ["concern", "worry", "care"],
+        plural: "Sorgen",
+        samples: [
+          {
+            translation: "She has a lot of worries about her job.",
+            sample: "Sie hat viele Sorgen wegen ihres Jobs.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "wachsen",
+      type: "VERB",
+      level: "A2",
+      categories: ["General", "Nature", "Hobbies", "Daily routines"],
+      spec: {
+        meanings: ["to grow"],
+        samples: [
+          {
+            translation: "The plants grow quickly in the spring.",
+            sample: "Die Pflanzen wachsen im Frühling schnell.",
+          },
+        ],
+        conjugation: {
+          ich: "wachse",
+          du: "wächst",
+          er_sie_es: "wächst",
+          wir: "wachsen",
+          ihr: "wachst",
+          sie_Sie: "wachsen",
+        },
+        infinitive: "wachsen",
+        pp: "gewachsen",
+      } as VerbSpec,
+    },
+    {
+      word: "Entdeckung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Education", "Occupation", "Technology"],
+      spec: {
+        article: "Die",
+        meanings: ["discovery"],
+        plural: "Entdeckungen",
+        samples: [
+          {
+            translation: "The discovery of penicillin revolutionized medicine.",
+            sample:
+              "Die Entdeckung des Penicillins revolutionierte die Medizin.",
+          },
+          {
+            translation: "Scientists made a groundbreaking discovery.",
+            sample: "Wissenschaftler machten eine bahnbrechende Entdeckung.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Wissenschaft",
+      type: "NOUN",
+      level: "B1",
+      categories: ["General", "Education", "Occupation", "Technology"],
+      spec: {
+        article: "Die",
+        meanings: ["science"],
+        plural: "Wissenschaften",
+        samples: [
+          {
+            translation: "Science helps us understand the world around us.",
+            sample:
+              "Die Wissenschaft hilft uns, die Welt um uns herum zu verstehen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Welt",
+      type: "NOUN",
+      level: "A1",
+      categories: ["General", "Nature", "Travel and holidays"],
+      spec: {
+        article: "Die",
+        meanings: ["world"],
+        plural: "Welten",
+        samples: [
+          {
+            translation: "The world is a beautiful place.",
+            sample: "Die Welt ist ein schöner Ort.",
+          },
+          {
+            translation: "We live in a cruel world.",
+            sample: "Wir leben in einer grausamen Welt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Ort",
+      type: "NOUN",
+      level: "A1",
+      categories: ["General", "Nature", "Travel and holidays"],
+      spec: {
+        article: "Der",
+        meanings: ["place", "location"],
+        plural: "Orte",
+        samples: [
+          {
+            translation: "This place is very special to me.",
+            sample: "Dieser Ort ist mir sehr besonders.",
+          },
+          {
+            sample: "Wir besuchen viele Orte auf unserer Reise.",
+            translation: "We visit many places on our trip.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "aussuchen",
+      type: "VERB",
+      level: "A1",
+      categories: ["General", "Shopping and clothing", "Daily routines"],
+      spec: {
+        meanings: ["to choose", "to select"],
+        samples: [
+          {
+            translation: "You should choose the best option.",
+            sample: "Du solltest die beste Option aussuchen.",
+          },
+          {
+            translation: "What happens if I choose the wrong answer?",
+            sample: "Was passiert, wenn ich die falsche Antwort aussuche?",
+          },
+          {
+            translation: "You have chosen a beautiful place to live.",
+            sample: "Du hast einen schönen Ort zum Leben ausgesucht.",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "Antwort",
+      type: "NOUN",
+      level: "A1",
+      categories: ["General", "Education", "Communication"],
+      spec: {
+        article: "Die",
+        meanings: ["answer", "response"],
+        plural: "Antworten",
+        samples: [
+          {
+            translation: "She gave the correct answer to the question.",
+            sample: "Sie gab die richtige Antwort auf die Frage.",
+          },
+          {
+            translation: "What is the answer to this problem?",
+            sample: "Was ist die Antwort auf dieses Problem?",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Frage",
+      type: "NOUN",
+      level: "A1",
+      categories: ["General", "Education", "Communication"],
+      spec: {
+        article: "Die",
+        meanings: ["question", "inquiry"],
+        plural: "Fragen",
+        samples: [
+          {
+            translation: "I have a question about the homework.",
+            sample: "Ich habe eine Frage zu den Hausaufgaben.",
+          },
+          {
+            translation: "You did not answer my question.",
+            sample: "Du hast meine Frage nicht beantwortet.",
+          },
+          {
+            translation: "I have many questions.",
+            sample: "Ich habe viele Fragen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "antworten",
+      type: "VERB",
+      level: "A1",
+      categories: ["General", "Education", "Communication"],
+      spec: {
+        meanings: ["to answer", "to reply"],
+        samples: [
+          {
+            translation: "Please answer the question.",
+            sample: "Bitte beantworte die Frage.",
+          },
+          {
+            translation: "I can't answer that right now.",
+            sample: "Ich kann das jetzt nicht beantworten.",
+          },
+        ],
+        conjugation: {
+          ich: "antworte",
+          du: "antwortest",
+          er_sie_es: "antwortet",
+          wir: "antworten",
+          ihr: "antwortet",
+          sie_Sie: "antworten",
+        },
+        infinitive: "antworten",
+        pp: "geantwortet",
+      } as VerbSpec,
     },
   ],
 };
