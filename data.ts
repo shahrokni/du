@@ -10449,5 +10449,1514 @@ const data: Data = {
         pp: "geantwortet",
       } as VerbSpec,
     },
+    {
+      word: "Gewalt",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["power", "authority", "violence"],
+        plural: "Gewalten",
+        samples: [
+          {
+            translation: "The separation of powers is essential for democracy.",
+            sample: "Die Gewaltenteilung ist für die Demokratie wesentlich.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Gewaltenteilung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["separation of powers"],
+        plural: "Gewaltenteilungen",
+        samples: [
+          {
+            translation: "The separation of powers is essential for democracy.",
+            sample: "Die Gewaltenteilung ist für die Demokratie wesentlich.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Amt",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Das",
+        meanings: ["office", "department", "agency"],
+        plural: "Ämter",
+        samples: [
+          {
+            translation: "He works at the local government office.",
+            sample: "Er arbeitet im örtlichen Amt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Gemeindeverwaltung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["municipal administration", "local government"],
+        plural: "Gemeindeverwaltungen",
+        samples: [
+          {
+            translation: "The municipal administration handles local affairs.",
+            sample: "Die Gemeindeverwaltung regelt lokale Angelegenheiten.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "ernennen",
+      type: "VERB",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        meanings: ["to appoint", "to designate"],
+        samples: [
+          {
+            translation: "The president appointed a new minister.",
+            sample: "Der Präsident ernannte einen neuen Minister.",
+          },
+        ],
+        conjugation: {
+          ich: "ernenne",
+          du: "ernennst",
+          er_sie_es: "ernennt",
+          wir: "ernennen",
+          ihr: "ernennt",
+          sie_Sie: "ernennen",
+        },
+        infinitive: "ernennen",
+        pp: "ernannt",
+      } as VerbSpec,
+    },
+    {
+      word: "Bundeskanzler",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Der",
+        meanings: ["Federal Chancellor"],
+        plural: "Bundeskanzler",
+        samples: [
+          {
+            translation:
+              "The Federal Chancellor is the head of government in Germany.",
+            sample: "Der Bundeskanzler ist der Regierungschef in Deutschland.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Bundespräsident",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Der",
+        meanings: ["Federal President"],
+        plural: "Bundespräsidenten",
+        samples: [
+          {
+            translation:
+              "The Federal President represents the country internationally.",
+            sample: "Der Bundespräsident vertritt das Land international.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Gemeinde",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["municipality", "community"],
+        plural: "Gemeinden",
+        samples: [
+          {
+            translation: "The municipality is responsible for local services.",
+            sample:
+              "Die Gemeinde ist für lokale Dienstleistungen verantwortlich.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "herrschen",
+      type: "VERB",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        meanings: ["to rule", "to reign", "to prevail"],
+        samples: [
+          {
+            translation: "The king ruled the country for many years.",
+            sample: "Der König herrschte viele Jahre über das Land.",
+          },
+        ],
+        conjugation: {
+          ich: "herrsche",
+          du: "herrschst",
+          er_sie_es: "herrscht",
+          wir: "herrschen",
+          ihr: "herrscht",
+          sie_Sie: "herrschen",
+        },
+        infinitive: "herrschen",
+        pp: "geherrscht",
+      } as VerbSpec,
+    },
+    {
+      word: "gliedern",
+      type: "VERB",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        meanings: ["to structure", "to divide"],
+        samples: [
+          {
+            translation: "The report is structured into three main sections.",
+            sample: "Der Bericht ist in drei Hauptabschnitte gegliedert.",
+          },
+          {
+            translation: "The country is divided into several states.",
+            sample: "Das Land ist in mehrere Staaten gegliedert.",
+          },
+        ],
+        conjugation: {
+          ich: "gliedere",
+          du: "gliederst",
+          er_sie_es: "gliedert",
+          wir: "gliedern",
+          ihr: "gliedert",
+          sie_Sie: "gliedern",
+        },
+        infinitive: "gliedern",
+        pp: "gegliedert",
+      } as VerbSpec,
+    },
+    {
+      word: "Bericht",
+      type: "NOUN",
+      level: "B1",
+      categories: ["General", "Education", "Occupation", "Communication"],
+      spec: {
+        article: "Der",
+        meanings: ["report", "account"],
+        plural: "Berichte",
+        samples: [
+          {
+            translation: "The report was very detailed and informative.",
+            sample: "Der Bericht war sehr detailliert und informativ.",
+          },
+          {
+            translation: "She has written a report about the event.",
+            sample: "Sie hat einen Bericht über die Veranstaltung geschrieben.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "entwerfen",
+      type: "VERB",
+      level: "B2",
+      categories: ["General", "Education", "Occupation", "Official matters"],
+      spec: {
+        meanings: ["to design", "to draft"],
+        samples: [
+          {
+            translation: "The architect is designing a new building.",
+            sample: "Der Architekt entwirft ein neues Gebäude.",
+          },
+          {
+            translation: "She is drafting a proposal for the project.",
+            sample: "Sie entwirft einen Vorschlag für das Projekt.",
+          },
+        ],
+
+        conjugation: {
+          ich: "entwerfe",
+          du: "entwirfst",
+          er_sie_es: "entwirft",
+          wir: "entwerfen",
+          ihr: "entwerft",
+          sie_Sie: "entwerfen",
+        },
+        infinitive: "entwerfen",
+        pp: "entworfen",
+      } as VerbSpec,
+    },
+    {
+      word: "Vorschlag",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Education", "Occupation", "Official matters"],
+      spec: {
+        article: "Der",
+        meanings: ["proposal", "suggestion"],
+        plural: "Vorschläge",
+        samples: [
+          {
+            translation: "She made a proposal for the new project.",
+            sample: "Sie machte einen Vorschlag für das neue Projekt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "bilden",
+      type: "VERB",
+      level: "A2",
+      categories: ["General", "Education", "Occupation", "Official matters"],
+      spec: {
+        meanings: ["to form", "to develop"],
+        samples: [
+          {
+            translation: "The students form groups for the project.",
+            sample: "Die Schüler bilden Gruppen für das Projekt.",
+          },
+          {
+            translation: "We need to develop a plan for the event.",
+            sample: "Wir müssen einen Plan für die Veranstaltung bilden.",
+          },
+        ],
+        conjugation: {
+          ich: "bilde",
+          du: "bildest",
+          er_sie_es: "bildet",
+          wir: "bilden",
+          ihr: "bildet",
+          sie_Sie: "bilden",
+        },
+        infinitive: "bilden",
+        pp: "gebildet",
+      } as VerbSpec,
+    },
+    {
+      word: "Schulwesen",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Education", "Occupation", "Official matters"],
+      spec: {
+        article: "Das",
+        meanings: ["school system", "education system"],
+        plural: "Schulwesen",
+        samples: [
+          {
+            translation: "The school system varies from country to country.",
+            sample: "Das Schulwesen variiert von Land zu Land.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Verwaltung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["administration", "management"],
+        plural: "Verwaltungen",
+        samples: [
+          {
+            translation:
+              "The administration is responsible for local services.",
+            sample:
+              "Die Verwaltung ist für lokale Dienstleistungen verantwortlich.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Staatsoberhaupt",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Das",
+        meanings: ["head of state"],
+        plural: "Staatsoberhäupter",
+        samples: [
+          {
+            translation:
+              "The head of state represents the country internationally.",
+            sample: "Das Staatsoberhaupt vertritt das Land international.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Abkürzung",
+      type: "NOUN",
+      level: "A2",
+      categories: ["General", "Education", "Communication"],
+      spec: {
+        article: "Die",
+        meanings: ["abbreviation", "shortcut"],
+        plural: "Abkürzungen",
+        samples: [
+          {
+            translation: "LOL is an abbreviation for 'laughing out loud.'",
+            sample: "LOL ist eine Abkürzung für 'laut lachend.'",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Auslegung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["interpretation"],
+        plural: "Auslegungen",
+        samples: [
+          {
+            translation: "The interpretation of the law can vary.",
+            sample: "Die Auslegung des Gesetzes kann variieren.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "überwachen",
+      type: "VERB",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        meanings: ["to monitor", "to supervise"],
+        samples: [
+          {
+            translation: "The security cameras monitor the premises 24/7.",
+            sample:
+              "Die Überwachungskameras überwachen das Gelände rund um die Uhr.",
+          },
+        ],
+        conjugation: {
+          ich: "überwache",
+          du: "überwachst",
+          er_sie_es: "überwacht",
+          wir: "überwachen",
+          ihr: "überwacht",
+          sie_Sie: "überwachen",
+        },
+        infinitive: "überwachen",
+        pp: "überwacht",
+      } as VerbSpec,
+    },
+    {
+      word: "Gelände",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Das",
+        meanings: ["premises", "site", "area"],
+        plural: "Gelände",
+        samples: [
+          {
+            translation: "The premises are monitored by security cameras.",
+            sample: "Das Gelände wird von Überwachungskameras überwacht.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Einhaltung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["compliance", "adherence"],
+        plural: "Einhaltungen",
+        samples: [
+          {
+            translation:
+              "The company ensures compliance with safety regulations.",
+            sample:
+              "Das Unternehmen gewährleistet die Einhaltung der Sicherheitsvorschriften.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Schulpflicht",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["compulsory education"],
+        plural: "Schulpflichten",
+        samples: [
+          {
+            translation: "Compulsory education is mandatory for all children.",
+            sample: "Die Schulpflicht ist für alle Kinder verpflichtend.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Schweigepflicht",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["duty of confidentiality", "secrecy obligation"],
+        plural: "Schweigepflichten",
+        samples: [
+          {
+            translation:
+              "Doctors have a duty of confidentiality towards their patients.",
+            sample:
+              "Ärzte haben eine Schweigepflicht gegenüber ihren Patienten.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "leugnen",
+      type: "VERB",
+      level: "B2",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "Communication",
+      ],
+      spec: {
+        meanings: ["to deny", "to refute"],
+        samples: [
+          {
+            translation: "He denied all accusations against him.",
+            sample: "Er leugnete alle Anschuldigungen gegen sich.",
+          },
+        ],
+        conjugation: {
+          ich: "leugne",
+          du: "leugnest",
+          er_sie_es: "leugnet",
+          wir: "leugnen",
+          ihr: "leugnet",
+          sie_Sie: "leugnen",
+        },
+        infinitive: "leugnen",
+        pp: "geleugnet",
+      } as VerbSpec,
+    },
+    {
+      word: "Anschuldigung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["accusation", "allegation"],
+        plural: "Anschuldigungen",
+        samples: [
+          {
+            translation: "He is accused of theft.",
+            sample: "Er steht unter der Anschuldigung des Diebstahls.",
+          },
+          {
+            translation: "She faced false accusations at work.",
+            sample:
+              "Sie sah sich falschen Anschuldigungen bei der Arbeit gegenüber.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "strafen",
+      type: "VERB",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        meanings: ["to punish", "to penalize"],
+        samples: [
+          {
+            translation: "The court decided to punish the offender.",
+            sample: "Das Gericht entschied, den Täter zu strafen.",
+          },
+        ],
+        conjugation: {
+          ich: "strafe",
+          du: "strafst",
+          er_sie_es: "straft",
+          wir: "strafen",
+          ihr: "straft",
+          sie_Sie: "strafen",
+        },
+        infinitive: "strafen",
+        pp: "bestraft",
+      } as VerbSpec,
+    },
+    {
+      word: "Freiheitsstrafe",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["imprisonment", "custodial sentence"],
+        plural: "Freiheitsstrafen",
+        samples: [
+          {
+            translation: "He was sentenced to five years of imprisonment.",
+            sample: "Er wurde zu fünf Jahren Freiheitsstrafe verurteilt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Kürzung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["reduction", "cut"],
+        plural: "Kürzungen",
+        samples: [
+          {
+            translation: "The government announced budget cuts.",
+            sample: "Die Regierung kündigte Haushaltskürzungen an.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Sozialversicherung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["social security", "social insurance"],
+        plural: "Sozialversicherungen",
+        samples: [
+          {
+            translation: "Social security provides support for the unemployed.",
+            sample:
+              "Die Sozialversicherung bietet Unterstützung für Arbeitslose.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Unterstützung",
+      type: "NOUN",
+      level: "A2",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "Family and friends",
+      ],
+      spec: {
+        article: "Die",
+        meanings: ["support", "assistance"],
+        plural: "Unterstützungen",
+        samples: [
+          {
+            translation:
+              "She received support from her family during difficult times.",
+            sample:
+              "Sie erhielt Unterstützung von ihrer Familie in schwierigen Zeiten.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "wechseln",
+      type: "VERB",
+      level: "A1",
+      categories: ["General", "Daily routines"],
+      spec: {
+        meanings: ["to change", "to switch"],
+        samples: [
+          {
+            translation: "I need to change my clothes after work.",
+            sample: "Ich muss nach der Arbeit meine Kleidung wechseln.",
+          },
+        ],
+        conjugation: {
+          ich: "wechsle",
+          du: "wechselst",
+          er_sie_es: "wechselt",
+          wir: "wechseln",
+          ihr: "wechselt",
+          sie_Sie: "wechseln",
+        },
+        infinitive: "wechseln",
+        pp: "gewechselt",
+      } as VerbSpec,
+    },
+    {
+      word: "Einverständnis",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Das",
+        meanings: ["consent", "agreement"],
+        plural: "Einverständnisse",
+        samples: [
+          {
+            translation:
+              "You need to obtain consent before using someone's personal data.",
+            sample:
+              "Du musst das Einverständnis einholen, bevor du persönliche Daten von jemandem verwendest.",
+          },
+          {
+            translation: "She gave her consent to the terms and conditions.",
+            sample: "Sie gab ihr Einverständnis zu den Geschäftsbedingungen.",
+          },
+          {
+            translation:
+              "The project can only proceed with the consent of all parties involved.",
+            sample:
+              "Das Projekt kann nur mit dem Einverständnis aller beteiligten Parteien fortgesetzt werden.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Mehrheit",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["majority"],
+        plural: "Mehrheiten",
+        samples: [
+          {
+            translation: "The majority of voters supported the new policy.",
+            sample: "Die Mehrheit der Wähler unterstützte die neue Politik.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Arbeitgeber",
+      type: "NOUN",
+      level: "A2",
+      categories: ["General", "Occupation", "Daily routines"],
+      spec: {
+        article: "Der",
+        meanings: ["employer"],
+        plural: "Arbeitgeber",
+        samples: [
+          {
+            translation: "The employer provides benefits to employees.",
+            sample: "Der Arbeitgeber bietet den Mitarbeitern Vorteile.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Pflege",
+      type: "NOUN",
+      level: "A2",
+      categories: ["General", "Health", "Occupation"],
+      spec: {
+        article: "Die",
+        meanings: ["care", "nursing"],
+        plural: "Pflegen",
+        samples: [
+          {
+            translation: "She works in elderly care.",
+            sample: "Sie arbeitet in der Altenpflege.",
+          },
+          {
+            translation: "The patient received excellent care at the hospital.",
+            sample: "Der Patient erhielt im Krankenhaus ausgezeichnete Pflege.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Lebensversicherung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["life insurance"],
+        plural: "Lebensversicherungen",
+        samples: [
+          {
+            translation:
+              "Life insurance provides financial security for families.",
+            sample:
+              "Lebensversicherungen bieten finanzielle Sicherheit für Familien.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Rentenversicherung",
+      type: "NOUN",
+      level: "B2",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "Occupation",
+      ],
+      spec: {
+        article: "Die",
+        meanings: ["pension insurance", "retirement insurance"],
+        plural: "Rentenversicherungen",
+        samples: [
+          {
+            translation:
+              "Pension insurance ensures a stable income after retirement.",
+            sample:
+              "Die Rentenversicherung sorgt für ein stabiles Einkommen nach der Rente.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Wetterkunde",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Nature", "Education"],
+      spec: {
+        article: "Die",
+        meanings: ["meteorology", "weather science"],
+        plural: "Wetterkunden",
+        samples: [
+          {
+            translation: "Meteorology is the study of weather patterns.",
+            sample: "Die Wetterkunde ist die Studie der Wetterlagen.",
+          },
+        ],
+      } as NounSpec,
+    },
+
+    {
+      word: "Äquator",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Nature", "Education"],
+      spec: {
+        article: "Der",
+        meanings: ["equator"],
+        plural: "Äquatoren",
+        samples: [
+          {
+            translation: "The equator divides the Earth into two hemispheres.",
+            sample: "Der Äquator teilt die Erde in zwei Hemisphären.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Gewerkschaft",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Occupation", "Law and order"],
+      spec: {
+        article: "Die",
+        meanings: ["trade union", "labor union"],
+        plural: "Gewerkschaften",
+        samples: [
+          {
+            translation: "The trade union advocates for workers' rights.",
+            sample:
+              "Die Gewerkschaft setzt sich für die Rechte der Arbeiter ein.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Arbeitnehmer",
+      type: "NOUN",
+      level: "A2",
+      categories: ["General", "Occupation", "Daily routines"],
+      spec: {
+        article: "Der",
+        meanings: ["employee", "worker"],
+        plural: "Arbeitnehmer",
+        samples: [
+          {
+            translation: "The employee received a raise for his hard work.",
+            sample:
+              "Der Arbeitnehmer erhielt eine Gehaltserhöhung für seine harte Arbeit.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Arbeitgeberverband",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Occupation", "Law and order"],
+      spec: {
+        article: "Der",
+        meanings: ["employers' association"],
+        plural: "Arbeitgeberverbände",
+        samples: [
+          {
+            translation:
+              "The employers' association negotiates labor agreements.",
+            sample: "Der Arbeitgeberverband verhandelt Arbeitsverträge.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Zusammenarbeit",
+      type: "NOUN",
+      level: "A2",
+      categories: ["General", "Occupation", "Daily routines"],
+      spec: {
+        article: "Die",
+        meanings: ["collaboration", "cooperation"],
+        plural: "Zusammenarbeiten",
+        samples: [
+          {
+            translation: "Collaboration is key to a successful project.",
+            sample:
+              "Zusammenarbeit ist der Schlüssel zu einem erfolgreichen Projekt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "verlieren",
+      type: "VERB",
+      level: "A1",
+      categories: ["General", "Daily routines"],
+      spec: {
+        meanings: ["to lose"],
+        samples: [
+          {
+            translation: "I always lose my keys.",
+            sample: "Ich verliere immer meine Schlüssel.",
+          },
+        ],
+        conjugation: {
+          ich: "verliere",
+          du: "verlierst",
+          er_sie_es: "verliert",
+          wir: "verlieren",
+          ihr: "verliert",
+          sie_Sie: "verlieren",
+        },
+        infinitive: "verlieren",
+        pp: "verloren",
+      } as VerbSpec,
+    },
+    {
+      word: "Entlassung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Occupation", "Law and order"],
+      spec: {
+        article: "Die",
+        meanings: ["dismissal", "layoff"],
+        plural: "Entlassungen",
+        samples: [
+          {
+            translation:
+              "The company announced several layoffs due to restructuring.",
+            sample:
+              "Das Unternehmen kündigte aufgrund von Umstrukturierungen mehrere Entlassungen an.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "bekommen",
+      type: "VERB",
+      level: "A1",
+      categories: ["General", "Daily routines"],
+      spec: {
+        meanings: ["to get", "to receive"],
+        samples: [
+          {
+            translation: "I get a lot of emails every day.",
+            sample: "Ich bekomme jeden Tag viele E-Mails.",
+          },
+        ],
+        conjugation: {
+          ich: "bekomme",
+          du: "bekommst",
+          er_sie_es: "bekommt",
+          wir: "bekommen",
+          ihr: "bekommt",
+          sie_Sie: "bekommen",
+        },
+        infinitive: "bekommen",
+        pp: "bekommen",
+      } as VerbSpec,
+    },
+    {
+      word: "Handlung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["action", "deed", "operation"],
+        plural: "Handlungen",
+        samples: [
+          {
+            translation:
+              "The action taken by the government was controversial.",
+            sample: "Die Handlung der Regierung war umstritten.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Vernichtung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["destruction", "annihilation"],
+        plural: "Vernichtungen",
+        samples: [
+          {
+            translation: "The destruction of evidence is a serious offense.",
+            sample:
+              "Die Vernichtung von Beweismitteln ist ein schweres Vergehen.",
+          },
+          {
+            translation:
+              "The destruction of the ancient city was a tragic event.",
+            sample:
+              "Die Vernichtung der antiken Stadt war ein tragisches Ereignis.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Ereignis",
+      type: "NOUN",
+      level: "B2",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "Events",
+        "Sports",
+        "Leisure",
+      ],
+      spec: {
+        article: "Das",
+        meanings: ["event", "occurrence"],
+        plural: "Ereignisse",
+        samples: [
+          {
+            translation: "The event attracted a large crowd.",
+            sample: "Das Ereignis zog eine große Menschenmenge an.",
+          },
+          {
+            translation: "The occurrence of the accident was unexpected.",
+            sample: "Das Ereignis des Unfalls war unerwartet.",
+          },
+          {
+            translation: "The sports event was held in the city stadium.",
+            sample: "Das Sportereignis fand im Stadtstadion statt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Aufruf",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Der",
+        meanings: ["appeal", "call"],
+        plural: "Aufrufe",
+        samples: [
+          {
+            translation: "The appeal for donations was successful.",
+            sample: "Der Aufruf zu Spenden war erfolgreich.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "kritisieren",
+      type: "VERB",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        meanings: ["to criticize", "to critique"],
+        samples: [
+          {
+            translation:
+              "The politician was criticized for his controversial statements.",
+            sample:
+              "Der Politiker wurde für seine umstrittenen Aussagen kritisiert.",
+          },
+        ],
+        conjugation: {
+          ich: "kritisieren",
+          du: "kritisierst",
+          er_sie_es: "kritisiert",
+          wir: "kritisieren",
+          ihr: "kritisiert",
+          sie_Sie: "kritisieren",
+        },
+        infinitive: "kritisieren",
+        pp: "kritisiert",
+      } as VerbSpec,
+    },
+    {
+      word: "Stimme",
+      type: "NOUN",
+      level: "A2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["vote", "voice"],
+        plural: "Stimmen",
+        samples: [
+          {
+            translation: "Every citizen has the right to vote.",
+            sample: "Jeder Bürger hat das Recht zu stimmen.",
+          },
+          {
+            translation: "Her voice was heard in the meeting.",
+            sample: "Ihre Stimme wurde in der Sitzung gehört.",
+          },
+          {
+            translation: "He cast his vote in the election.",
+            sample: "Er gab seine Stimme bei der Wahl ab.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Pflicht",
+      type: "NOUN",
+      level: "B1",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["duty", "obligation"],
+        plural: "Pflichten",
+        samples: [
+          {
+            translation: "It is our duty to protect the environment.",
+            sample: "Es ist unsere Pflicht, die Umwelt zu schützen.",
+          },
+          {
+            translation: "Citizens have an obligation to obey the law.",
+            sample: "Bürger haben die Pflicht, das Gesetz zu befolgen.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Zwang",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Der",
+        meanings: ["coercion", "compulsion"],
+        plural: "Zwänge",
+        samples: [
+          {
+            translation: "The use of coercion is prohibited by law.",
+            sample: "Der Einsatz von Zwang ist gesetzlich verboten.",
+          },
+          {
+            translation: "She acted under compulsion.",
+            sample: "Sie handelte unter Zwang.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "entscheiden",
+      type: "VERB",
+      level: "A2",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "Daily routines",
+        "Occupation",
+        "Education",
+      ],
+      spec: {
+        meanings: ["to decide", "to determine"],
+        samples: [
+          {
+            translation: "I need to decide on a career path.",
+            sample: "Ich muss mich für einen Karriereweg entscheiden.",
+          },
+          {
+            translation: "I can't decide what to eat for dinner.",
+            sample:
+              "Ich kann mich nicht entscheiden, was ich zum Abendessen essen soll.",
+          },
+          {
+            translation: "Who will decide the winner of the competition?",
+            sample: "Wer wird den Gewinner des Wettbewerbs entscheiden?",
+          },
+        ],
+      } as VerbSpec,
+    },
+    {
+      word: "Hürde",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Die",
+        meanings: ["obstacle", "hurdle"],
+        plural: "Hürden",
+        samples: [
+          {
+            translation:
+              "The company faced several obstacles during the project.",
+            sample:
+              "Das Unternehmen stand während des Projekts vor mehreren Hürden.",
+          },
+          {
+            translation: "The athlete jumped over the hurdles with ease.",
+            sample: "Der Athlet sprang mühelos über die Hürden.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Wille",
+      type: "NOUN",
+      level: "B2",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "Daily routines",
+        "Occupation",
+        "Education",
+      ],
+      spec: {
+        article: "Der",
+        meanings: ["will", "intention"],
+        plural: "Wille",
+        samples: [
+          {
+            translation: "Her strong will helped her overcome challenges.",
+            sample:
+              "Ihr starker Wille half ihr, Herausforderungen zu überwinden.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Wechsel",
+      type: "NOUN",
+      level: "B2",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "Daily routines",
+        "Occupation",
+        "Education",
+      ],
+      spec: {
+        article: "Der",
+        meanings: ["change", "switch"],
+        plural: "Wechsel",
+        samples: [
+          {
+            translation: "The change in leadership brought new policies.",
+            sample: "Der Wechsel in der Führung brachte neue Richtlinien.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "erschweren",
+      type: "VERB",
+      level: "B2",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "Daily routines",
+      ],
+      spec: {
+        meanings: ["to complicate", "to make difficult"],
+        samples: [
+          {
+            translation:
+              "The new regulations complicate the application process.",
+            sample: "Die neuen Vorschriften erschweren den Antragsprozess.",
+          },
+        ],
+        conjugation: {
+          ich: "erschwere",
+          du: "erschwerst",
+          er_sie_es: "erschwert",
+          wir: "erschweren",
+          ihr: "erschwert",
+          sie_Sie: "erschweren",
+        },
+        infinitive: "erschweren",
+        pp: "erschwert",
+      } as VerbSpec,
+    },
+    {
+      word: "Stimmzettel",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Der",
+        meanings: ["ballot paper", "voting slip"],
+        plural: "Stimmzettel",
+        samples: [
+          {
+            translation:
+              "The ballot paper was used to cast votes in the election.",
+            sample:
+              "Der Stimmzettel wurde verwendet, um Stimmen bei der Wahl abzugeben.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Bürgermeister",
+      type: "NOUN",
+      level: "B2",
+      categories: [
+        "General",
+        "Law and order",
+        "Official matters",
+        "City life and errands",
+      ],
+      spec: {
+        article: "Der",
+        meanings: ["mayor"],
+        plural: "Bürgermeister",
+        samples: [
+          {
+            translation:
+              "The mayor addressed the community at the town hall meeting.",
+            sample:
+              "Der Bürgermeister sprach die Gemeinde bei der Stadtratssitzung an.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Leiter",
+      type: "NOUN",
+      level: "A2",
+      categories: [
+        "General",
+        "Occupation",
+        "Daily routines",
+        "Sports",
+        "Official matters",
+      ],
+      spec: {
+        article: "Der",
+        meanings: ["leader", "manager", "head"],
+        plural: "Leiter",
+        samples: [
+          {
+            translation: "The manager is responsible for the team's success.",
+            sample: "Der Leiter ist für den Erfolg des Teams verantwortlich.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "abschaffen",
+      type: "VERB",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        meanings: ["to abolish", "to eliminate"],
+        samples: [
+          {
+            translation: "The government decided to abolish the outdated law.",
+            sample:
+              "Die Regierung beschloss, das veraltete Gesetz abzuschaffen.",
+          },
+        ],
+        conjugation: {
+          ich: "schaffe ab",
+          du: "schaffst ab",
+          er_sie_es: "schafft ab",
+          wir: "schaffen ab",
+          ihr: "schafft ab",
+          sie_Sie: "schaffen ab",
+        },
+        infinitive: "abschaffen",
+        pp: "abgeschafft",
+      } as VerbSpec,
+    },
+    {
+      word: "vertreten",
+      type: "VERB",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        meanings: ["to represent", "to advocate"],
+        samples: [
+          {
+            translation: "The lawyer represents his client in court.",
+            sample: "Der Rechtsanwalt vertritt seinen Mandanten vor Gericht.",
+          },
+        ],
+        conjugation: {
+          ich: "vertrete",
+          du: "vertrittst",
+          er_sie_es: "vertritt",
+          wir: "vertreten",
+          ihr: "vertretet",
+          sie_Sie: "vertreten",
+        },
+        infinitive: "vertreten",
+        pp: "vertreten",
+      } as VerbSpec,
+    },
+    {
+      word: "Kündigung",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Occupation", "Law and order"],
+      spec: {
+        article: "Die",
+        meanings: ["termination", "dismissal", "resignation"],
+        plural: "Kündigungen",
+        samples: [
+          {
+            translation: "The employee received a termination notice.",
+            sample: "Der Arbeitnehmer erhielt eine Kündigung.",
+          },
+          {
+            translation: "She submitted her resignation letter.",
+            sample: "Sie reichte ihr Kündigungsschreiben ein.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Unrecht",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Das",
+        meanings: ["injustice", "wrong"],
+        plural: "Unrechte",
+        samples: [
+          {
+            translation: "Fighting against injustice is important.",
+            sample: "Der Kampf gegen Unrecht ist wichtig.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Rechtsanwalt",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Der",
+        meanings: ["lawyer", "attorney"],
+        plural: "Rechtsanwälte",
+        samples: [
+          {
+            translation: "The lawyer provided legal advice to his client.",
+            sample: "Der Rechtsanwalt gab seinem Mandanten rechtlichen Rat.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Richter",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Der",
+        meanings: ["judge"],
+        plural: "Richter",
+        samples: [
+          {
+            translation: "The judge was known for his fair decisions.",
+            sample: "Der Richter war für seine fairen Entscheidungen bekannt.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Urteil",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Das",
+        meanings: ["verdict", "judgment"],
+        plural: "Urteile",
+        samples: [
+          {
+            translation: "The verdict was announced after a lengthy trial.",
+            sample: "Das Urteil wurde nach einem langen Prozess verkündet.",
+          },
+        ],
+      } as NounSpec,
+    },
+    {
+      word: "Verfahren",
+      type: "NOUN",
+      level: "B2",
+      categories: ["General", "Law and order", "Official matters"],
+      spec: {
+        article: "Das",
+        meanings: ["procedure", "process"],
+        plural: "Verfahren",
+        samples: [
+          {
+            translation:
+              "The legal procedure can be complex and time-consuming.",
+            sample:
+              "Das rechtliche Verfahren kann komplex und zeitaufwendig sein.",
+          },
+        ],
+      } as NounSpec,
+    },
   ],
 };
