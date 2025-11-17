@@ -1166,6 +1166,11 @@ const data: Data = {
             sample: "Könntest du 5 Minuten warten?",
           },
           {
+            sample: " Ich warte am Gate 5 auf dich/Sie/euch/ihn/sie/sie.",
+            translation:
+              "I am waiting for you/you (formal)/y'all (informal plural)/him/her/them at Gate 5.",
+          },
+          {
             sample: "Ich warte auf dich.",
             translation: "I am waiting for you.",
             explanations: [
